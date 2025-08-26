@@ -63,7 +63,8 @@ export const generateAudio = async (
     // Create local backup (save to localStorage)
     const audioKey = `${text}-${voiceType}`;
     const audioArrayBuffer = await audioBlob.arrayBuffer();
-    const audioBase64 = btoa(String.fromCharCode(...new Uint8Array(audioArrayBuffer)));
+    const uint8Array = new Uint8Array(audioArrayBuffer);
+    const audioBase64 = btoa(String.fromCharCode.apply(null, Array.from(uint8Array)));
     
     try {
       localStorage.setItem(`audio_${audioKey}`, audioBase64);
