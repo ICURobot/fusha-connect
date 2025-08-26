@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { curriculum } from "../../entities/Curriculum";
 import { Module } from "../../entities/Curriculum";
-import { BookOpen, Target, CheckCircle2, Circle, ArrowLeft, ArrowRight, Play, MessageCircle, PenTool, Volume2 } from "lucide-react";
+import { BookOpen, Target, CheckCircle2, Circle, ArrowLeft, ArrowRight, Play, MessageCircle, PenTool, Volume2, Loader2 } from "lucide-react";
+import { generateAudio, playAudio as playAudioUtil, cleanupAudioUrl, AudioResponse } from "../../utils/audio";
 import { Button } from "../ui/button";
 
 export default function Lesson() {
@@ -13,6 +14,8 @@ export default function Lesson() {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
   const [showResults, setShowResults] = useState(false);
+  const [audioUrls, setAudioUrls] = useState<{ [key: string]: string }>({});
+  const [audioLoading, setAudioLoading] = useState<{ [key: string]: boolean }>({});
 
   useEffect(() => {
     if (moduleId) {
@@ -27,6 +30,13 @@ export default function Lesson() {
     }
     setIsLoading(false);
   }, [moduleId]);
+
+  // Cleanup audio URLs when component unmounts
+  useEffect(() => {
+    return () => {
+      Object.values(audioUrls).forEach(url => cleanupAudioUrl(url));
+    };
+  }, [audioUrls]);
 
   const handleLessonComplete = (lessonId: string) => {
     if (currentModule) {
@@ -62,9 +72,31 @@ export default function Lesson() {
     setShowResults(true);
   };
 
-  const playAudio = (text: string) => {
-    // Placeholder for audio playback logic
-    console.log(`Playing audio for: ${text}`);
+  const playAudio = async (text: string, voiceType: 'male' | 'female' = 'male') => {
+    const key = `${text}-${voiceType}`;
+    
+    // If audio already exists, play it
+    if (audioUrls[key]) {
+      playAudioUtil(audioUrls[key]);
+      return;
+    }
+    
+    // Set loading state
+    setAudioLoading(prev => ({ ...prev, [key]: true }));
+    
+    try {
+      const result = await generateAudio(text, voiceType);
+      if (result.success && result.audioUrl) {
+        setAudioUrls(prev => ({ ...prev, [key]: result.audioUrl! }));
+        playAudioUtil(result.audioUrl);
+      } else {
+        console.error('Failed to generate audio:', result.error);
+      }
+    } catch (error) {
+      console.error('Audio generation error:', error);
+    } finally {
+      setAudioLoading(prev => ({ ...prev, [key]: false }));
+    }
   };
 
   if (isLoading) {
@@ -393,23 +425,43 @@ export default function Lesson() {
                     <th className="p-3 font-medium text-gray-600">Audio</th>
                   </tr>
                 </thead>
-                <tbody>
-                  {lesson1_1Vocabulary.map((item, index) => (
-                    <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
-                      <td className="p-3 text-xl font-medium text-gray-800" lang="ar" dir="rtl">{item.arabic}</td>
-                      <td className="p-3 text-gray-600 italic">{item.transliteration}</td>
-                      <td className="p-3 text-gray-700">{item.meaning}</td>
-                      <td className="p-3">
-                        <button 
-                          onClick={() => playAudio(item.arabic)}
-                          className="clay-button p-2 hover:scale-110 transition-transform"
-                        >
-                          <Volume2 className="w-4 h-4 text-blue-600" />
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
+                                  <tbody>
+                    {lesson1_1Vocabulary.map((item, index) => (
+                      <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                        <td className="p-3 text-xl font-medium text-gray-800" lang="ar" dir="rtl">{item.arabic}</td>
+                        <td className="p-3 text-gray-600 italic">{item.transliteration}</td>
+                        <td className="p-3 text-gray-700">{item.meaning}</td>
+                        <td className="p-3">
+                          <div className="flex space-x-2">
+                            <button 
+                              onClick={() => playAudio(item.arabic, 'male')}
+                              disabled={audioLoading[`${item.arabic}-male`]}
+                              className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                              title="Play with male voice (Anas)"
+                            >
+                              {audioLoading[`${item.arabic}-male`] ? (
+                                <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                              ) : (
+                                <Volume2 className="w-4 h-4 text-blue-600" />
+                              )}
+                            </button>
+                            <button 
+                              onClick={() => playAudio(item.arabic, 'female')}
+                              disabled={audioLoading[`${item.arabic}-female`]}
+                              className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                              title="Play with female voice (Ghizlane)"
+                            >
+                              {audioLoading[`${item.arabic}-female`] ? (
+                                <Loader2 className="w-4 h-4 text-pink-600 animate-spin" />
+                              ) : (
+                                <Volume2 className="w-4 h-4 text-pink-600" />
+                              )}
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
               </table>
             </div>
           </div>
@@ -425,12 +477,32 @@ export default function Lesson() {
                     <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{line.arabic}</p>
                     <p className="text-sm text-gray-500">{line.english}</p>
                   </div>
-                  <button 
-                    onClick={() => playAudio(line.arabic)}
-                    className="clay-button p-2 hover:scale-110 transition-transform"
-                  >
-                    <Volume2 className="w-4 h-4 text-blue-600" />
-                  </button>
+                  <div className="flex space-x-2">
+                    <button 
+                      onClick={() => playAudio(line.arabic, 'male')}
+                      disabled={audioLoading[`${line.arabic}-male`]}
+                      className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                      title="Play with male voice (Anas)"
+                    >
+                      {audioLoading[`${line.arabic}-male`] ? (
+                        <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                      ) : (
+                        <Volume2 className="w-4 h-4 text-blue-600" />
+                      )}
+                    </button>
+                    <button 
+                      onClick={() => playAudio(line.arabic, 'female')}
+                      disabled={audioLoading[`${line.arabic}-female`]}
+                      className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                      title="Play with female voice (Ghizlane)"
+                    >
+                      {audioLoading[`${line.arabic}-female`] ? (
+                        <Loader2 className="w-4 h-4 text-pink-600 animate-spin" />
+                      ) : (
+                        <Volume2 className="w-4 h-4 text-pink-600" />
+                      )}
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
