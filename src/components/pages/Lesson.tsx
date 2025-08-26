@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import { LessonEntity as Lesson, ProgressEntity as Progress } from "../../entities";
+import { LessonEntity, ProgressEntity, Lesson, Progress } from "../../entities";
 import { createPageUrl } from "../../utils";
 import { ArrowLeft, ArrowRight, CheckCircle2, Play, Target, BookOpen, MessageCircle, PenTool } from "lucide-react";
 import { Button } from "../ui/button";
@@ -30,7 +30,7 @@ export default function LessonPage() {
   const loadLesson = async () => {
     try {
       if (lessonId) {
-        const lessonData = await Lesson.get(lessonId);
+        const lessonData = await LessonEntity.get(lessonId);
         if (lessonData) {
           setLesson(lessonData);
         }
@@ -42,7 +42,7 @@ export default function LessonPage() {
 
   const loadAllLessons = async () => {
     try {
-      const lessons = await Lesson.list('level_code, module_number, order');
+      const lessons = await LessonEntity.list('level_code, module_number, order');
       setAllLessons(lessons);
     } catch (error) {
       console.error('Error loading all lessons:', error);
@@ -62,7 +62,7 @@ export default function LessonPage() {
   const checkCompletion = async () => {
     try {
       const userId = getUserIdentifier();
-      const progressRecords = await Progress.filter({ 
+      const progressRecords = await ProgressEntity.filter({ 
         lesson_id: lessonId, 
         user_identifier: userId 
       });
@@ -76,7 +76,7 @@ export default function LessonPage() {
     try {
       const userId = getUserIdentifier();
       if (lessonId) {
-        await Progress.create({
+        await ProgressEntity.create({
           lesson_id: lessonId,
           user_identifier: userId
         });

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { LevelEntity as Level, ModuleEntity as Module, LessonEntity as Lesson, ProgressEntity as Progress } from "../../entities";
+import { LevelEntity, ModuleEntity, LessonEntity, ProgressEntity, Level, Module, Lesson, Progress } from "../../entities";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "../../utils";
 import { CheckCircle2, Circle, BookOpen, Clock, Trophy, Target } from "lucide-react";
@@ -20,10 +20,10 @@ export default function Dashboard() {
   const loadData = async () => {
     try {
       const [levelsData, modulesData, lessonsData, progressData] = await Promise.all([
-        Level.list('order'),
-        Module.list('order'),
-        Lesson.list('order'),
-        Progress.list()
+        LevelEntity.list('order'),
+        ModuleEntity.list('order'),
+        LessonEntity.list('order'),
+        ProgressEntity.list()
       ]);
       
       setLevels(levelsData);
