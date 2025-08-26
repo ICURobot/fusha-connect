@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { curriculum } from "../../entities/Curriculum";
 import { Module } from "../../entities/Curriculum";
 import { BookOpen, Target, CheckCircle2, Circle, ArrowLeft, ArrowRight, Play, MessageCircle, PenTool, Volume2, Loader2 } from "lucide-react";
-import { generateAudio, playAudio as playAudioUtil, cleanupAudioUrl, AudioResponse } from "../../utils/audio";
+import { generateAudio, playAudio as playAudioUtil, cleanupAudioUrl } from "../../utils/audio";
 import { Button } from "../ui/button";
 
 export default function Lesson() {

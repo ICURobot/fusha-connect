@@ -1,16 +1,14 @@
 // Audio utility functions for ElevenLabs TTS and Supabase storage
 
 const ELEVENLABS_API_KEY = process.env.REACT_APP_ELEVENLABS_API_KEY;
-const SUPABASE_URL = process.env.REACT_APP_SUPABASE_URL;
-const SUPABASE_ANON_KEY = process.env.REACT_APP_SUPABASE_ANON_KEY;
 
 // Voice IDs for ElevenLabs
 const VOICE_IDS = {
-  male: 'R6nda3uM038xEEKi7GFl', // Anas
-  female: 'u0TsaWvt0v8migutHM3M' // Ghizlane
+  male: process.env.REACT_APP_ELEVENLABS_MALE_VOICE_ID || '',
+  female: process.env.REACT_APP_ELEVENLABS_FEMALE_VOICE_ID || ''
 };
 
-export interface AudioResponse {
+interface AudioResponse {
   success: boolean;
   audioUrl?: string;
   error?: string;
@@ -22,6 +20,14 @@ export const generateAudio = async (
 ): Promise<AudioResponse> => {
   try {
     const voiceId = VOICE_IDS[voiceType];
+    
+    if (!voiceId) {
+      throw new Error(`Voice ID not configured for ${voiceType} voice`);
+    }
+    
+    if (!ELEVENLABS_API_KEY) {
+      throw new Error('ElevenLabs API key not configured');
+    }
     
     // Call ElevenLabs API
     const response = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
@@ -48,7 +54,7 @@ export const generateAudio = async (
     // Get audio blob
     const audioBlob = await response.blob();
     
-    // Convert to base64 for storage (or you could upload to Supabase directly)
+    // Convert to blob URL for playback
     const audioUrl = URL.createObjectURL(audioBlob);
     
     return {
