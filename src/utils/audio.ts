@@ -1,8 +1,8 @@
 // Audio utility functions for ElevenLabs TTS and Supabase storage
 
-const ELEVENLABS_API_KEY = 'sk_73d348b186f145ab4a390b411fa34dd33a2a39e4264b5f0c';
-const SUPABASE_URL = 'https://oriwiprgfknsjxiquwve.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yaXdpcHJnZmtuc2p4aXF1d3ZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYxNzQ1ODUsImV4cCI6MjA3MTc1MDU4NX0.PQgYKstTgHj0HTrEDlSVBCxtbIQ1Q181MbO4lx1zufI';
+const ELEVENLABS_API_KEY = process.env.REACT_APP_ELEVENLABS_API_KEY;
+const SUPABASE_URL = process.env.REACT_APP_SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.REACT_APP_SUPABASE_ANON_KEY;
 
 // Voice IDs for ElevenLabs
 const VOICE_IDS = {
