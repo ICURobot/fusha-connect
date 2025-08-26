@@ -3,39 +3,9 @@ import { Link } from "react-router-dom";
 import { createPageUrl } from "../../utils";
 import { BookOpen, Target, Headphones, PenTool, ArrowRight, Star, Users } from "lucide-react";
 import { Button } from "../ui/button";
+import { curriculum } from "../../entities/Curriculum";
 
 export default function Homepage() {
-  const levels = [
-    {
-      code: "A1",
-      title: "Beginner Foundation",
-      description: "Master basic sentence structures and essential vocabulary",
-      color: "from-green-100 to-green-200",
-      textColor: "text-green-700"
-    },
-    {
-      code: "A2",
-      title: "Elementary Progress",
-      description: "Build confidence with everyday conversations and grammar",
-      color: "from-cyan-100 to-cyan-200",
-      textColor: "text-cyan-700"
-    },
-    {
-      code: "B1",
-      title: "Intermediate Skills",
-      description: "Develop fluency in complex topics and advanced structures",
-      color: "from-amber-100 to-amber-200",
-      textColor: "text-amber-700"
-    },
-    {
-      code: "B2",
-      title: "Upper Intermediate",
-      description: "Achieve sophisticated expression and academic proficiency",
-      color: "from-gray-200 to-gray-300",
-      textColor: "text-gray-700"
-    }
-  ];
-
   const features = [
     {
       icon: Target,
@@ -103,7 +73,7 @@ export default function Homepage() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {levels.map((level, index) => (
+          {curriculum.map((level, index) => (
             <div key={level.code} className="clay-card p-6 group cursor-pointer">
               <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${level.color} flex items-center justify-center`}>
                   <span className={`font-bold text-lg ${level.textColor}`}>{level.code}</span>
@@ -114,7 +84,7 @@ export default function Homepage() {
               <div className="mt-4 pt-4 border-t border-gray-200">
                 <div className="flex items-center text-sm text-gray-500">
                   <Users className="w-4 h-4 mr-1" />
-                  <span>Multiple modules included</span>
+                  <span>{level.modules.length} modules included</span>
                 </div>
               </div>
             </div>

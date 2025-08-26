@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { createPageUrl } from "../../utils";
+
 import { ChevronDown, ChevronRight, BookOpen, CheckCircle2, Circle, Trophy } from "lucide-react";
 import { Button } from "../ui/button";
 

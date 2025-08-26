@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl } from "../../utils";
-import { Home, BookOpen, User, Menu, X } from "lucide-react";
+import { Home, BookOpen, Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
 
 export default function Layout({ children }) {
@@ -9,7 +9,7 @@ export default function Layout({ children }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   const navigation = [
-    { name: "Home", url: createPageUrl("Homepage"), icon: Home },
+    { name: "Home", url: "/", icon: Home },
     { name: "Dashboard", url: createPageUrl("Dashboard"), icon: BookOpen },
   ];
 
@@ -89,7 +89,7 @@ export default function Layout({ children }) {
       <header className="clay-element sticky top-4 z-50 mx-4 mt-4 mb-8">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <Link to={createPageUrl("Homepage")} className="flex items-center space-x-3">
+            <Link to="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 clay-button rounded-full flex items-center justify-center">
                 <span className="text-xl font-bold text-purple-700">ف</span>
               </div>
