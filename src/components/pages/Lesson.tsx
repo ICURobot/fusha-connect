@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { curriculum } from "../../entities/Curriculum";
 import { Module } from "../../entities/Curriculum";
 import { BookOpen, Target, CheckCircle2, Circle, ArrowLeft, ArrowRight, Play, MessageCircle, PenTool, Volume2, Loader2 } from "lucide-react";
-import { generateAudio, playAudio as playAudioUtil, cleanupAudioUrl } from "../../utils/audio";
+import { generateAudio, playAudio as playAudioUtil, cleanupAudioUrl, getAudioFromBackup } from "../../utils/audio";
 import { Button } from "../ui/button";
 
 export default function Lesson() {
@@ -85,6 +85,16 @@ export default function Lesson() {
     setAudioLoading(prev => ({ ...prev, [key]: true }));
     
     try {
+      // First try to get from backup
+      const backupAudio = await getAudioFromBackup(text, voiceType);
+      if (backupAudio) {
+        setAudioUrls(prev => ({ ...prev, [key]: backupAudio }));
+        playAudioUtil(backupAudio);
+        setAudioLoading(prev => ({ ...prev, [key]: false }));
+        return;
+      }
+      
+      // If no backup, generate new audio
       const result = await generateAudio(text, voiceType);
       if (result.success && result.audioUrl) {
         setAudioUrls(prev => ({ ...prev, [key]: result.audioUrl! }));
@@ -432,7 +442,7 @@ export default function Lesson() {
                         <td className="p-3 text-gray-600 italic">{item.transliteration}</td>
                         <td className="p-3 text-gray-700">{item.meaning}</td>
                         <td className="p-3">
-                          <div className="flex space-x-2">
+                          <div className="flex items-center space-x-2">
                             <button 
                               onClick={() => playAudio(item.arabic, 'male')}
                               disabled={audioLoading[`${item.arabic}-male`]}
@@ -445,6 +455,7 @@ export default function Lesson() {
                                 <Volume2 className="w-4 h-4 text-blue-600" />
                               )}
                             </button>
+                            <span className="text-xs text-gray-500">Anas</span>
                             <button 
                               onClick={() => playAudio(item.arabic, 'female')}
                               disabled={audioLoading[`${item.arabic}-female`]}
@@ -457,6 +468,7 @@ export default function Lesson() {
                                 <Volume2 className="w-4 h-4 text-pink-600" />
                               )}
                             </button>
+                            <span className="text-xs text-gray-500">Ghizlane</span>
                           </div>
                         </td>
                       </tr>
@@ -477,7 +489,7 @@ export default function Lesson() {
                     <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{line.arabic}</p>
                     <p className="text-sm text-gray-500">{line.english}</p>
                   </div>
-                  <div className="flex space-x-2">
+                  <div className="flex items-center space-x-2">
                     <button 
                       onClick={() => playAudio(line.arabic, 'male')}
                       disabled={audioLoading[`${line.arabic}-male`]}
@@ -490,6 +502,7 @@ export default function Lesson() {
                         <Volume2 className="w-4 h-4 text-blue-600" />
                       )}
                     </button>
+                    <span className="text-xs text-gray-500">Anas</span>
                     <button 
                       onClick={() => playAudio(line.arabic, 'female')}
                       disabled={audioLoading[`${line.arabic}-female`]}
@@ -502,6 +515,7 @@ export default function Lesson() {
                         <Volume2 className="w-4 h-4 text-pink-600" />
                       )}
                     </button>
+                    <span className="text-xs text-gray-500">Ghizlane</span>
                   </div>
                 </div>
               ))}

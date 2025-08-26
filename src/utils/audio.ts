@@ -1,6 +1,12 @@
 // Audio utility functions for ElevenLabs TTS and Supabase storage
+import { createClient } from '@supabase/supabase-js';
 
 const ELEVENLABS_API_KEY = process.env.REACT_APP_ELEVENLABS_API_KEY;
+const SUPABASE_URL = process.env.REACT_APP_SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.REACT_APP_SUPABASE_ANON_KEY;
+
+// Initialize Supabase client
+const supabase = createClient(SUPABASE_URL!, SUPABASE_ANON_KEY!);
 
 // Voice IDs for ElevenLabs
 const VOICE_IDS = {
@@ -54,6 +60,38 @@ export const generateAudio = async (
     // Get audio blob
     const audioBlob = await response.blob();
     
+    // Create local backup (save to localStorage)
+    const audioKey = `${text}-${voiceType}`;
+    const audioArrayBuffer = await audioBlob.arrayBuffer();
+    const audioBase64 = btoa(String.fromCharCode(...new Uint8Array(audioArrayBuffer)));
+    
+    try {
+      localStorage.setItem(`audio_${audioKey}`, audioBase64);
+      console.log(`Local backup created for: ${audioKey}`);
+    } catch (localStorageError) {
+      console.warn('Could not save to localStorage:', localStorageError);
+    }
+    
+    // Upload to Supabase bucket
+    try {
+      const fileName = `${audioKey}.mp3`;
+      const { data: uploadData, error: uploadError } = await supabase.storage
+        .from('audio')
+        .upload(fileName, audioBlob, {
+          contentType: 'audio/mpeg',
+          cacheControl: '3600',
+          upsert: true
+        });
+      
+      if (uploadError) {
+        console.warn('Supabase upload failed:', uploadError);
+      } else {
+        console.log('Audio uploaded to Supabase:', uploadData);
+      }
+    } catch (supabaseError) {
+      console.warn('Supabase upload error:', supabaseError);
+    }
+    
     // Convert to blob URL for playback
     const audioUrl = URL.createObjectURL(audioBlob);
     
@@ -82,4 +120,40 @@ export const cleanupAudioUrl = (audioUrl: string) => {
   if (audioUrl.startsWith('blob:')) {
     URL.revokeObjectURL(audioUrl);
   }
+};
+
+// Function to get audio from local backup or Supabase
+export const getAudioFromBackup = async (text: string, voiceType: 'male' | 'female' = 'male'): Promise<string | null> => {
+  const audioKey = `${text}-${voiceType}`;
+  
+  // Try localStorage first
+  try {
+    const localAudio = localStorage.getItem(`audio_${audioKey}`);
+    if (localAudio) {
+      const audioBlob = new Blob([Uint8Array.from(atob(localAudio), c => c.charCodeAt(0))], { type: 'audio/mpeg' });
+      return URL.createObjectURL(audioBlob);
+    }
+  } catch (error) {
+    console.warn('Could not retrieve from localStorage:', error);
+  }
+  
+  // Try Supabase if local backup not available
+  try {
+    const fileName = `${audioKey}.mp3`;
+    const { data, error } = await supabase.storage
+      .from('audio')
+      .download(fileName);
+    
+    if (error || !data) {
+      return null;
+    }
+    
+    const audioBlob = new Blob([data], { type: 'audio/mpeg' });
+    return URL.createObjectURL(audioBlob);
+  } catch (error) {
+    console.warn('Could not retrieve from Supabase:', error);
+    return null;
+  }
+  
+  return null;
 };
