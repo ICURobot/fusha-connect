@@ -147,18 +147,19 @@ export default function Lesson() {
   // Placeholder data for exercises (replace with actual data)
   const lesson1_1Vocabulary = [
     { arabic: "مَرْحَباً", transliteration: "marhaban", meaning: "Hello", audioUrl: "" },
-    { arabic: "كَيْفَ حَالُكَ؟", transliteration: "kayfa halak", meaning: "How are you?", audioUrl: "" },
+    { arabic: "كَيْفَ حَالُكِ؟", transliteration: "kayfa haaluki", meaning: "How are you? (feminine form)", audioUrl: "" },
     { arabic: "أَنَا بِخَيْرٍ", transliteration: "ana bkhayr", meaning: "I'm fine", audioUrl: "" },
     { arabic: "أَنَا جَيِّدٌ", transliteration: "ana jayd", meaning: "I'm good", audioUrl: "" },
     { arabic: "أَنَا جَيِّدٌ جِدّاً", transliteration: "ana jayd jadhan", meaning: "I'm very good", audioUrl: "" },
   ];
 
   const lesson1_1Conversation = [
-    { speaker: "You", arabic: "مَرْحَباً", english: "Hello" },
-    { speaker: "You", arabic: "كَيْفَ حَالُكَ؟", english: "How are you?" },
-    { speaker: "You", arabic: "أَنَا بِخَيْرٍ", english: "I'm fine" },
-    { speaker: "You", arabic: "أَنَا جَيِّدٌ", english: "I'm good" },
-    { speaker: "You", arabic: "أَنَا جَيِّدٌ جِدّاً", english: "I'm very good" },
+    { speaker: "Khalid", arabic: "مَرْحَباً", english: "Hello" },
+    { speaker: "Maryam", arabic: "أَهْلاً وَ سَهْلاً", english: "Welcome" },
+    { speaker: "Khalid", arabic: "كَيْفَ حَالُكِ؟", english: "How are you? (to female)" },
+    { speaker: "Maryam", arabic: "بِخَيْر، شُكْراً", english: "Fine, thank you" },
+    { speaker: "Khalid", arabic: "مِن أَيْنَ أَنْتِ؟", english: "Where are you from?" },
+    { speaker: "Maryam", arabic: "أَنَا مِن مِصْر", english: "I'm from Egypt" }
   ];
 
   const lesson1_1Exercises = [
@@ -168,8 +169,8 @@ export default function Lesson() {
       correctAnswer: "مَرْحَباً",
     },
     {
-      question: "What is the correct response to 'كَيْفَ حَالُكَ؟'?",
-      options: ["مَرْحَباً", "كَيْفَ حَالُكَ؟", "أَنَا بِخَيْرٍ", "أَنَا جَيِّدٌ", "أَنَا جَيِّدٌ جِدّاً"],
+      question: "What is the correct response to 'كَيْفَ حَالُكِ؟'?",
+      options: ["مَرْحَباً", "كَيْفَ حَالُكِ؟", "أَنَا بِخَيْرٍ", "أَنَا جَيِّدٌ", "أَنَا جَيِّدٌ جِدّاً"],
       correctAnswer: "أَنَا بِخَيْرٍ",
     },
     {
@@ -474,12 +475,12 @@ export default function Lesson() {
                     <p className="text-sm text-gray-500">{line.english}</p>
                   </div>
                   <button 
-                    onClick={() => playAudio(`conversation-${line.arabic}`, 'male')}
-                    disabled={audioLoading[`conversation-${line.arabic}-male`]}
+                    onClick={() => playAudio(`conversation-${line.arabic}`, line.speaker === 'Khalid' ? 'male' : 'female')}
+                    disabled={audioLoading[`conversation-${line.arabic}-${line.speaker === 'Khalid' ? 'male' : 'female'}`]}
                     className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
-                    title="Play audio"
+                    title={`Play ${line.speaker === 'Khalid' ? 'male' : 'female'} voice`}
                   >
-                    {audioLoading[`conversation-${line.arabic}-male`] ? (
+                    {audioLoading[`conversation-${line.arabic}-${line.speaker === 'Khalid' ? 'male' : 'female'}`] ? (
                       <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
                     ) : (
                       <Volume2 className="w-4 h-4 text-blue-600" />

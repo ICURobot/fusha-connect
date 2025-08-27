@@ -9,9 +9,15 @@ let supabase: any = null;
 if (SUPABASE_URL && SUPABASE_ANON_KEY) {
   try {
     supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    console.log('✅ Supabase client initialized successfully');
   } catch (error) {
     console.warn('Failed to initialize Supabase client:', error);
   }
+} else {
+  console.warn('❌ Supabase environment variables missing:', {
+    url: SUPABASE_URL ? '✅' : '❌',
+    key: SUPABASE_ANON_KEY ? '✅' : '❌'
+  });
 }
 
 interface AudioResponse {
@@ -48,50 +54,51 @@ export const cleanupAudioUrl = (audioUrl: string) => {
 // Function to get audio directly from Supabase bucket
 export const getAudioFromSupabase = async (text: string, voiceType: 'male' | 'female' = 'male'): Promise<string | null> => {
   try {
+    console.log('🔍 Looking for audio for:', text, voiceType);
+    
     // Map Arabic text to exact filenames we uploaded to Supabase
     const filenameMap: { [key: string]: string } = {
-      // Vocabulary section
+      // Vocabulary section - using exact text from the app
       'مَرْحَباً-male': 'marhaban.mp3',
-      'أَهْلاً وَ سَهْلاً-male': 'ahlan-wa-sahlan.mp3',
-      'السَّلامُ عَلَيْكُم-male': 'assalamu-alaykum.mp3',
-      'وَ عَلَيْكُم السَّلام-male': 'wa-alaykum-assalam.mp3',
-      'صَباح الخَيْر-male': 'sabah-al-khayr.mp3',
-      'صَباح النُّور-male': 'sabah-an-nur.mp3',
-      'مَساء الخَيْر-male': 'masa-al-khayr.mp3',
-      'مَساء النُّور-male': 'masa-an-nur.mp3',
-      'كَيْفَ الحال؟-male': 'kayfa-al-hal.mp3',
-      'بِخَيْر، شُكْراً-male': 'bikhayr-shukran.mp3',
-      'مِن فَضْلِك-male': 'min-fadlik.mp3',
-      'شُكْراً-male': 'shukran.mp3',
-      // Conversation section (with unique context identifiers)
-      'conversation-السَّلامُ عَلَيْكُم-male': 'conversation-1.mp3',
-      'conversation-وَ عَلَيْكُم السَّلام-male': 'conversation-2.mp3',
-      'conversation-صَباح الخَيْر-male': 'conversation-3.mp3',
-      'conversation-صَباح النُّور. كَيْفَ الحال؟-male': 'conversation-4.mp3',
-      'conversation-أنا بِخَيْر، شُكْراً. وَ أَنْتِ؟-male': 'conversation-5.mp3',
-      'conversation-بِخَيْر، الحَمْدُ لِله-male': 'conversation-6.mp3'
+      'كَيْفَ حَالُكِ؟-male': 'kayfa-haaluki.mp3',
+      'أَنَا بِخَيْرٍ-male': 'ana-bikhayr.mp3',
+      'أَنَا جَيِّدٌ-male': 'ana-jayid.mp3',
+      'أَنَا جَيِّدٌ جِدّاً-male': 'ana-jayid-jiddan.mp3',
+      // Conversation section - using exact text from the app
+      'conversation-مَرْحَباً-male': 'khalid-marhaban.mp3',
+      'conversation-أَهْلاً وَ سَهْلاً-female': 'maryam-ahlan.mp3',
+      'conversation-كَيْفَ حَالُكِ؟-male': 'khalid-kayfa-haaluki.mp3',
+      'conversation-بِخَيْر، شُكْراً-female': 'maryam-bikhayr.mp3',
+      'conversation-مِن أَيْنَ أَنْتِ؟-male': 'khalid-min-ayna.mp3',
+      'conversation-أَنَا مِن مِصْر-female': 'maryam-ana-misr.mp3'
     };
 
     const audioKey = `${text}-${voiceType}`;
+    console.log('🔑 Audio key:', audioKey);
+    
     const filename = filenameMap[audioKey];
+    console.log('📁 Filename found:', filename);
 
     if (!filename) {
-      console.warn('No filename mapping found for:', audioKey);
+      console.warn('❌ No filename mapping found for:', audioKey);
+      console.log('🔍 Available keys:', Object.keys(filenameMap));
       return null;
     }
 
     if (!supabase) {
-      console.warn('Supabase client not available');
+      console.warn('❌ Supabase client not available');
       return null;
     }
 
+    console.log('📤 Downloading from Supabase:', filename);
+    
     // Get audio from Supabase bucket
     const { data, error } = await supabase.storage
       .from('audio')
       .download(filename);
 
     if (error || !data) {
-      console.warn('Supabase download failed for:', filename, error);
+      console.warn('❌ Supabase download failed for:', filename, error);
       return null;
     }
 
@@ -103,7 +110,7 @@ export const getAudioFromSupabase = async (text: string, voiceType: 'male' | 'fe
     return audioUrl;
 
   } catch (error) {
-    console.error('Error getting audio from Supabase:', error);
+    console.error('❌ Error getting audio from Supabase:', error);
     return null;
   }
 };
