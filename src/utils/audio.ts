@@ -46,15 +46,33 @@ export const playAudio = (audioUrl: string) => {
 };
 
 export const cleanupAudioUrl = (audioUrl: string) => {
+  // Only cleanup if it's a blob URL and not in our cache
   if (audioUrl.startsWith('blob:')) {
-    URL.revokeObjectURL(audioUrl);
+    // Check if this URL is still in our cache
+    const isCached = Object.values(audioCache).includes(audioUrl);
+    if (!isCached) {
+      URL.revokeObjectURL(audioUrl);
+      console.log('🧹 Cleaned up unused blob URL');
+    } else {
+      console.log('💾 Keeping cached blob URL');
+    }
   }
 };
+
+// Cache for audio blob URLs to prevent re-downloading
+const audioCache: { [key: string]: string } = {};
 
 // Function to get audio directly from Supabase bucket
 export const getAudioFromSupabase = async (text: string, voiceType: 'male' | 'female' = 'male'): Promise<string | null> => {
   try {
+    const audioKey = `${text}-${voiceType}`;
     console.log('🔍 Looking for audio for:', text, voiceType);
+    
+    // Check if we already have this audio cached
+    if (audioCache[audioKey]) {
+      console.log('💾 Using cached audio URL for:', audioKey);
+      return audioCache[audioKey];
+    }
     
     // Map Arabic text to exact filenames we uploaded to Supabase
     const filenameMap: { [key: string]: string } = {
@@ -84,11 +102,9 @@ export const getAudioFromSupabase = async (text: string, voiceType: 'male' | 'fe
       'المَدْرَسَةُ جَدِيدَةٌ-male': 'lesson1-2-sentence-4.mp3',
       'الكِتابُ جَدِيدٌ-male': 'lesson1-2-sentence-5.mp3'
     };
-
-    const audioKey = `${text}-${voiceType}`;
-    console.log('🔑 Audio key:', audioKey);
     
     const filename = filenameMap[audioKey];
+    console.log('🔑 Audio key:', audioKey);
     console.log('📁 Filename found:', filename);
 
     if (!filename) {
@@ -118,7 +134,10 @@ export const getAudioFromSupabase = async (text: string, voiceType: 'male' | 'fe
     const audioBlob = new Blob([data], { type: 'audio/mpeg' });
     const audioUrl = URL.createObjectURL(audioBlob);
     
-    console.log('✅ Audio loaded from Supabase:', filename);
+    // Cache the audio URL for future use
+    audioCache[audioKey] = audioUrl;
+    
+    console.log('✅ Audio loaded from Supabase and cached:', filename);
     return audioUrl;
 
   } catch (error) {
