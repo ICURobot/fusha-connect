@@ -1,18 +1,6 @@
 // Audio utility functions for ElevenLabs TTS and Supabase storage
 import { createClient } from '@supabase/supabase-js';
 
-// Simple hash function to create safe filenames
-function createHash(str: string): string {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    const char = str.charCodeAt(i);
-    hash = ((hash << 5) - hash) + char;
-    hash = hash & hash; // Convert to 32-bit integer
-  }
-  return Math.abs(hash).toString(36);
-}
-
-const ELEVENLABS_API_KEY = process.env.REACT_APP_ELEVENLABS_API_KEY;
 const SUPABASE_URL = process.env.REACT_APP_SUPABASE_URL;
 const SUPABASE_ANON_KEY = process.env.REACT_APP_SUPABASE_ANON_KEY;
 
@@ -26,12 +14,6 @@ if (SUPABASE_URL && SUPABASE_ANON_KEY) {
   }
 }
 
-// Voice IDs for ElevenLabs
-const VOICE_IDS = {
-  male: process.env.REACT_APP_ELEVENLABS_MALE_VOICE_ID || '',
-  female: process.env.REACT_APP_ELEVENLABS_FEMALE_VOICE_ID || ''
-};
-
 interface AudioResponse {
   success: boolean;
   audioUrl?: string;
@@ -42,20 +24,12 @@ export const generateAudio = async (
   text: string, 
   voiceType: 'male' | 'female' = 'male'
 ): Promise<AudioResponse> => {
-  try {
-    // For now, just return success - we'll implement Supabase-only playback
-    // This prevents the ElevenLabs API calls for random users
-    return {
-      success: true,
-      audioUrl: null
-    };
-  } catch (error) {
-    console.error('Audio generation error:', error);
-    return {
-      success: false,
-      error: error instanceof Error ? error.message : 'Unknown error'
-    };
-  }
+  // This function is no longer needed since we're using Supabase-only playback
+  // But keeping it for compatibility with existing code
+  return {
+    success: true,
+    audioUrl: null
+  };
 };
 
 export const playAudio = (audioUrl: string) => {
@@ -76,6 +50,7 @@ export const getAudioFromSupabase = async (text: string, voiceType: 'male' | 'fe
   try {
     // Map Arabic text to exact filenames we uploaded to Supabase
     const filenameMap: { [key: string]: string } = {
+      // Vocabulary section
       'مَرْحَباً-male': 'marhaban.mp3',
       'أَهْلاً وَ سَهْلاً-male': 'ahlan-wa-sahlan.mp3',
       'السَّلامُ عَلَيْكُم-male': 'assalamu-alaykum.mp3',
@@ -88,12 +63,13 @@ export const getAudioFromSupabase = async (text: string, voiceType: 'male' | 'fe
       'بِخَيْر، شُكْراً-male': 'bikhayr-shukran.mp3',
       'مِن فَضْلِك-male': 'min-fadlik.mp3',
       'شُكْراً-male': 'shukran.mp3',
-      'السَّلامُ عَلَيْكُم-male': 'conversation-1.mp3',
-      'وَ عَلَيْكُم السَّلام-male': 'conversation-2.mp3',
-      'صَباح الخَيْر-male': 'conversation-3.mp3',
-      'صَباح النُّور. كَيْفَ الحال؟-male': 'conversation-4.mp3',
-      'أنا بِخَيْر، شُكْراً. وَ أَنْتِ؟-male': 'conversation-5.mp3',
-      'بِخَيْر، الحَمْدُ لِله-male': 'conversation-6.mp3'
+      // Conversation section (with unique context identifiers)
+      'conversation-السَّلامُ عَلَيْكُم-male': 'conversation-1.mp3',
+      'conversation-وَ عَلَيْكُم السَّلام-male': 'conversation-2.mp3',
+      'conversation-صَباح الخَيْر-male': 'conversation-3.mp3',
+      'conversation-صَباح النُّور. كَيْفَ الحال؟-male': 'conversation-4.mp3',
+      'conversation-أنا بِخَيْر، شُكْراً. وَ أَنْتِ؟-male': 'conversation-5.mp3',
+      'conversation-بِخَيْر، الحَمْدُ لِله-male': 'conversation-6.mp3'
     };
 
     const audioKey = `${text}-${voiceType}`;

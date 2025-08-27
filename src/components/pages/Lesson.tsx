@@ -474,12 +474,12 @@ export default function Lesson() {
                     <p className="text-sm text-gray-500">{line.english}</p>
                   </div>
                   <button 
-                    onClick={() => playAudio(line.arabic, 'male')}
-                    disabled={audioLoading[`${line.arabic}-male`]}
+                    onClick={() => playAudio(`conversation-${line.arabic}`, 'male')}
+                    disabled={audioLoading[`conversation-${line.arabic}-male`]}
                     className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
                     title="Play audio"
                   >
-                    {audioLoading[`${line.arabic}-male`] ? (
+                    {audioLoading[`conversation-${line.arabic}-male`] ? (
                       <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
                     ) : (
                       <Volume2 className="w-4 h-4 text-blue-600" />
