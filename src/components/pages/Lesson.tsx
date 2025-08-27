@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { curriculum } from "../../entities/Curriculum";
 import { Module } from "../../entities/Curriculum";
 import { BookOpen, Target, CheckCircle2, Circle, ArrowLeft, ArrowRight, Play, MessageCircle, PenTool, Volume2, Loader2 } from "lucide-react";
-import { generateAudio, playAudio as playAudioUtil, cleanupAudioUrl, getAudioFromBackup } from "../../utils/audio";
+import { generateAudio, playAudio as playAudioUtil, cleanupAudioUrl, getAudioFromSupabase } from "../../utils/audio";
 import { Button } from "../ui/button";
 
 export default function Lesson() {
@@ -86,7 +86,7 @@ export default function Lesson() {
     
     try {
       // First try to get from backup
-      const backupAudio = await getAudioFromBackup(text, voiceType);
+      const backupAudio = await getAudioFromSupabase(text, voiceType);
       if (backupAudio) {
         setAudioUrls(prev => ({ ...prev, [key]: backupAudio }));
         playAudioUtil(backupAudio);

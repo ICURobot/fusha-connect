@@ -43,98 +43,12 @@ export const generateAudio = async (
   voiceType: 'male' | 'female' = 'male'
 ): Promise<AudioResponse> => {
   try {
-    const voiceId = VOICE_IDS[voiceType];
-    
-    if (!voiceId) {
-      throw new Error(`Voice ID not configured for ${voiceType} voice`);
-    }
-    
-    if (!ELEVENLABS_API_KEY) {
-      throw new Error('ElevenLabs API key not configured');
-    }
-    
-    // Call ElevenLabs API
-    const response = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
-      method: 'POST',
-      headers: {
-        'Accept': 'audio/mpeg',
-        'Content-Type': 'application/json',
-        'xi-api-key': ELEVENLABS_API_KEY,
-      },
-      body: JSON.stringify({
-        text: text,
-        model_id: 'eleven_multilingual_v2',
-        voice_settings: {
-          stability: 0.5,
-          similarity_boost: 0.5,
-        }
-      })
-    });
-
-    if (!response.ok) {
-      throw new Error(`ElevenLabs API error: ${response.status}`);
-    }
-
-    // Get audio blob
-    const audioBlob = await response.blob();
-    
-    // Create local backup (save to localStorage)
-    const audioKey = `${text}-${voiceType}`;
-    const audioArrayBuffer = await audioBlob.arrayBuffer();
-    const uint8Array = new Uint8Array(audioArrayBuffer);
-    const audioBase64 = btoa(String.fromCharCode.apply(null, Array.from(uint8Array)));
-    
-    try {
-      localStorage.setItem(`audio_${audioKey}`, audioBase64);
-      console.log(`Local backup created for: ${audioKey}`);
-    } catch (localStorageError) {
-      console.warn('Could not save to localStorage:', localStorageError);
-    }
-    
-    // Save audio file locally for manual upload to Supabase
-    try {
-      // Create a safe filename for local storage
-      const safeFileName = `${createHash(audioKey)}.mp3`;
-      console.log('✅ Audio generated successfully:', {
-        originalKey: audioKey,
-        safeFileName: safeFileName,
-        fileSize: audioBlob.size
-      });
-      
-      // Store the mapping: audioKey -> safeFileName for retrieval
-      localStorage.setItem(`filename_${audioKey}`, safeFileName);
-      
-      // Create download link to save file to local project folder
-      const downloadLink = document.createElement('a');
-      downloadLink.href = URL.createObjectURL(audioBlob);
-      downloadLink.download = safeFileName;
-      downloadLink.style.display = 'none';
-      
-      // Add to DOM and trigger download
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
-      
-      // Clean up the blob URL
-      URL.revokeObjectURL(downloadLink.href);
-      
-      console.log('📁 Audio file downloaded:', safeFileName);
-      console.log('💡 Save this file to: /public/audio/' + safeFileName);
-      console.log('📋 Original text: ' + text);
-      console.log('🎯 Voice type: ' + voiceType);
-      
-    } catch (localError) {
-      console.error('Local storage error:', localError);
-    }
-    
-    // Convert to blob URL for playback
-    const audioUrl = URL.createObjectURL(audioBlob);
-    
+    // For now, just return success - we'll implement Supabase-only playback
+    // This prevents the ElevenLabs API calls for random users
     return {
       success: true,
-      audioUrl: audioUrl
+      audioUrl: null
     };
-    
   } catch (error) {
     console.error('Audio generation error:', error);
     return {
@@ -157,64 +71,63 @@ export const cleanupAudioUrl = (audioUrl: string) => {
   }
 };
 
-// Function to get audio from local backup or Supabase
-export const getAudioFromBackup = async (text: string, voiceType: 'male' | 'female' = 'male'): Promise<string | null> => {
-  const audioKey = `${text}-${voiceType}`;
-  
-  // Try localStorage first
+// Function to get audio directly from Supabase bucket
+export const getAudioFromSupabase = async (text: string, voiceType: 'male' | 'female' = 'male'): Promise<string | null> => {
   try {
-    const localAudio = localStorage.getItem(`audio_${audioKey}`);
-    if (localAudio) {
-      const audioBlob = new Blob([Uint8Array.from(atob(localAudio), c => c.charCodeAt(0))], { type: 'audio/mpeg' });
-      return URL.createObjectURL(audioBlob);
-    }
-  } catch (error) {
-    console.warn('Could not retrieve from localStorage:', error);
-  }
-  
-  // Try local file system first, then Supabase as fallback
-  try {
-    // Get the safe filename from localStorage mapping
-    const safeFileName = localStorage.getItem(`filename_${audioKey}`);
-    if (!safeFileName) {
+    // Map Arabic text to exact filenames we uploaded to Supabase
+    const filenameMap: { [key: string]: string } = {
+      'مَرْحَباً-male': 'marhaban.mp3',
+      'أَهْلاً وَ سَهْلاً-male': 'ahlan-wa-sahlan.mp3',
+      'السَّلامُ عَلَيْكُم-male': 'assalamu-alaykum.mp3',
+      'وَ عَلَيْكُم السَّلام-male': 'wa-alaykum-assalam.mp3',
+      'صَباح الخَيْر-male': 'sabah-al-khayr.mp3',
+      'صَباح النُّور-male': 'sabah-an-nur.mp3',
+      'مَساء الخَيْر-male': 'masa-al-khayr.mp3',
+      'مَساء النُّور-male': 'masa-an-nur.mp3',
+      'كَيْفَ الحال؟-male': 'kayfa-al-hal.mp3',
+      'بِخَيْر، شُكْراً-male': 'bikhayr-shukran.mp3',
+      'مِن فَضْلِك-male': 'min-fadlik.mp3',
+      'شُكْراً-male': 'shukran.mp3',
+      'السَّلامُ عَلَيْكُم-male': 'conversation-1.mp3',
+      'وَ عَلَيْكُم السَّلام-male': 'conversation-2.mp3',
+      'صَباح الخَيْر-male': 'conversation-3.mp3',
+      'صَباح النُّور. كَيْفَ الحال؟-male': 'conversation-4.mp3',
+      'أنا بِخَيْر، شُكْراً. وَ أَنْتِ؟-male': 'conversation-5.mp3',
+      'بِخَيْر، الحَمْدُ لِله-male': 'conversation-6.mp3'
+    };
+
+    const audioKey = `${text}-${voiceType}`;
+    const filename = filenameMap[audioKey];
+
+    if (!filename) {
       console.warn('No filename mapping found for:', audioKey);
       return null;
     }
-    
-    // Try to load from local public/audio folder first
-    try {
-      const localAudioUrl = `/audio/${safeFileName}`;
-      console.log('Trying local audio file:', localAudioUrl);
-      return localAudioUrl;
-    } catch (localError) {
-      console.warn('Local file not found, trying Supabase...');
-    }
-    
-    // Fallback to Supabase if available and local file not available
-    if (supabase) {
-      try {
-        const { data, error } = await supabase.storage
-          .from('audio')
-          .download(safeFileName);
-        
-        if (error || !data) {
-          return null;
-        }
-        
-        const audioBlob = new Blob([data], { type: 'audio/mpeg' });
-        return URL.createObjectURL(audioBlob);
-      } catch (supabaseError) {
-        console.warn('Supabase download failed:', supabaseError);
-      }
-    } else {
+
+    if (!supabase) {
       console.warn('Supabase client not available');
+      return null;
     }
+
+    // Get audio from Supabase bucket
+    const { data, error } = await supabase.storage
+      .from('audio')
+      .download(filename);
+
+    if (error || !data) {
+      console.warn('Supabase download failed for:', filename, error);
+      return null;
+    }
+
+    // Convert to blob URL for playback
+    const audioBlob = new Blob([data], { type: 'audio/mpeg' });
+    const audioUrl = URL.createObjectURL(audioBlob);
     
-    return null;
+    console.log('✅ Audio loaded from Supabase:', filename);
+    return audioUrl;
+
   } catch (error) {
-    console.warn('Could not retrieve audio:', error);
+    console.error('Error getting audio from Supabase:', error);
     return null;
   }
-  
-  return null;
 };
