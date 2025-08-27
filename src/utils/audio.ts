@@ -112,8 +112,24 @@ export const generateAudio = async (
       // Store the mapping: audioKey -> safeFileName for retrieval
       localStorage.setItem(`filename_${audioKey}`, safeFileName);
       
-      // Note: Audio file is saved locally and will be manually uploaded to Supabase
-      console.log('📁 Audio ready for manual upload to Supabase bucket');
+      // Create download link to save file to local project folder
+      const downloadLink = document.createElement('a');
+      downloadLink.href = URL.createObjectURL(audioBlob);
+      downloadLink.download = safeFileName;
+      downloadLink.style.display = 'none';
+      
+      // Add to DOM and trigger download
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+      
+      // Clean up the blob URL
+      URL.revokeObjectURL(downloadLink.href);
+      
+      console.log('📁 Audio file downloaded:', safeFileName);
+      console.log('💡 Save this file to: /public/audio/' + safeFileName);
+      console.log('📋 Original text: ' + text);
+      console.log('🎯 Voice type: ' + voiceType);
       
     } catch (localError) {
       console.error('Local storage error:', localError);
