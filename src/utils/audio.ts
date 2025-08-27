@@ -16,29 +16,21 @@ const ELEVENLABS_API_KEY = process.env.REACT_APP_ELEVENLABS_API_KEY;
 const SUPABASE_URL = process.env.REACT_APP_SUPABASE_URL;
 const SUPABASE_ANON_KEY = process.env.REACT_APP_SUPABASE_ANON_KEY;
 
-// Initialize Supabase client
-const supabase = createClient(SUPABASE_URL!, SUPABASE_ANON_KEY!);
-
-// Debug: Check Supabase connection
-console.log('Supabase client initialized:', {
-  url: SUPABASE_URL ? '✅ Loaded' : '❌ Missing',
-  anonKey: SUPABASE_ANON_KEY ? '✅ Loaded' : '❌ Missing',
-  client: supabase ? '✅ Created' : '❌ Failed'
-});
+// Initialize Supabase client only if environment variables are available
+let supabase: any = null;
+if (SUPABASE_URL && SUPABASE_ANON_KEY) {
+  try {
+    supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  } catch (error) {
+    console.warn('Failed to initialize Supabase client:', error);
+  }
+}
 
 // Voice IDs for ElevenLabs
 const VOICE_IDS = {
   male: process.env.REACT_APP_ELEVENLABS_MALE_VOICE_ID || '',
   female: process.env.REACT_APP_ELEVENLABS_FEMALE_VOICE_ID || ''
 };
-
-// Debug: Log environment variables (remove this after testing)
-console.log('Environment variables loaded:', {
-  apiKey: ELEVENLABS_API_KEY ? '✅ Loaded' : '❌ Missing',
-  maleVoice: VOICE_IDS.male ? `✅ ${VOICE_IDS.male}` : '❌ Missing',
-  femaleVoice: VOICE_IDS.female ? `✅ ${VOICE_IDS.female}` : '❌ Missing',
-  supabaseUrl: SUPABASE_URL ? '✅ Loaded' : '❌ Missing'
-});
 
 interface AudioResponse {
   success: boolean;
@@ -198,17 +190,27 @@ export const getAudioFromBackup = async (text: string, voiceType: 'male' | 'fema
       console.warn('Local file not found, trying Supabase...');
     }
     
-    // Fallback to Supabase if local file not available
-    const { data, error } = await supabase.storage
-      .from('audio')
-      .download(safeFileName);
-    
-    if (error || !data) {
-      return null;
+    // Fallback to Supabase if available and local file not available
+    if (supabase) {
+      try {
+        const { data, error } = await supabase.storage
+          .from('audio')
+          .download(safeFileName);
+        
+        if (error || !data) {
+          return null;
+        }
+        
+        const audioBlob = new Blob([data], { type: 'audio/mpeg' });
+        return URL.createObjectURL(audioBlob);
+      } catch (supabaseError) {
+        console.warn('Supabase download failed:', supabaseError);
+      }
+    } else {
+      console.warn('Supabase client not available');
     }
     
-    const audioBlob = new Blob([data], { type: 'audio/mpeg' });
-    return URL.createObjectURL(audioBlob);
+    return null;
   } catch (error) {
     console.warn('Could not retrieve audio:', error);
     return null;
