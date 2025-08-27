@@ -1469,7 +1469,15 @@ export default function Lesson() {
                       <td className="p-3 text-gray-700">{item.meaning}</td>
                       <td className="p-3">
                         <button 
-                          onClick={() => playAudio(item.arabic, 'male')}
+                          onClick={() => {
+                            // Special case for duplicate vocabulary items
+                            if (item.arabic === 'مَكْتَبٌ') {
+                              // Use lesson2-4 specific key for مَكْتَبٌ
+                            } else if (item.arabic === 'نَافِذَةٌ') {
+                              // Use lesson2-4 specific key for نَافِذَةٌ
+                            }
+                            playAudio(item.arabic, 'male');
+                          }}
                           disabled={audioLoading[`${item.arabic}-male`]}
                           className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
                           title="Play audio"
@@ -1492,26 +1500,34 @@ export default function Lesson() {
           <div className="clay-card p-6">
             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Example Sentences</h4>
             <div className="space-y-4">
-              {lesson2_4ExampleSentences.map((sentence, index) => (
-                <div key={index} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg border-b border-gray-200 last:border-b-0">
-                  <div className="flex-grow">
-                    <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{sentence.arabic}</p>
-                    <p className="text-sm text-gray-500">{sentence.english}</p>
+              {lesson2_4ExampleSentences.map((sentence, index) => {
+                // Determine voice type based on sentence content
+                let voiceType: 'male' | 'female' = 'male';
+                if (sentence.arabic.includes('بِنْتُ') || sentence.arabic.includes('نَافِذَةُ') || sentence.arabic.includes('صُورَةُ') || sentence.arabic.includes('حَقِيبَةُ') || sentence.arabic.includes('مَدِينَةُ') || sentence.arabic.includes('جَامِعَةُ')) {
+                  voiceType = 'female';
+                }
+                
+                return (
+                  <div key={index} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg border-b border-gray-200 last:border-b-0">
+                    <div className="flex-grow">
+                      <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{sentence.arabic}</p>
+                      <p className="text-sm text-gray-500">{sentence.english}</p>
+                    </div>
+                    <button 
+                      onClick={() => playAudio(sentence.arabic, voiceType)}
+                      disabled={audioLoading[`${sentence.arabic}-${voiceType}`]}
+                      className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                      title="Play audio"
+                    >
+                      {audioLoading[`${sentence.arabic}-${voiceType}`] ? (
+                        <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                      ) : (
+                        <Volume2 className="w-4 h-4 text-blue-600" />
+                      )}
+                    </button>
                   </div>
-                  <button 
-                    onClick={() => playAudio(sentence.arabic, 'male')}
-                    disabled={audioLoading[`${sentence.arabic}-male`]}
-                    className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
-                    title="Play audio"
-                  >
-                    {audioLoading[`${sentence.arabic}-male`] ? (
-                      <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
-                    ) : (
-                      <Volume2 className="w-4 h-4 text-blue-600" />
-                    )}
-                  </button>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -1838,26 +1854,34 @@ export default function Lesson() {
           <div className="clay-card p-6">
             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Example Conversation</h4>
             <div className="space-y-4">
-              {lesson2_2ExampleSentences.map((sentence, index) => (
-                <div key={index} className={`flex items-center space-x-4 p-4 bg-gray-50 rounded-lg border-b border-gray-200 last:border-b-0 ${sentence.isQuestion ? 'font-semibold' : ''}`}>
-                  <div className="flex-grow">
-                    <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{sentence.arabic}</p>
-                    <p className="text-sm text-gray-500">{sentence.english}</p>
+              {lesson2_2ExampleSentences.map((sentence, index) => {
+                // Determine voice type based on sentence content
+                let voiceType: 'male' | 'female' = 'male';
+                if (sentence.arabic.includes('هَذِهِ') || sentence.arabic.includes('طَبِيبَةٌ')) {
+                  voiceType = 'female';
+                }
+                
+                return (
+                  <div key={index} className={`flex items-center space-x-4 p-4 bg-gray-50 rounded-lg border-b border-gray-200 last:border-b-0 ${sentence.isQuestion ? 'font-semibold' : ''}`}>
+                    <div className="flex-grow">
+                      <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{sentence.arabic}</p>
+                      <p className="text-sm text-gray-500">{sentence.english}</p>
+                    </div>
+                    <button 
+                      onClick={() => playAudio(sentence.arabic, voiceType)}
+                      disabled={audioLoading[`${sentence.arabic}-${voiceType}`]}
+                      className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                      title="Play audio"
+                    >
+                      {audioLoading[`${sentence.arabic}-${voiceType}`] ? (
+                        <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                      ) : (
+                        <Volume2 className="w-4 h-4 text-blue-600" />
+                      )}
+                    </button>
                   </div>
-                  <button 
-                    onClick={() => playAudio(sentence.arabic, 'male')}
-                    disabled={audioLoading[`${sentence.arabic}-male`]}
-                    className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
-                    title="Play audio"
-                  >
-                    {audioLoading[`${sentence.arabic}-male`] ? (
-                      <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
-                    ) : (
-                      <Volume2 className="w-4 h-4 text-blue-600" />
-                    )}
-                  </button>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -1986,7 +2010,11 @@ export default function Lesson() {
                       <td className="p-3 text-gray-700">{item.meaning}</td>
                       <td className="p-3">
                         <button 
-                          onClick={() => playAudio(item.arabic, 'male')}
+                          onClick={() => {
+                            // Special case for car vocabulary to avoid duplicate key
+                            const audioKey = item.arabic === 'سَيَّارَةٌ' ? 'سَيَّارَةٌ (lesson2-3)-male' : `${item.arabic}-male`;
+                            playAudio(audioKey.replace('-male', ''), 'male');
+                          }}
                           disabled={audioLoading[`${item.arabic}-male`]}
                           className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
                           title="Play audio"
@@ -2009,26 +2037,34 @@ export default function Lesson() {
           <div className="clay-card p-6">
             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Example Sentences</h4>
             <div className="space-y-4">
-              {lesson2_3ExampleSentences.map((sentence, index) => (
-                <div key={index} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg border-b border-gray-200 last:border-b-0">
-                  <div className="flex-grow">
-                    <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{sentence.arabic}</p>
-                    <p className="text-sm text-gray-500">{sentence.english}</p>
+              {lesson2_3ExampleSentences.map((sentence, index) => {
+                // Determine voice type based on sentence content
+                let voiceType: 'male' | 'female' = 'male';
+                if (sentence.arabic.includes('هَذِهِ') || sentence.arabic.includes('سَيَّارَتُكِ') || sentence.arabic.includes('اِسْمُهَا') || sentence.arabic.includes('صَدِيقَتِي')) {
+                  voiceType = 'female';
+                }
+                
+                return (
+                  <div key={index} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg border-b border-gray-200 last:border-b-0">
+                    <div className="flex-grow">
+                      <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{sentence.arabic}</p>
+                      <p className="text-sm text-gray-500">{sentence.english}</p>
+                    </div>
+                    <button 
+                      onClick={() => playAudio(sentence.arabic, voiceType)}
+                      disabled={audioLoading[`${sentence.arabic}-${voiceType}`]}
+                      className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                      title="Play audio"
+                    >
+                      {audioLoading[`${sentence.arabic}-${voiceType}`] ? (
+                        <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                      ) : (
+                        <Volume2 className="w-4 h-4 text-blue-600" />
+                      )}
+                    </button>
                   </div>
-                  <button 
-                    onClick={() => playAudio(sentence.arabic, 'male')}
-                    disabled={audioLoading[`${sentence.arabic}-male`]}
-                    className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
-                    title="Play audio"
-                  >
-                    {audioLoading[`${sentence.arabic}-male`] ? (
-                      <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
-                    ) : (
-                      <Volume2 className="w-4 h-4 text-blue-600" />
-                    )}
-                  </button>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -2037,177 +2073,6 @@ export default function Lesson() {
             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Check Your Understanding</h4>
             <div className="space-y-6">
               {lesson2_3Exercises.map((q, qIndex) => (
-                <div key={qIndex} className="p-4 border border-gray-200 rounded-lg">
-                  <p className="font-semibold text-gray-800 mb-3">{qIndex + 1}. {q.question}</p>
-                  <div className="space-y-2">
-                    {q.options.map((option, oIndex) => {
-                      const isSelected = selectedAnswers[qIndex] === option;
-                      const isCorrect = q.correctAnswer === option;
-                      let bgColor = 'bg-white';
-                      if (showResults) {
-                        if (isSelected && isCorrect) bgColor = 'bg-green-100 border-green-400';
-                        else if (isSelected && !isCorrect) bgColor = 'bg-red-100 border-red-400';
-                        else if (isCorrect) bgColor = 'bg-green-100 border-green-400';
-                      }
-
-                      return (
-                        <label key={oIndex} className={`flex items-center justify-between p-3 rounded-md border cursor-pointer transition-all duration-200 ${isSelected ? 'border-blue-500' : 'border-gray-300'} ${bgColor}`}>
-                          <input 
-                            type="radio" 
-                            name={`question-${qIndex}`} 
-                            value={option} 
-                            checked={isSelected} 
-                            onChange={() => handleOptionChange(qIndex, option)} 
-                            className="mr-3"
-                          />
-                          <span className="text-lg text-right flex-1" lang="ar" dir="rtl">{option}</span>
-                        </label>
-                      );
-                    })}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-6 text-center">
-              <Button onClick={checkAnswers} className="clay-button text-lg px-8 py-3">
-                Check Answers
-              </Button>
-            </div>
-          </div>
-        </div>
-      ) : currentLesson.id === "a1-m2-l4" ? (
-        <div className="space-y-8">
-          {/* Lesson Header */}
-          <div className="clay-card p-8 text-center">
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 2.4: The Idaafa Construction</h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Learn the most important way to show possession in Arabic.
-            </p>
-          </div>
-
-          {/* Objectives */}
-          <div className="clay-card p-6">
-            <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center space-x-2">
-              <Target className="w-5 h-5 text-blue-600" />
-              <span>Learning Objectives</span>
-            </h4>
-            <ul className="space-y-2 text-gray-700">
-              <li className="flex items-start space-x-2">
-                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
-                <span>Understand the concept of the Idaafa (الإِضَافَة) to show possession.</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
-                <span>Learn the two parts of an Idaafa: the <em>MuDaaf</em> and the <em>MuDaaf ilayhi</em>.</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
-                <span>Master the two essential rules for the first noun in an Idaafa.</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Grammar Explanation */}
-          <div className="clay-card p-6">
-            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Grammar: Possession with Idaafa</h4>
-            <div className="space-y-4">
-              <div className="p-4 bg-gray-50 rounded-lg">
-                <h5 className="text-lg font-semibold text-gray-700 mb-2">"The Book of the Student"</h5>
-                <p className="text-gray-600">Besides attached pronouns, the main way to show possession is by placing two nouns next to each other. This is called an <strong>Idaafa</strong>. It translates to "the X of the Y" or "Y's X".</p>
-                <p className="text-xl text-right mt-2" lang="ar" dir="rtl">كِتَابُ الطَّالِبِ</p>
-                <p className="text-sm text-gray-500 text-right">The book of the student (The student's book)</p>
-              </div>
-              <div className="p-4 bg-gray-50 rounded-lg">
-                <h5 className="text-lg font-semibold text-gray-700 mb-2">The Two Parts</h5>
-                <ul className="mt-2 space-y-2 text-gray-700">
-                  <li><strong>1. The MuDaaf (الْمُضَافُ):</strong> The first noun. This is the thing that is possessed (e.g., 'the book').</li>
-                  <li><strong>2. The MuDaaf ilayhi (الْمُضَافُ إِلَيْهِ):</strong> The second noun. This is the possessor (e.g., 'the student').</li>
-                </ul>
-              </div>
-              <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg">
-                <h5 className="text-lg font-semibold text-gray-700 mb-2">The Two Golden Rules of the MuDaaf</h5>
-                <p className="text-gray-600">The first noun (the MuDaaf) has two very strict rules you must always follow:</p>
-                <ol className="mt-2 space-y-2 text-gray-700 list-decimal list-inside">
-                  <li>It can <strong>NEVER</strong> have the definite article <span lang="ar" dir="rtl">الـ</span>.</li>
-                  <li>It can <strong>NEVER</strong> have <em>tanwiin</em> (the -un/-an/-in endings).</li>
-                </ol>
-                <p className="text-gray-600 mt-2">The second noun (the MuDaaf ilayhi) will almost always be definite (have <span lang="ar" dir="rtl">الـ</span>) at this stage.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Vocabulary */}
-          <div className="clay-card p-6">
-            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Vocabulary</h4>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="border-b-2 border-gray-200">
-                    <th className="p-3 text-lg font-semibold text-gray-700">Arabic</th>
-                    <th className="p-3 font-medium text-gray-600">Transliteration</th>
-                    <th className="p-3 font-medium text-gray-600">Meaning</th>
-                    <th className="p-3 font-medium text-gray-600">Audio</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {lesson2_4Vocabulary.map((item, index) => (
-                    <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
-                      <td className="p-3 text-xl font-medium text-gray-800" lang="ar" dir="rtl">{item.arabic}</td>
-                      <td className="p-3 text-gray-600 italic">{item.transliteration}</td>
-                      <td className="p-3 text-gray-700">{item.meaning}</td>
-                      <td className="p-3">
-                        <button 
-                          onClick={() => playAudio(item.arabic, 'male')}
-                          disabled={audioLoading[`${item.arabic}-male`]}
-                          className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
-                          title="Play audio"
-                        >
-                          {audioLoading[`${item.arabic}-male`] ? (
-                            <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
-                          ) : (
-                            <Volume2 className="w-4 h-4 text-blue-600" />
-                          )}
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* Example Sentences */}
-          <div className="clay-card p-6">
-            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Example Sentences</h4>
-            <div className="space-y-4">
-              {lesson2_4ExampleSentences.map((sentence, index) => (
-                <div key={index} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg border-b border-gray-200 last:border-b-0">
-                  <div className="flex-grow">
-                    <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{sentence.arabic}</p>
-                    <p className="text-sm text-gray-500">{sentence.english}</p>
-                  </div>
-                  <button 
-                    onClick={() => playAudio(sentence.arabic, 'male')}
-                    disabled={audioLoading[`${sentence.arabic}-male`]}
-                    className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
-                    title="Play audio"
-                  >
-                    {audioLoading[`${sentence.arabic}-male`] ? (
-                      <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
-                    ) : (
-                      <Volume2 className="w-4 h-4 text-blue-600" />
-                    )}
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Exercises */}
-          <div className="clay-card p-6">
-            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Check Your Understanding</h4>
-            <div className="space-y-6">
-              {lesson2_4Exercises.map((q, qIndex) => (
                 <div key={qIndex} className="p-4 border border-gray-200 rounded-lg">
                   <p className="font-semibold text-gray-800 mb-3">{qIndex + 1}. {q.question}</p>
                   <div className="space-y-2">
