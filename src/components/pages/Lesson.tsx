@@ -297,6 +297,187 @@ export default function Lesson() {
   const moonLetters = "أ ب ج ح خ ع غ ف ق ك م هـ و ي";
   const sunLetters = "ت ث د ذ ر ز س ش ص ض ط ظ ل ن";
 
+  // Lesson 2.1: Countries & Nationalities
+  const lesson2_1Vocabulary = [
+    { arabic: "مِصْر", transliteration: "miSr", meaning: "Egypt", audioUrl: "" },
+    { arabic: "مِصْرِيّ / مِصْرِيّة", transliteration: "miSriyy / miSriyya", meaning: "Egyptian (m/f)", audioUrl: "" },
+    { arabic: "سوريا", transliteration: "suuriya", meaning: "Syria", audioUrl: "" },
+    { arabic: "سورِيّ / سوريّة", transliteration: "suuriyy / suuriyya", meaning: "Syrian (m/f)", audioUrl: "" },
+    { arabic: "لُبْنان", transliteration: "lubnaan", meaning: "Lebanon", audioUrl: "" },
+    { arabic: "لُبْنانيّ / لُبْنانيّة", transliteration: "lubnaaniyy / lubnaaniyya", meaning: "Lebanese (m/f)", audioUrl: "" },
+    { arabic: "العِراق", transliteration: "al-'iraaq", meaning: "Iraq", audioUrl: "" },
+    { arabic: "عِراقيّ / عِراقيّة", transliteration: "'iraaqiyy / 'iraaqiyya", meaning: "Iraqi (m/f)", audioUrl: "" },
+    { arabic: "أمريكا", transliteration: "amriika", meaning: "America", audioUrl: "" },
+    { arabic: "أمريكيّ / أمريكيّة", transliteration: "amriikiyy / amriikiyya", meaning: "American (m/f)", audioUrl: "" },
+    { arabic: "مِنْ أَيْنَ؟", transliteration: "min ayna?", meaning: "From where?", audioUrl: "" },
+  ];
+
+  const lesson2_1ExampleSentences = [
+    { arabic: "هُوَ مِنْ مِصْر.", english: "He is from Egypt." },
+    { arabic: "إِذَنْ، هُوَ مِصْرِيّ.", english: "Therefore, he is Egyptian." },
+    { arabic: "هِيَ مِنْ سوريا.", english: "She is from Syria." },
+    { arabic: "إِذَنْ، هِيَ سوريّة.", english: "Therefore, she is Syrian." },
+    { arabic: "مِنْ أَيْنَ أَنْتَ؟", english: "Where are you from? (to a male)" },
+    { arabic: "أنا أمريكيّ.", english: "I am American. (male speaker)" },
+  ];
+
+  const lesson2_1Exercises = [
+    {
+      question: "A man from 'لُبْنان' (Lebanon) is...",
+      options: ["لُبْنانيّة", "لُبْنانيّ", "لُبْنان", "لُبْنانيّات"],
+      correctAnswer: "لُبْنانيّ"
+    },
+    {
+      question: "How would a woman from 'العِراق' (Iraq) describe herself?",
+      options: ["أنا عِراقيّ.", "أنا عِراقيّة.", "أنا مِنْ عِراقيّ.", "أنا العِراق."],
+      correctAnswer: "أنا عِراقيّة."
+    },
+    {
+      question: "The adjective used to describe nationality is called:",
+      options: ["Ta' Marbuta", "Idaafa", "Nisba", "Shadda"],
+      correctAnswer: "Nisba"
+    }
+  ];
+
+  // Lesson 2.2: "This is..." & Question Words
+  const lesson2_2Vocabulary = [
+    { arabic: "مَا؟", transliteration: "maa?", meaning: "What? (for non-humans)", audioUrl: "" },
+    { arabic: "مَنْ؟", transliteration: "man?", meaning: "Who? (for humans)", audioUrl: "" },
+    { arabic: "مَكْتَبٌ", transliteration: "maktabun", meaning: "desk, office", audioUrl: "" },
+    { arabic: "نَافِذَةٌ", transliteration: "naafidhatun", meaning: "window", audioUrl: "" },
+    { arabic: "طَبِيبٌ / طَبِيبَةٌ", transliteration: "Tabiibun / Tabiibatun", meaning: "doctor (m/f)", audioUrl: "" },
+    { arabic: "مُمَرِّضٌ / مُمَرِّضَةٌ", transliteration: "mumarriDun / mumarriDatun", meaning: "nurse (m/f)", audioUrl: "" },
+    { arabic: "بَابٌ", transliteration: "baabun", meaning: "door", audioUrl: "" },
+    { arabic: "صَدِيقٌ / صَدِيقَةٌ", transliteration: "Sadiiqun / Sadiiqatun", meaning: "friend (m/f)", audioUrl: "" },
+  ];
+
+  const lesson2_2ExampleSentences = [
+    { arabic: "مَا هَذَا؟", english: "What is this? (pointing to masc. object)", isQuestion: true },
+    { arabic: "هَذَا مَكْتَبٌ.", english: "This is a desk.", isQuestion: false },
+    { arabic: "مَا هَذِهِ؟", english: "What is this? (pointing to fem. object)", isQuestion: true },
+    { arabic: "هَذِهِ نَافِذَةٌ.", english: "This is a window.", isQuestion: false },
+    { arabic: "مَنْ هَذَا؟", english: "Who is this? (pointing to a male)", isQuestion: true },
+    { arabic: "هَذَا صَدِيقِي.", english: "This is my friend (male).", isQuestion: false },
+    { arabic: "مَنْ هَذِهِ؟", english: "Who is this? (pointing to a female)", isQuestion: true },
+    { arabic: "هَذِهِ طَبِيبَةٌ.", english: "This is a (female) doctor.", isQuestion: false },
+  ];
+
+  const lesson2_2Exercises = [
+    {
+      question: "You are pointing to a male doctor (طَبِيبٌ). What do you ask?",
+      options: ["مَا هَذَا؟", "مَنْ هَذَا؟", "مَا هَذِهِ؟", "مَنْ هَذِهِ؟"],
+      correctAnswer: "مَنْ هَذَا؟"
+    },
+    {
+      question: "You are pointing to a window (نَافِذَةٌ). What do you ask?",
+      options: ["مَا هَذَا؟", "مَنْ هَذَا؟", "مَا هَذِهِ؟", "مَنْ هَذِهِ؟"],
+      correctAnswer: "مَا هَذِهِ؟"
+    },
+    {
+      question: "Someone asks you, 'مَنْ هَذِهِ؟'. A correct response could be:",
+      options: ["هَذَا بَابٌ.", "هَذِهِ صَدِيقَتِي.", "هَذَا صَدِيقِي.", "هَذِهِ نَافِذَةٌ."],
+      correctAnswer: "هَذِهِ صَدِيقَتِي."
+    }
+  ];
+
+  // Lesson 2.3: Attached Pronouns (Possession)
+  const lesson2_3Vocabulary = [
+    { arabic: "ـي", transliteration: "-ī", meaning: "my", audioUrl: "" },
+    { arabic: "ـكَ", transliteration: "-ka", meaning: "your (masc.)", audioUrl: "" },
+    { arabic: "ـكِ", transliteration: "-ki", meaning: "your (fem.)", audioUrl: "" },
+    { arabic: "ـهُ", transliteration: "-hu", meaning: "his", audioUrl: "" },
+    { arabic: "ـهَا", transliteration: "-hā", meaning: "her", audioUrl: "" },
+    { arabic: "اِسْمٌ", transliteration: "ismun", meaning: "name", audioUrl: "" },
+    { arabic: "كِتَابٌ", transliteration: "kitābun", meaning: "book", audioUrl: "" },
+    { arabic: "صَدِيقٌ", transliteration: "ṣadīqun", meaning: "friend (male)", audioUrl: "" },
+    { arabic: "صَدِيقَةٌ", transliteration: "ṣadīqatun", meaning: "friend (female)", audioUrl: "" },
+    { arabic: "سَيَّارَةٌ", transliteration: "sayyāratun", meaning: "car", audioUrl: "" },
+  ];
+
+  const lesson2_3ExampleSentences = [
+    { arabic: "اِسْمِي خَالِدٌ.", english: "My name is Khalid." },
+    { arabic: "هَذَا كِتَابُكَ.", english: "This is your book. (to a male)" },
+    { arabic: "هَذِهِ سَيَّارَتُكِ.", english: "This is your car. (to a female)" },
+    { arabic: "صَدِيقُهُ مُهَنْدِسٌ.", english: "His friend is an engineer." },
+    { arabic: "اِسْمُهَا مَهَا.", english: "Her name is Maha." },
+    { arabic: "صَدِيقَتِي طَبِيبَةٌ.", english: "My friend (female) is a doctor." },
+  ];
+
+  const lesson2_3Exercises = [
+    {
+      question: "How do you say 'my book'?",
+      options: ["كِتَابُكَ", "كِتَابِي", "كِتَابُهَا", "كِتَابُهُ"],
+      correctAnswer: "كِتَابِي"
+    },
+    {
+      question: "The phrase 'اِسْمُهَا' means:",
+      options: ["His name", "Your name (m)", "My name", "Her name"],
+      correctAnswer: "Her name"
+    },
+    {
+      question: "You are talking to a female friend. How do you say 'your car'?",
+      options: ["سَيَّارَتُكِ", "سَيَّارَتِي", "سَيَّارَتُكَ", "سَيَّارَتُهُ"],
+      correctAnswer: "سَيَّارَتُكِ"
+    }
+  ];
+
+  // Lesson 2.4: The Idaafa Construction
+  const lesson2_4Vocabulary = [
+    { arabic: "بِنْتٌ", transliteration: "bintun", meaning: "daughter / girl", audioUrl: "" },
+    { arabic: "جَامِعَةٌ", transliteration: "jāmiʿatun", meaning: "university", audioUrl: "" },
+    { arabic: "مَدِينَةٌ", transliteration: "madīnatun", meaning: "city", audioUrl: "" },
+    { arabic: "غُرْفَةٌ", transliteration: "ghurfatun", meaning: "room", audioUrl: "" },
+    { arabic: "مِفْتَاحٌ", transliteration: "miftāḥun", meaning: "key", audioUrl: "" },
+    { arabic: "مَكْتَبٌ", transliteration: "maktabun", meaning: "desk / office", audioUrl: "" },
+    { arabic: "اَلْمُدِيرُ", transliteration: "al-mudīru", meaning: "the director / manager", audioUrl: "" },
+    { arabic: "لَوْنٌ", transliteration: "lawnun", meaning: "color", audioUrl: "" },
+    { arabic: "قَمِيصٌ", transliteration: "qamīṣun", meaning: "shirt", audioUrl: "" },
+    { arabic: "طَعَامٌ", transliteration: "ṭaʿāmun", meaning: "food", audioUrl: "" },
+    { arabic: "مَطْبَخٌ", transliteration: "maṭbakhun", meaning: "kitchen", audioUrl: "" },
+    { arabic: "صُورَةٌ", transliteration: "ṣūratun", meaning: "picture / photo", audioUrl: "" },
+    { arabic: "طَبِيبٌ", transliteration: "ṭabībun", meaning: "doctor", audioUrl: "" },
+    { arabic: "مُسْتَشْفَى", transliteration: "mustashfā", meaning: "hospital", audioUrl: "" },
+    { arabic: "حَقِيبَةٌ", transliteration: "ḥaqībatun", meaning: "bag / suitcase", audioUrl: "" },
+    { arabic: "شَارِعٌ", transliteration: "shāriʿun", meaning: "street", audioUrl: "" },
+    { arabic: "نَافِذَةٌ", transliteration: "nāfidhatun", meaning: "window", audioUrl: "" },
+  ];
+
+  const lesson2_4ExampleSentences = [
+    { arabic: "هَذَا بَيْتُ الْمُهَنْدِسِ.", english: "This is the engineer's house." },
+    { arabic: "اِسْمُ الطَّالِبِ مُحَمَّدٌ.", english: "The student's name is Muhammad." },
+    { arabic: "مِفْتَاحُ السَّيَّارَةِ جَدِيدٌ.", english: "The key of the car is new." },
+    { arabic: "بِنْتُ الْمُدَرِّسَةِ فِي الْجَامِعَةِ.", english: "The teacher's daughter is at the university." },
+    { arabic: "هَذَا مَكْتَبُ الْمُدِيرِ.", english: "This is the director's office." },
+    { arabic: "لَوْنُ الْقَمِيصِ أَزْرَقُ.", english: "The shirt's color is blue." },
+    { arabic: "نَافِذَةُ الْغُرْفَةِ كَبِيرَةٌ.", english: "The room's window is big." },
+    { arabic: "صُورَةُ الْبِنْتِ جَمِيلَةٌ.", english: "The girl's picture is beautiful." },
+    { arabic: "حَقِيبَةُ الطَّالِبَةِ عَلَى الْمَكْتَبِ.", english: "The student's (f) bag is on the desk." },
+    { arabic: "طَعَامُ الْمَطْبَخِ لَذِيذٌ.", english: "The kitchen's food is delicious." },
+    { arabic: "سَيَّارَةُ الطَّبِيبِ فِي الشَّارِعِ.", english: "The doctor's car is in the street." },
+    { arabic: "اِسْمُ الْمُسْتَشْفَى \"الشِّفَاءُ\".", english: "The hospital's name is \"Al-Shifaa\"." },
+    { arabic: "مِفْتَاحُ الْبَابِ صَغِيرٌ.", english: "The key of the door is small." },
+    { arabic: "مَدِينَةُ الْقَاهِرَةِ فِي مِصْرَ.", english: "The city of Cairo is in Egypt." },
+    { arabic: "جَامِعَةُ دِمَشْقَ قَدِيمَةٌ.", english: "The University of Damascus is old." },
+  ];
+
+  const lesson2_4Exercises = [
+    {
+      question: "Which of these is a grammatically correct Idaafa construction for 'the student's book'?",
+      options: ["اَلْكِتَابُ الطَّالِبِ", "كِتَابُ الطَّالِبِ", "كِتَابٌ الطَّالِبِ", "اَلْكِتَابُ اَلطَّالِبِ"],
+      correctAnswer: "كِتَابُ الطَّالِبِ"
+    },
+    {
+      question: "In the phrase 'بَابُ الْبَيْتِ' (the door of the house), the word 'بَابُ' is the...",
+      options: ["MuDaaf", "MuDaaf ilayhi"],
+      correctAnswer: "MuDaaf"
+    },
+    {
+      question: "The first noun (MuDaaf) in an Idaafa can NEVER have:",
+      options: ["A fatha", "A kasra", "al- and tanwiin", "A Damma"],
+      correctAnswer: "al- and tanwiin"
+    }
+  ];
+
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       {/* Module Header */}
@@ -990,6 +1171,1035 @@ export default function Lesson() {
             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Check Your Understanding</h4>
             <div className="space-y-6">
               {lesson1_4Exercises.map((q, qIndex) => (
+                <div key={qIndex} className="p-4 border border-gray-200 rounded-lg">
+                  <p className="font-semibold text-gray-800 mb-3">{qIndex + 1}. {q.question}</p>
+                  <div className="space-y-2">
+                    {q.options.map((option, oIndex) => {
+                      const isSelected = selectedAnswers[qIndex] === option;
+                      const isCorrect = q.correctAnswer === option;
+                      let bgColor = 'bg-white';
+                      if (showResults) {
+                        if (isSelected && isCorrect) bgColor = 'bg-green-100 border-green-400';
+                        else if (isSelected && !isCorrect) bgColor = 'bg-red-100 border-red-400';
+                        else if (isCorrect) bgColor = 'bg-green-100 border-green-400';
+                      }
+
+                      return (
+                        <label key={oIndex} className={`flex items-center justify-between p-3 rounded-md border cursor-pointer transition-all duration-200 ${isSelected ? 'border-blue-500' : 'border-gray-300'} ${bgColor}`}>
+                          <input 
+                            type="radio" 
+                            name={`question-${qIndex}`} 
+                            value={option} 
+                            checked={isSelected} 
+                            onChange={() => handleOptionChange(qIndex, option)} 
+                            className="mr-3"
+                          />
+                          <span className="text-lg text-right flex-1" lang="ar" dir="rtl">{option}</span>
+                        </label>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 text-center">
+              <Button onClick={checkAnswers} className="clay-button text-lg px-8 py-3">
+                Check Answers
+              </Button>
+            </div>
+          </div>
+        </div>
+      ) : currentLesson.id === "a1-m1-l5" ? (
+        <div className="space-y-8">
+          {/* Lesson Header */}
+          <div className="clay-card p-8 text-center">
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">The Idaafa Construction</h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Learn how to form Idaafa constructions (الإضافة الإضافية) and understand the rules.
+            </p>
+          </div>
+
+          {/* Objectives */}
+          <div className="clay-card p-6">
+            <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center space-x-2">
+              <Target className="w-5 h-5 text-blue-600" />
+              <span>Learning Objectives</span>
+            </h4>
+            <ul className="space-y-2 text-gray-700">
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Understand the concept of Idaafa (الإضافة الإضافية).</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Learn how to form Idaafa constructions.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Practice forming Idaafa constructions with nouns and adjectives.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Grammar Explanation */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Grammar: Idaafa Construction</h4>
+            <div className="space-y-4">
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">What is an Idaafa?</h5>
+                <p className="text-gray-600">An Idaafa is an extra word added to a sentence to make it more specific or descriptive. It's like adding a modifier to a noun. For example, "The book is new" (كِتابٌ جَديدٌ) can become "The student's book is new" (كِتابُ الطالبِ جَديدٌ).</p>
+              </div>
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">How to Form an Idaafa?</h5>
+                <p className="text-gray-600">To form an Idaafa, you add a word (MuDaaf) before the noun. The MuDaaf can be:</p>
+                <ul className="mt-2 space-y-1 text-gray-700">
+                  <li>A possessive pronoun (like "my", "your", "his", "her").</li>
+                  <li>A demonstrative pronoun (like "this", "that").</li>
+                  <li>A personal pronoun (like "I", "you", "he", "she").</li>
+                  <li>A relative pronoun (like "who", "whom").</li>
+                  <li>A possessive adjective (like "my", "your", "his", "her").</li>
+                </ul>
+                <p className="text-gray-600 mt-2">The MuDaaf must agree in gender and number with the noun it's attached to.</p>
+              </div>
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">Example: Idaafa with Possessive Pronouns</h5>
+                <p className="text-gray-600">`طالب جَديد` (a new student) + `ـي` (my) = `طالبِي جَديدٌ` (my new student).</p>
+                <p className="text-gray-600 mt-2">`طالبة جَديدة` (a new female student) + `ـكِ` (your) = `طالبَتِكِ جَديدَةٌ` (your new female student).</p>
+              </div>
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">Example: Idaafa with Demonstrative Pronouns</h5>
+                <p className="text-gray-600">`كِتاب جَديد` (a new book) + `هذا` (this) = `كِتابُ هذا جَديدٌ` (this new book).</p>
+                <p className="text-gray-600 mt-2">`كِتاب جَديد` (a new book) + `هٰذِه` (this) = `كِتابُ هٰذِه جَديدٌ` (this new book).</p>
+              </div>
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">Example: Idaafa with Personal Pronouns</h5>
+                <p className="text-gray-600">`كِتاب جَديد` (a new book) + `أَنَا` (I) = `كِتابِ أَنَا جَديدٌ` (my new book).</p>
+                <p className="text-gray-600 mt-2">`كِتاب جَديد` (a new book) + `أَنتِ` (you) = `كِتابِ أَنتِ جَديدٌ` (your new book).</p>
+              </div>
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">Example: Idaafa with Relative Pronouns</h5>
+                <p className="text-gray-600">`كِتاب جَديد` (a new book) + `الذِي` (who) = `كِتابُ الذِي جَديدٌ` (the new book).</p>
+                <p className="text-gray-600 mt-2">`كِتاب جَديد` (a new book) + `الذِين` (who) = `كِتابُ الذِين جَديدٌ` (the new books).</p>
+              </div>
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">Example: Idaafa with Possessive Adjectives</h5>
+                <p className="text-gray-600">`كِتاب جَديد` (a new book) + `أَنَا` (my) = `كِتابِ أَنَا جَديدٌ` (my new book).</p>
+                <p className="text-gray-600 mt-2">`كِتاب جَديد` (a new book) + `أَنتِ` (your) = `كِتابِ أَنتِ جَديدٌ` (your new book).</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Vocabulary */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Vocabulary</h4>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="border-b-2 border-gray-200">
+                    <th className="p-3 text-lg font-semibold text-gray-700">Arabic</th>
+                    <th className="p-3 font-medium text-gray-600">Transliteration</th>
+                    <th className="p-3 font-medium text-gray-600">Meaning</th>
+                    <th className="p-3 font-medium text-gray-600">Audio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {lesson2_4Vocabulary.map((item, index) => (
+                    <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                      <td className="p-3 text-xl font-medium text-gray-800" lang="ar" dir="rtl">{item.arabic}</td>
+                      <td className="p-3 text-gray-600 italic">{item.transliteration}</td>
+                      <td className="p-3 text-gray-700">{item.meaning}</td>
+                      <td className="p-3">
+                        <button 
+                          onClick={() => playAudio(item.arabic)}
+                          className="clay-button p-2 hover:scale-110 transition-transform"
+                        >
+                          <Volume2 className="w-4 h-4 text-blue-600" />
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Example Sentences */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Example Sentences</h4>
+            <div className="space-y-4">
+              {lesson2_4ExampleSentences.map((sentence, index) => (
+                <div key={index} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg border-b border-gray-200 last:border-b-0">
+                  <div className="flex-grow">
+                    <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{sentence.arabic}</p>
+                    <p className="text-sm text-gray-500">{sentence.english}</p>
+                  </div>
+                  <button 
+                    onClick={() => playAudio(sentence.arabic)}
+                    className="clay-button p-2 hover:scale-110 transition-transform"
+                  >
+                    <Volume2 className="w-4 h-4 text-blue-600" />
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Exercises */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Check Your Understanding</h4>
+            <div className="space-y-6">
+              {lesson2_4Exercises.map((q, qIndex) => (
+                <div key={qIndex} className="p-4 border border-gray-200 rounded-lg">
+                  <p className="font-semibold text-gray-800 mb-3">{qIndex + 1}. {q.question}</p>
+                  <div className="space-y-2">
+                    {q.options.map((option, oIndex) => {
+                      const isSelected = selectedAnswers[qIndex] === option;
+                      const isCorrect = q.correctAnswer === option;
+                      let bgColor = 'bg-white';
+                      if (showResults) {
+                        if (isSelected && isCorrect) bgColor = 'bg-green-100 border-green-400';
+                        else if (isSelected && !isCorrect) bgColor = 'bg-red-100 border-red-400';
+                        else if (isCorrect) bgColor = 'bg-green-100 border-green-400';
+                      }
+
+                      return (
+                        <label key={oIndex} className={`flex items-center justify-between p-3 rounded-md border cursor-pointer transition-all duration-200 ${isSelected ? 'border-blue-500' : 'border-gray-300'} ${bgColor}`}>
+                          <input 
+                            type="radio" 
+                            name={`question-${qIndex}`} 
+                            value={option} 
+                            checked={isSelected} 
+                            onChange={() => handleOptionChange(qIndex, option)} 
+                            className="mr-3"
+                          />
+                          <span className="text-lg text-right flex-1" lang="ar" dir="rtl">{option}</span>
+                        </label>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 text-center">
+              <Button onClick={checkAnswers} className="clay-button text-lg px-8 py-3">
+                Check Answers
+              </Button>
+            </div>
+          </div>
+        </div>
+      ) : currentLesson.id === "a1-m2-l4" ? (
+        <div className="space-y-8">
+          {/* Lesson Header */}
+          <div className="clay-card p-8 text-center">
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 2.4: The Idaafa Construction</h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Learn the most important way to show possession in Arabic.
+            </p>
+          </div>
+
+          {/* Objectives */}
+          <div className="clay-card p-6">
+            <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center space-x-2">
+              <Target className="w-5 h-5 text-blue-600" />
+              <span>Learning Objectives</span>
+            </h4>
+            <ul className="space-y-2 text-gray-700">
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Understand the concept of the Idaafa (الإِضَافَة) to show possession.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Learn the two parts of an Idaafa: the <em>MuDaaf</em> and the <em>MuDaaf ilayhi</em>.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Master the two essential rules for the first noun in an Idaafa.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Grammar Explanation */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Grammar: Possession with Idaafa</h4>
+            <div className="space-y-4">
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">"The Book of the Student"</h5>
+                <p className="text-gray-600">Besides attached pronouns, the main way to show possession is by placing two nouns next to each other. This is called an <strong>Idaafa</strong>. It translates to "the X of the Y" or "Y's X".</p>
+                <p className="text-xl text-right mt-2" lang="ar" dir="rtl">كِتَابُ الطَّالِبِ</p>
+                <p className="text-sm text-gray-500 text-right">The book of the student (The student's book)</p>
+              </div>
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">The Two Parts</h5>
+                <ul className="mt-2 space-y-2 text-gray-700">
+                  <li><strong>1. The MuDaaf (الْمُضَافُ):</strong> The first noun. This is the thing that is possessed (e.g., 'the book').</li>
+                  <li><strong>2. The MuDaaf ilayhi (الْمُضَافُ إِلَيْهِ):</strong> The second noun. This is the possessor (e.g., 'the student').</li>
+                </ul>
+              </div>
+              <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">The Two Golden Rules of the MuDaaf</h5>
+                <p className="text-gray-600">The first noun (the MuDaaf) has two very strict rules you must always follow:</p>
+                <ol className="mt-2 space-y-2 text-gray-700 list-decimal list-inside">
+                  <li>It can <strong>NEVER</strong> have the definite article <span lang="ar" dir="rtl">الـ</span>.</li>
+                  <li>It can <strong>NEVER</strong> have <em>tanwiin</em> (the -un/-an/-in endings).</li>
+                </ol>
+                <p className="text-gray-600 mt-2">The second noun (the MuDaaf ilayhi) will almost always be definite (have <span lang="ar" dir="rtl">الـ</span>) at this stage.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Vocabulary */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Vocabulary</h4>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="border-b-2 border-gray-200">
+                    <th className="p-3 text-lg font-semibold text-gray-700">Arabic</th>
+                    <th className="p-3 font-medium text-gray-600">Transliteration</th>
+                    <th className="p-3 font-medium text-gray-600">Meaning</th>
+                    <th className="p-3 font-medium text-gray-600">Audio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {lesson2_4Vocabulary.map((item, index) => (
+                    <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                      <td className="p-3 text-xl font-medium text-gray-800" lang="ar" dir="rtl">{item.arabic}</td>
+                      <td className="p-3 text-gray-600 italic">{item.transliteration}</td>
+                      <td className="p-3 text-gray-700">{item.meaning}</td>
+                      <td className="p-3">
+                        <button 
+                          onClick={() => playAudio(item.arabic, 'male')}
+                          disabled={audioLoading[`${item.arabic}-male`]}
+                          className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                          title="Play audio"
+                        >
+                          {audioLoading[`${item.arabic}-male`] ? (
+                            <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                          ) : (
+                            <Volume2 className="w-4 h-4 text-blue-600" />
+                          )}
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Example Sentences */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Example Sentences</h4>
+            <div className="space-y-4">
+              {lesson2_4ExampleSentences.map((sentence, index) => (
+                <div key={index} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg border-b border-gray-200 last:border-b-0">
+                  <div className="flex-grow">
+                    <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{sentence.arabic}</p>
+                    <p className="text-sm text-gray-500">{sentence.english}</p>
+                  </div>
+                  <button 
+                    onClick={() => playAudio(sentence.arabic, 'male')}
+                    disabled={audioLoading[`${sentence.arabic}-male`]}
+                    className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                    title="Play audio"
+                  >
+                    {audioLoading[`${sentence.arabic}-male`] ? (
+                      <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                    ) : (
+                      <Volume2 className="w-4 h-4 text-blue-600" />
+                    )}
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Exercises */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Check Your Understanding</h4>
+            <div className="space-y-6">
+              {lesson2_4Exercises.map((q, qIndex) => (
+                <div key={qIndex} className="p-4 border border-gray-200 rounded-lg">
+                  <p className="font-semibold text-gray-800 mb-3">{qIndex + 1}. {q.question}</p>
+                  <div className="space-y-2">
+                    {q.options.map((option, oIndex) => {
+                      const isSelected = selectedAnswers[qIndex] === option;
+                      const isCorrect = q.correctAnswer === option;
+                      let bgColor = 'bg-white';
+                      if (showResults) {
+                        if (isSelected && isCorrect) bgColor = 'bg-green-100 border-green-400';
+                        else if (isSelected && !isCorrect) bgColor = 'bg-red-100 border-red-400';
+                        else if (isCorrect) bgColor = 'bg-green-100 border-green-400';
+                      }
+
+                      return (
+                        <label key={oIndex} className={`flex items-center justify-between p-3 rounded-md border cursor-pointer transition-all duration-200 ${isSelected ? 'border-blue-500' : 'border-gray-300'} ${bgColor}`}>
+                          <input 
+                            type="radio" 
+                            name={`question-${qIndex}`} 
+                            value={option} 
+                            checked={isSelected} 
+                            onChange={() => handleOptionChange(qIndex, option)} 
+                            className="mr-3"
+                          />
+                          <span className="text-lg text-right flex-1" lang="ar" dir="rtl">{option}</span>
+                        </label>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 text-center">
+              <Button onClick={checkAnswers} className="clay-button text-lg px-8 py-3">
+                Check Answers
+              </Button>
+            </div>
+          </div>
+        </div>
+      ) : currentLesson.id === "a1-m2-l1" ? (
+        <div className="space-y-8">
+          {/* Lesson Header */}
+          <div className="clay-card p-8 text-center">
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 2.1: Countries & Nationalities</h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Learn to ask where someone is from and state your own nationality.
+            </p>
+          </div>
+
+          {/* Objectives */}
+          <div className="clay-card p-6">
+            <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center space-x-2">
+              <Target className="w-5 h-5 text-blue-600" />
+              <span>Learning Objectives</span>
+            </h4>
+            <ul className="space-y-2 text-gray-700">
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Learn the names of several countries in Arabic.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Understand and form <em>nisba</em> adjectives to describe nationality.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Ask and answer the question "Where are you from?".</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Grammar Explanation */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Grammar: The Nisba Adjective (النِّسْبة)</h4>
+            <div className="space-y-4">
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">From a Place to a Person</h5>
+                <p className="text-gray-600">In Arabic, you can turn the name of a place (like a country or city) into an adjective to describe someone's origin. This is called a <strong>nisba</strong> adjective. It's like turning "America" into "American."</p>
+              </div>
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">How to Form the Nisba</h5>
+                <p className="text-gray-600">The rule is simple. You add a suffix to the end of the place name:</p>
+                <ul className="mt-2 space-y-2 text-gray-700">
+                  <li>For <strong>masculine</strong> nouns, add <span className="font-bold text-lg" lang="ar" dir="rtl">ـيّ</span> (pronounced "-iyy").</li>
+                  <li>For <strong>feminine</strong> nouns, add <span className="font-bold text-lg" lang="ar" dir="rtl">ـيّة</span> (pronounced "-iyya").</li>
+                </ul>
+                <div className="mt-3 border-t pt-3">
+                  <p className="text-gray-700 font-medium">Example:</p>
+                  <p className="text-xl text-right mt-1" lang="ar" dir="rtl">مِصْر (Egypt) <span className="mx-2">→</span> مِصْرِيّ (Egyptian man) <span className="mx-2">→</span> مِصْرِيّة (Egyptian woman)</p>
+                </div>
+                <div className="mt-3 border-t pt-3">
+                  <p className="text-gray-700 font-medium">Note:</p>
+                  <p className="text-gray-600">If the place name ends in a <em>Ta' Marbuta</em> (ة) or <em>Alif</em> (ا), you usually drop that letter before adding the <em>nisba</em> ending. For example, <span lang="ar" dir="rtl">سوريا → سوريّ</span>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Vocabulary */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Vocabulary</h4>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="border-b-2 border-gray-200">
+                    <th className="p-3 text-lg font-semibold text-gray-700">Arabic</th>
+                    <th className="p-3 font-medium text-gray-600">Transliteration</th>
+                    <th className="p-3 font-medium text-gray-600">Meaning</th>
+                    <th className="p-3 font-medium text-gray-600">Audio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {lesson2_1Vocabulary.map((item, index) => (
+                    <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                      <td className="p-3 text-xl font-medium text-gray-800" lang="ar" dir="rtl">{item.arabic}</td>
+                      <td className="p-3 text-gray-600 italic">{item.transliteration}</td>
+                      <td className="p-3 text-gray-700">{item.meaning}</td>
+                      <td className="p-3">
+                        <button 
+                          onClick={() => playAudio(item.arabic, 'male')}
+                          disabled={audioLoading[`${item.arabic}-male`]}
+                          className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                          title="Play audio"
+                        >
+                          {audioLoading[`${item.arabic}-male`] ? (
+                            <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                          ) : (
+                            <Volume2 className="w-4 h-4 text-blue-600" />
+                          )}
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Example Sentences */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Example Sentences</h4>
+            <div className="space-y-4">
+              {lesson2_1ExampleSentences.map((sentence, index) => (
+                <div key={index} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg border-b border-gray-200 last:border-b-0">
+                  <div className="flex-grow">
+                    <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{sentence.arabic}</p>
+                    <p className="text-sm text-gray-500">{sentence.english}</p>
+                  </div>
+                  <button 
+                    onClick={() => playAudio(sentence.arabic, 'male')}
+                    disabled={audioLoading[`${sentence.arabic}-male`]}
+                    className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                    title="Play audio"
+                  >
+                    {audioLoading[`${sentence.arabic}-male`] ? (
+                      <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                    ) : (
+                      <Volume2 className="w-4 h-4 text-blue-600" />
+                    )}
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Exercises */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Check Your Understanding</h4>
+            <div className="space-y-6">
+              {lesson2_1Exercises.map((q, qIndex) => (
+                <div key={qIndex} className="p-4 border border-gray-200 rounded-lg">
+                  <p className="font-semibold text-gray-800 mb-3">{qIndex + 1}. {q.question}</p>
+                  <div className="space-y-2">
+                    {q.options.map((option, oIndex) => {
+                      const isSelected = selectedAnswers[qIndex] === option;
+                      const isCorrect = q.correctAnswer === option;
+                      let bgColor = 'bg-white';
+                      if (showResults) {
+                        if (isSelected && isCorrect) bgColor = 'bg-green-100 border-green-400';
+                        else if (isSelected && !isCorrect) bgColor = 'bg-red-100 border-red-400';
+                        else if (isCorrect) bgColor = 'bg-green-100 border-green-400';
+                      }
+
+                      return (
+                        <label key={oIndex} className={`flex items-center justify-between p-3 rounded-md border cursor-pointer transition-all duration-200 ${isSelected ? 'border-blue-500' : 'border-gray-300'} ${bgColor}`}>
+                          <input 
+                            type="radio" 
+                            name={`question-${qIndex}`} 
+                            value={option} 
+                            checked={isSelected} 
+                            onChange={() => handleOptionChange(qIndex, option)} 
+                            className="mr-3"
+                          />
+                          <span className="text-lg text-right flex-1" lang="ar" dir="rtl">{option}</span>
+                        </label>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 text-center">
+              <Button onClick={checkAnswers} className="clay-button text-lg px-8 py-3">
+                Check Answers
+              </Button>
+            </div>
+          </div>
+        </div>
+      ) : currentLesson.id === "a1-m2-l2" ? (
+        <div className="space-y-8">
+          {/* Lesson Header */}
+          <div className="clay-card p-8 text-center">
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 2.2: "This is..." & Question Words</h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Learn to ask fundamental questions about people and objects around you.
+            </p>
+          </div>
+
+          {/* Objectives */}
+          <div className="clay-card p-6">
+            <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center space-x-2">
+              <Target className="w-5 h-5 text-blue-600" />
+              <span>Learning Objectives</span>
+            </h4>
+            <ul className="space-y-2 text-gray-700">
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Review the demonstratives <span className="font-bold" lang="ar" dir="rtl">هَذَا</span> (this, masc.) and <span className="font-bold" lang="ar" dir="rtl">هَذِهِ</span> (this, fem.).</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Learn the difference between <span className="font-bold" lang="ar" dir="rtl">مَا؟</span> (What?) and <span className="font-bold" lang="ar" dir="rtl">مَنْ؟</span> (Who?).</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Practice forming simple questions and answers.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Grammar Explanation */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Grammar: Asking Questions</h4>
+            <div className="space-y-4">
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">What? vs. Who?</h5>
+                <p className="text-gray-600">Arabic makes a clear distinction between asking about people and asking about objects. This is one of the most important rules for forming basic questions.</p>
+                <ul className="mt-2 space-y-2 text-gray-700">
+                  <li>Use <span className="font-bold text-lg" lang="ar" dir="rtl">مَا؟ (maa?)</span> to ask "What?" for <strong>non-human</strong> nouns (objects, ideas, animals).</li>
+                  <li>Use <span className="font-bold text-lg" lang="ar" dir="rtl">مَنْ؟ (man?)</span> to ask "Who?" for <strong>human</strong> nouns.</li>
+                </ul>
+              </div>
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">Sentence Structure</h5>
+                <p className="text-gray-600">The structure for these questions is very simple: <strong>Question Word + Demonstrative?</strong> You must still choose the correct demonstrative (<span lang="ar" dir="rtl">هَذَا</span> or <span lang="ar" dir="rtl">هَذِهِ</span>) to match the gender of the noun you are asking about.</p>
+                <div className="mt-3 border-t pt-3">
+                  <p className="text-gray-700 font-medium">Asking about an object (masculine):</p>
+                  <p className="text-xl text-right mt-1" lang="ar" dir="rtl">مَا هَذَا؟ <span className="text-base text-gray-500 italic">(maa haadhaa?)</span></p>
+                </div>
+                <div className="mt-3 border-t pt-3">
+                  <p className="text-gray-700 font-medium">Asking about a person (feminine):</p>
+                  <p className="text-xl text-right mt-1" lang="ar" dir="rtl">مَنْ هَذِهِ؟ <span className="text-base text-gray-500 italic">(man haadhihi?)</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Vocabulary */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Vocabulary</h4>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="border-b-2 border-gray-200">
+                    <th className="p-3 text-lg font-semibold text-gray-700">Arabic</th>
+                    <th className="p-3 font-medium text-gray-600">Transliteration</th>
+                    <th className="p-3 font-medium text-gray-600">Meaning</th>
+                    <th className="p-3 font-medium text-gray-600">Audio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {lesson2_2Vocabulary.map((item, index) => (
+                    <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                      <td className="p-3 text-xl font-medium text-gray-800" lang="ar" dir="rtl">{item.arabic}</td>
+                      <td className="p-3 text-gray-600 italic">{item.transliteration}</td>
+                      <td className="p-3 text-gray-700">{item.meaning}</td>
+                      <td className="p-3">
+                        <button 
+                          onClick={() => playAudio(item.arabic, 'male')}
+                          disabled={audioLoading[`${item.arabic}-male`]}
+                          className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                          title="Play audio"
+                        >
+                          {audioLoading[`${item.arabic}-male`] ? (
+                            <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                          ) : (
+                            <Volume2 className="w-4 h-4 text-blue-600" />
+                          )}
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Example Sentences */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Example Conversation</h4>
+            <div className="space-y-4">
+              {lesson2_2ExampleSentences.map((sentence, index) => (
+                <div key={index} className={`flex items-center space-x-4 p-4 bg-gray-50 rounded-lg border-b border-gray-200 last:border-b-0 ${sentence.isQuestion ? 'font-semibold' : ''}`}>
+                  <div className="flex-grow">
+                    <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{sentence.arabic}</p>
+                    <p className="text-sm text-gray-500">{sentence.english}</p>
+                  </div>
+                  <button 
+                    onClick={() => playAudio(sentence.arabic, 'male')}
+                    disabled={audioLoading[`${sentence.arabic}-male`]}
+                    className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                    title="Play audio"
+                  >
+                    {audioLoading[`${sentence.arabic}-male`] ? (
+                      <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                    ) : (
+                      <Volume2 className="w-4 h-4 text-blue-600" />
+                    )}
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Exercises */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Check Your Understanding</h4>
+            <div className="space-y-6">
+              {lesson2_2Exercises.map((q, qIndex) => (
+                <div key={qIndex} className="p-4 border border-gray-200 rounded-lg">
+                  <p className="font-semibold text-gray-800 mb-3">{qIndex + 1}. {q.question}</p>
+                  <div className="space-y-2">
+                    {q.options.map((option, oIndex) => {
+                      const isSelected = selectedAnswers[qIndex] === option;
+                      const isCorrect = q.correctAnswer === option;
+                      let bgColor = 'bg-white';
+                      if (showResults) {
+                        if (isSelected && isCorrect) bgColor = 'bg-green-100 border-green-400';
+                        else if (isSelected && !isCorrect) bgColor = 'bg-red-100 border-red-400';
+                        else if (isCorrect) bgColor = 'bg-green-100 border-green-400';
+                      }
+
+                      return (
+                        <label key={oIndex} className={`flex items-center justify-between p-3 rounded-md border cursor-pointer transition-all duration-200 ${isSelected ? 'border-blue-500' : 'border-gray-300'} ${bgColor}`}>
+                          <input 
+                            type="radio" 
+                            name={`question-${qIndex}`} 
+                            value={option} 
+                            checked={isSelected} 
+                            onChange={() => handleOptionChange(qIndex, option)} 
+                            className="mr-3"
+                          />
+                          <span className="text-lg text-right flex-1" lang="ar" dir="rtl">{option}</span>
+                        </label>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 text-center">
+              <Button onClick={checkAnswers} className="clay-button text-lg px-8 py-3">
+                Check Answers
+              </Button>
+            </div>
+          </div>
+        </div>
+      ) : currentLesson.id === "a1-m2-l3" ? (
+        <div className="space-y-8">
+          {/* Lesson Header */}
+          <div className="clay-card p-8 text-center">
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 2.3: Attached Pronouns (Possession)</h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Learn one of the most common and useful features of Arabic: possessive suffixes.
+            </p>
+          </div>
+
+          {/* Objectives */}
+          <div className="clay-card p-6">
+            <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center space-x-2">
+              <Target className="w-5 h-5 text-blue-600" />
+              <span>Learning Objectives</span>
+            </h4>
+            <ul className="space-y-2 text-gray-700">
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Learn the five singular attached pronouns for possession.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Attach these pronouns to both masculine and feminine nouns.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Understand the rule for nouns ending in Ta' Marbuta (ة).</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Grammar Explanation */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Grammar: Possessive Suffixes</h4>
+            <div className="space-y-4">
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">A More Efficient Way</h5>
+                <p className="text-gray-600">Instead of having separate words for "my," "your," etc., Arabic attaches a short suffix directly to the end of a noun. This is an extremely common feature of the language.</p>
+              </div>
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">The Five Singular Pronouns</h5>
+                <table className="w-full mt-2">
+                  <tbody>
+                    <tr className="border-b"><td className="p-2 text-xl" lang="ar" dir="rtl">ـي</td><td className="p-2 italic">...-ī</td><td className="p-2">my</td></tr>
+                    <tr className="border-b"><td className="p-2 text-xl" lang="ar" dir="rtl">ـكَ</td><td className="p-2 italic">...-ka</td><td className="p-2">your (to a male)</td></tr>
+                    <tr className="border-b"><td className="p-2 text-xl" lang="ar" dir="rtl">ـكِ</td><td className="p-2 italic">...-ki</td><td className="p-2">your (to a female)</td></tr>
+                    <tr className="border-b"><td className="p-2 text-xl" lang="ar" dir="rtl">ـهُ</td><td className="p-2 italic">...-hu</td><td className="p-2">his</td></tr>
+                    <tr><td className="p-2 text-xl" lang="ar" dir="rtl">ـهَا</td><td className="p-2 italic">...-hā</td><td className="p-2">her</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">The Ta' Marbuta Rule (ة)</h5>
+                <p className="text-gray-600">This is a very important rule: When you add a possessive suffix to a feminine noun that ends in a <strong>Ta' Marbuta (ة)</strong>, the <strong>ة changes to a regular `ت`</strong> before the suffix is added.</p>
+                <p className="text-xl text-right mt-2" lang="ar" dir="rtl">سَيَّارَةٌ + ـهَا  <span className="mx-2">→</span>  سَيَّارَتُهَا</p>
+                <p className="text-sm text-gray-500 text-right">A car + her → her car</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Vocabulary */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Vocabulary</h4>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="border-b-2 border-gray-200">
+                    <th className="p-3 text-lg font-semibold text-gray-700">Arabic</th>
+                    <th className="p-3 font-medium text-gray-600">Transliteration</th>
+                    <th className="p-3 font-medium text-gray-600">Meaning</th>
+                    <th className="p-3 font-medium text-gray-600">Audio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {lesson2_3Vocabulary.map((item, index) => (
+                    <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                      <td className="p-3 text-xl font-medium text-gray-800" lang="ar" dir="rtl">{item.arabic}</td>
+                      <td className="p-3 text-gray-600 italic">{item.transliteration}</td>
+                      <td className="p-3 text-gray-700">{item.meaning}</td>
+                      <td className="p-3">
+                        <button 
+                          onClick={() => playAudio(item.arabic, 'male')}
+                          disabled={audioLoading[`${item.arabic}-male`]}
+                          className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                          title="Play audio"
+                        >
+                          {audioLoading[`${item.arabic}-male`] ? (
+                            <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                          ) : (
+                            <Volume2 className="w-4 h-4 text-blue-600" />
+                          )}
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Example Sentences */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Example Sentences</h4>
+            <div className="space-y-4">
+              {lesson2_3ExampleSentences.map((sentence, index) => (
+                <div key={index} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg border-b border-gray-200 last:border-b-0">
+                  <div className="flex-grow">
+                    <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{sentence.arabic}</p>
+                    <p className="text-sm text-gray-500">{sentence.english}</p>
+                  </div>
+                  <button 
+                    onClick={() => playAudio(sentence.arabic, 'male')}
+                    disabled={audioLoading[`${sentence.arabic}-male`]}
+                    className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                    title="Play audio"
+                  >
+                    {audioLoading[`${sentence.arabic}-male`] ? (
+                      <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                    ) : (
+                      <Volume2 className="w-4 h-4 text-blue-600" />
+                    )}
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Exercises */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Check Your Understanding</h4>
+            <div className="space-y-6">
+              {lesson2_3Exercises.map((q, qIndex) => (
+                <div key={qIndex} className="p-4 border border-gray-200 rounded-lg">
+                  <p className="font-semibold text-gray-800 mb-3">{qIndex + 1}. {q.question}</p>
+                  <div className="space-y-2">
+                    {q.options.map((option, oIndex) => {
+                      const isSelected = selectedAnswers[qIndex] === option;
+                      const isCorrect = q.correctAnswer === option;
+                      let bgColor = 'bg-white';
+                      if (showResults) {
+                        if (isSelected && isCorrect) bgColor = 'bg-green-100 border-green-400';
+                        else if (isSelected && !isCorrect) bgColor = 'bg-red-100 border-red-400';
+                        else if (isCorrect) bgColor = 'bg-green-100 border-green-400';
+                      }
+
+                      return (
+                        <label key={oIndex} className={`flex items-center justify-between p-3 rounded-md border cursor-pointer transition-all duration-200 ${isSelected ? 'border-blue-500' : 'border-gray-300'} ${bgColor}`}>
+                          <input 
+                            type="radio" 
+                            name={`question-${qIndex}`} 
+                            value={option} 
+                            checked={isSelected} 
+                            onChange={() => handleOptionChange(qIndex, option)} 
+                            className="mr-3"
+                          />
+                          <span className="text-lg text-right flex-1" lang="ar" dir="rtl">{option}</span>
+                        </label>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 text-center">
+              <Button onClick={checkAnswers} className="clay-button text-lg px-8 py-3">
+                Check Answers
+              </Button>
+            </div>
+          </div>
+        </div>
+      ) : currentLesson.id === "a1-m2-l4" ? (
+        <div className="space-y-8">
+          {/* Lesson Header */}
+          <div className="clay-card p-8 text-center">
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 2.4: The Idaafa Construction</h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Learn the most important way to show possession in Arabic.
+            </p>
+          </div>
+
+          {/* Objectives */}
+          <div className="clay-card p-6">
+            <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center space-x-2">
+              <Target className="w-5 h-5 text-blue-600" />
+              <span>Learning Objectives</span>
+            </h4>
+            <ul className="space-y-2 text-gray-700">
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Understand the concept of the Idaafa (الإِضَافَة) to show possession.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Learn the two parts of an Idaafa: the <em>MuDaaf</em> and the <em>MuDaaf ilayhi</em>.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Master the two essential rules for the first noun in an Idaafa.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Grammar Explanation */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Grammar: Possession with Idaafa</h4>
+            <div className="space-y-4">
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">"The Book of the Student"</h5>
+                <p className="text-gray-600">Besides attached pronouns, the main way to show possession is by placing two nouns next to each other. This is called an <strong>Idaafa</strong>. It translates to "the X of the Y" or "Y's X".</p>
+                <p className="text-xl text-right mt-2" lang="ar" dir="rtl">كِتَابُ الطَّالِبِ</p>
+                <p className="text-sm text-gray-500 text-right">The book of the student (The student's book)</p>
+              </div>
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">The Two Parts</h5>
+                <ul className="mt-2 space-y-2 text-gray-700">
+                  <li><strong>1. The MuDaaf (الْمُضَافُ):</strong> The first noun. This is the thing that is possessed (e.g., 'the book').</li>
+                  <li><strong>2. The MuDaaf ilayhi (الْمُضَافُ إِلَيْهِ):</strong> The second noun. This is the possessor (e.g., 'the student').</li>
+                </ul>
+              </div>
+              <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">The Two Golden Rules of the MuDaaf</h5>
+                <p className="text-gray-600">The first noun (the MuDaaf) has two very strict rules you must always follow:</p>
+                <ol className="mt-2 space-y-2 text-gray-700 list-decimal list-inside">
+                  <li>It can <strong>NEVER</strong> have the definite article <span lang="ar" dir="rtl">الـ</span>.</li>
+                  <li>It can <strong>NEVER</strong> have <em>tanwiin</em> (the -un/-an/-in endings).</li>
+                </ol>
+                <p className="text-gray-600 mt-2">The second noun (the MuDaaf ilayhi) will almost always be definite (have <span lang="ar" dir="rtl">الـ</span>) at this stage.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Vocabulary */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Vocabulary</h4>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="border-b-2 border-gray-200">
+                    <th className="p-3 text-lg font-semibold text-gray-700">Arabic</th>
+                    <th className="p-3 font-medium text-gray-600">Transliteration</th>
+                    <th className="p-3 font-medium text-gray-600">Meaning</th>
+                    <th className="p-3 font-medium text-gray-600">Audio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {lesson2_4Vocabulary.map((item, index) => (
+                    <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                      <td className="p-3 text-xl font-medium text-gray-800" lang="ar" dir="rtl">{item.arabic}</td>
+                      <td className="p-3 text-gray-600 italic">{item.transliteration}</td>
+                      <td className="p-3 text-gray-700">{item.meaning}</td>
+                      <td className="p-3">
+                        <button 
+                          onClick={() => playAudio(item.arabic, 'male')}
+                          disabled={audioLoading[`${item.arabic}-male`]}
+                          className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                          title="Play audio"
+                        >
+                          {audioLoading[`${item.arabic}-male`] ? (
+                            <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                          ) : (
+                            <Volume2 className="w-4 h-4 text-blue-600" />
+                          )}
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Example Sentences */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Example Sentences</h4>
+            <div className="space-y-4">
+              {lesson2_4ExampleSentences.map((sentence, index) => (
+                <div key={index} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg border-b border-gray-200 last:border-b-0">
+                  <div className="flex-grow">
+                    <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{sentence.arabic}</p>
+                    <p className="text-sm text-gray-500">{sentence.english}</p>
+                  </div>
+                  <button 
+                    onClick={() => playAudio(sentence.arabic, 'male')}
+                    disabled={audioLoading[`${sentence.arabic}-male`]}
+                    className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                    title="Play audio"
+                  >
+                    {audioLoading[`${sentence.arabic}-male`] ? (
+                      <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                    ) : (
+                      <Volume2 className="w-4 h-4 text-blue-600" />
+                    )}
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Exercises */}
+          <div className="clay-card p-6">
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Check Your Understanding</h4>
+            <div className="space-y-6">
+              {lesson2_4Exercises.map((q, qIndex) => (
                 <div key={qIndex} className="p-4 border border-gray-200 rounded-lg">
                   <p className="font-semibold text-gray-800 mb-3">{qIndex + 1}. {q.question}</p>
                   <div className="space-y-2">

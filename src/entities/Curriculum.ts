@@ -57,7 +57,7 @@ export const curriculum: Level[] = [
         canDoStatement: "I can state my nationality, talk about where I am from, and describe possessions using both attached pronouns and the idaafa.",
         lessons: [
           { id: "a1-m2-l1", title: "Countries & Nationalities", description: "Vocabulary for common countries. Forming nisba adjectives (e.g., misr -> misriyy)." },
-          { id: "a1-m2-l2", title: "The Definite Article", description: "Understanding 'al-' and the concept of Sun and Moon letters." },
+          { id: "a1-m2-l2", title: "'This is...' & Question Words", description: "Learn to ask fundamental questions about people and objects using demonstratives and question words." },
           { id: "a1-m2-l3", title: "Attached Pronouns (Possession)", description: "Attaching -i, -ka, -ki, -hu, -ha to nouns to show possession (my, your, his, her)." },
           { id: "a1-m2-l4", title: "The Idaafa Construction", description: "Introduction to the core concept of possession (e.g., bayt al-rajul - 'the man's house')." }
         ]
