@@ -136,7 +136,26 @@ export const getAudioFromSupabase = async (text: string, voiceType: 'male' | 'fe
       'الشَّمْسُ كَبِيرَةٌ.-male': 'lesson1-4-sentence-3.mp3',
       'النَّجْمُ صَغِيرٌ.-male': 'lesson1-4-sentence-4.mp3',
       'هٰذَا هُوَ الوَلَدُ.-male': 'lesson1-4-sentence-5.mp3',
-      'الدَّفْتَرُ عَلى الطّاوِلَةِ.-male': 'lesson1-4-sentence-6.mp3'
+      'الدَّفْتَرُ عَلى الطّاوِلَةِ.-male': 'lesson1-4-sentence-6.mp3',
+      // Lesson 2.1 Vocabulary section - Countries & Nationalities
+      'مِصْر-male': 'lesson2-1-vocab-1.mp3',
+      'مِصْرِيّ / مِصْرِيّة-male': 'lesson2-1-vocab-2.mp3',
+      'سوريا-male': 'lesson2-1-vocab-3.mp3',
+      'سورِيّ / سوريّة-male': 'lesson2-1-vocab-4.mp3',
+      'لُبْنان-male': 'lesson2-1-vocab-5.mp3',
+      'لُبْنانيّ / لُبْنانيّة-male': 'lesson2-1-vocab-6.mp3',
+      'العِراق-male': 'lesson2-1-vocab-7.mp3',
+      'عِراقيّ / عِراقيّة-male': 'lesson2-1-vocab-8.mp3',
+      'أمريكا-male': 'lesson2-1-vocab-9.mp3',
+      'أمريكيّ / أمريكيّة-male': 'lesson2-1-vocab-10.mp3',
+      'مِنْ أَيْنَ؟-male': 'lesson2-1-vocab-11.mp3',
+      // Lesson 2.1 Example Sentences section - Countries & Nationalities
+      'هُوَ مِنْ مِصْر.-male': 'lesson2-1-sentence-1.mp3',
+      'إِذَنْ، هُوَ مِصْرِيّ.-male': 'lesson2-1-sentence-2.mp3',
+      'هِيَ مِنْ سوريا-female': 'lesson2-1-sentence-3.mp3',
+      'إِذَنْ، هِيَ سوريّة-female': 'lesson2-1-sentence-4.mp3',
+      'مِنْ أَيْنَ أَنْتَ؟-male': 'lesson2-1-sentence-5.mp3',
+      'أنا أمريكيّ-male': 'lesson2-1-sentence-6.mp3'
     };
     
     const filename = filenameMap[audioKey];
