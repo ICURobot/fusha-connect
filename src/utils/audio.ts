@@ -152,10 +152,10 @@ export const getAudioFromSupabase = async (text: string, voiceType: 'male' | 'fe
       // Lesson 2.1 Example Sentences section - Countries & Nationalities
       'هُوَ مِنْ مِصْر.-male': 'lesson2-1-sentence-1.mp3',
       'إِذَنْ، هُوَ مِصْرِيّ.-male': 'lesson2-1-sentence-2.mp3',
-      'هِيَ مِنْ سوريا-female': 'lesson2-1-sentence-3.mp3',
-      'إِذَنْ، هِيَ سوريّة-female': 'lesson2-1-sentence-4.mp3',
+      'هِيَ مِنْ سوريا.-female': 'lesson2-1-sentence-3.mp3',
+      'إِذَنْ، هِيَ سوريّة.-female': 'lesson2-1-sentence-4.mp3',
       'مِنْ أَيْنَ أَنْتَ؟-male': 'lesson2-1-sentence-5.mp3',
-      'أنا أمريكيّ-male': 'lesson2-1-sentence-6.mp3'
+      'أنا أمريكيّ.-male': 'lesson2-1-sentence-6.mp3'
     };
     
     const filename = filenameMap[audioKey];

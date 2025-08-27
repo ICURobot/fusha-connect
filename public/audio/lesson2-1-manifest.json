@@ -1,0 +1,99 @@
+{
+  "lesson": "2.1",
+  "title": "Countries & Nationalities",
+  "vocabulary": [
+    {
+      "arabic": "مِصْر",
+      "english": "Egypt",
+      "audioFile": "lesson2-1-vocab-1.mp3"
+    },
+    {
+      "arabic": "مِصْرِيّ / مِصْرِيّة",
+      "english": "Egyptian (m/f)",
+      "audioFile": "lesson2-1-vocab-2.mp3"
+    },
+    {
+      "arabic": "سوريا",
+      "english": "Syria",
+      "audioFile": "lesson2-1-vocab-3.mp3"
+    },
+    {
+      "arabic": "سورِيّ / سوريّة",
+      "english": "Syrian (m/f)",
+      "audioFile": "lesson2-1-vocab-4.mp3"
+    },
+    {
+      "arabic": "لُبْنان",
+      "english": "Lebanon",
+      "audioFile": "lesson2-1-vocab-5.mp3"
+    },
+    {
+      "arabic": "لُبْنانيّ / لُبْنانيّة",
+      "english": "Lebanese (m/f)",
+      "audioFile": "lesson2-1-vocab-6.mp3"
+    },
+    {
+      "arabic": "العِراق",
+      "english": "Iraq",
+      "audioFile": "lesson2-1-vocab-7.mp3"
+    },
+    {
+      "arabic": "عِراقيّ / عِراقيّة",
+      "english": "Iraqi (m/f)",
+      "audioFile": "lesson2-1-vocab-8.mp3"
+    },
+    {
+      "arabic": "أمريكا",
+      "english": "America",
+      "audioFile": "lesson2-1-vocab-9.mp3"
+    },
+    {
+      "arabic": "أمريكيّ / أمريكيّة",
+      "english": "American (m/f)",
+      "audioFile": "lesson2-1-vocab-10.mp3"
+    },
+    {
+      "arabic": "مِنْ أَيْنَ؟",
+      "english": "From where?",
+      "audioFile": "lesson2-1-vocab-11.mp3"
+    }
+  ],
+  "exampleSentences": [
+    {
+      "arabic": "هُوَ مِنْ مِصْر.",
+      "english": "He is from Egypt.",
+      "voice": "male",
+      "audioFile": "lesson2-1-sentence-1.mp3"
+    },
+    {
+      "arabic": "إِذَنْ، هُوَ مِصْرِيّ.",
+      "english": "Therefore, he is Egyptian.",
+      "voice": "male",
+      "audioFile": "lesson2-1-sentence-2.mp3"
+    },
+    {
+      "arabic": "هِيَ مِنْ سوريا.",
+      "english": "She is from Syria.",
+      "voice": "female",
+      "audioFile": "lesson2-1-sentence-3.mp3"
+    },
+    {
+      "arabic": "إِذَنْ، هِيَ سوريّة.",
+      "english": "Therefore, she is Syrian.",
+      "voice": "female",
+      "audioFile": "lesson2-1-sentence-4.mp3"
+    },
+    {
+      "arabic": "مِنْ أَيْنَ أَنْتَ؟",
+      "english": "Where are you from? (to a male)",
+      "voice": "male",
+      "audioFile": "lesson2-1-sentence-5.mp3"
+    },
+    {
+      "arabic": "أنا أمريكيّ.",
+      "english": "I am American. (male speaker)",
+      "voice": "male",
+      "audioFile": "lesson2-1-sentence-6.mp3"
+    }
+  ]
+}

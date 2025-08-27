@@ -1661,26 +1661,34 @@ export default function Lesson() {
           <div className="clay-card p-6">
             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Example Sentences</h4>
             <div className="space-y-4">
-              {lesson2_1ExampleSentences.map((sentence, index) => (
-                <div key={index} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg border-b border-gray-200 last:border-b-0">
-                  <div className="flex-grow">
-                    <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{sentence.arabic}</p>
-                    <p className="text-sm text-gray-500">{sentence.english}</p>
+              {lesson2_1ExampleSentences.map((sentence, index) => {
+                // Determine voice type based on sentence content
+                let voiceType: 'male' | 'female' = 'male';
+                if (sentence.arabic.includes('هِيَ') || sentence.arabic.includes('سوريّة')) {
+                  voiceType = 'female';
+                }
+                
+                return (
+                  <div key={index} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg border-b border-gray-200 last:border-b-0">
+                    <div className="flex-grow">
+                      <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{sentence.arabic}</p>
+                      <p className="text-sm text-gray-500">{sentence.english}</p>
+                    </div>
+                    <button 
+                      onClick={() => playAudio(sentence.arabic, voiceType)}
+                      disabled={audioLoading[`${sentence.arabic}-${voiceType}`]}
+                      className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                      title="Play audio"
+                    >
+                      {audioLoading[`${sentence.arabic}-${voiceType}`] ? (
+                        <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                      ) : (
+                        <Volume2 className="w-4 h-4 text-blue-600" />
+                      )}
+                    </button>
                   </div>
-                  <button 
-                    onClick={() => playAudio(sentence.arabic, 'male')}
-                    disabled={audioLoading[`${sentence.arabic}-male`]}
-                    className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
-                    title="Play audio"
-                  >
-                    {audioLoading[`${sentence.arabic}-male`] ? (
-                      <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
-                    ) : (
-                      <Volume2 className="w-4 h-4 text-blue-600" />
-                    )}
-                  </button>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
