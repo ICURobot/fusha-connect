@@ -100,7 +100,27 @@ export const getAudioFromSupabase = async (text: string, voiceType: 'male' | 'fe
       'الطَّالِبَةُ جَدِيدَةٌ-male': 'lesson1-2-sentence-2.mp3',
       'المُدَرِّسُ جَدِيدٌ-male': 'lesson1-2-sentence-3.mp3',
       'المَدْرَسَةُ جَدِيدَةٌ-male': 'lesson1-2-sentence-4.mp3',
-      'الكِتابُ جَدِيدٌ-male': 'lesson1-2-sentence-5.mp3'
+      'الكِتابُ جَدِيدٌ-male': 'lesson1-2-sentence-5.mp3',
+      // Lesson 1.3 Vocabulary section
+      'هٰذَا-male': 'lesson1-3-vocab-1.mp3',
+      'هٰذِهِ-male': 'lesson1-3-vocab-2.mp3',
+      'بَيْتٌ-male': 'lesson1-3-vocab-3.mp3',
+      'سَيَّارَةٌ-male': 'lesson1-3-vocab-4.mp3',
+      'كِتابٌ-male': 'lesson1-3-vocab-5.mp3',
+      'قَلَمٌ-male': 'lesson1-3-vocab-6.mp3',
+      'طاوِلَةٌ-male': 'lesson1-3-vocab-7.mp3',
+      'رَجُلٌ-male': 'lesson1-3-vocab-8.mp3',
+      'اِمْرَأَةٌ-male': 'lesson1-3-vocab-9.mp3',
+      'جَمِيلٌ / جَمِيلَةٌ-male': 'lesson1-3-vocab-10.mp3',
+      'قَدِيمٌ / قَدِيمَةٌ-male': 'lesson1-3-vocab-11.mp3',
+      'واسِعٌ / واسِعَةٌ-male': 'lesson1-3-vocab-12.mp3',
+      // Lesson 1.3 Example Sentences section
+      'هٰذَا بَيْتٌ.-male': 'lesson1-3-sentence-1.mp3',
+      'هٰذِهِ سَيَّارَةٌ.-male': 'lesson1-3-sentence-2.mp3',
+      'هٰذَا قَلَمٌ جَمِيلٌ.-male': 'lesson1-3-sentence-3.mp3',
+      'هٰذِهِ طاوِلَةٌ كَبِيرَةٌ.-male': 'lesson1-3-sentence-4.mp3',
+      'هٰذَا رَجُلٌ مُهَنْدِسٌ.-male': 'lesson1-3-sentence-5.mp3',
+      'هٰذِهِ اِمْرَأَةٌ مُدَرِّسَةٌ.-male': 'lesson1-3-sentence-6.mp3'
     };
     
     const filename = filenameMap[audioKey];
