@@ -1,0 +1,58 @@
+{
+  "lesson": "1.2",
+  "title": "The Nominal Sentence",
+  "vocabulary": [
+    {
+      "text": "الطَّالِبُ",
+      "filename": "lesson1-2-vocab-1.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "الطَّالِبَةُ",
+      "filename": "lesson1-2-vocab-2.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "المُدَرِّسُ",
+      "filename": "lesson1-2-vocab-3.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "المَدْرَسَةُ",
+      "filename": "lesson1-2-vocab-4.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "الكِتابُ",
+      "filename": "lesson1-2-vocab-5.mp3",
+      "voice": "male"
+    }
+  ],
+  "exampleSentences": [
+    {
+      "text": "الطَّالِبُ جَدِيدٌ",
+      "filename": "lesson1-2-sentence-1.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "الطَّالِبَةُ جَدِيدَةٌ",
+      "filename": "lesson1-2-sentence-2.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "المُدَرِّسُ جَدِيدٌ",
+      "filename": "lesson1-2-sentence-3.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "المَدْرَسَةُ جَدِيدَةٌ",
+      "filename": "lesson1-2-sentence-4.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "الكِتابُ جَدِيدٌ",
+      "filename": "lesson1-2-sentence-5.mp3",
+      "voice": "male"
+    }
+  ]
+}

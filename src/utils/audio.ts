@@ -58,19 +58,31 @@ export const getAudioFromSupabase = async (text: string, voiceType: 'male' | 'fe
     
     // Map Arabic text to exact filenames we uploaded to Supabase
     const filenameMap: { [key: string]: string } = {
-      // Vocabulary section - using exact text from the app
+      // Lesson 1.1 Vocabulary section - using exact text from the app
       'مَرْحَباً-male': 'marhaban.mp3',
       'كَيْفَ حَالُكِ؟-male': 'kayfa-haaluki.mp3',
       'أَنَا بِخَيْرٍ-male': 'ana-bikhayr.mp3',
       'أَنَا جَيِّدٌ-male': 'ana-jayid.mp3',
       'أَنَا جَيِّدٌ جِدّاً-male': 'ana-jayid-jiddan.mp3',
-      // Conversation section - using exact text from the app
+      // Lesson 1.1 Conversation section - using exact text from the app
       'conversation-مَرْحَباً-male': 'khalid-marhaban.mp3',
       'conversation-أَهْلاً وَ سَهْلاً-female': 'maryam-ahlan.mp3',
       'conversation-كَيْفَ حَالُكِ؟-male': 'khalid-kayfa-haaluki.mp3',
       'conversation-بِخَيْر، شُكْراً-female': 'maryam-bikhayr.mp3',
       'conversation-مِن أَيْنَ أَنْتِ؟-male': 'khalid-min-ayna.mp3',
-      'conversation-أَنَا مِن مِصْر-female': 'maryam-ana-misr.mp3'
+      'conversation-أَنَا مِن مِصْر-female': 'maryam-ana-misr.mp3',
+      // Lesson 1.2 Vocabulary section
+      'الطَّالِبُ-male': 'lesson1-2-vocab-1.mp3',
+      'الطَّالِبَةُ-male': 'lesson1-2-vocab-2.mp3',
+      'المُدَرِّسُ-male': 'lesson1-2-vocab-3.mp3',
+      'المَدْرَسَةُ-male': 'lesson1-2-vocab-4.mp3',
+      'الكِتابُ-male': 'lesson1-2-vocab-5.mp3',
+      // Lesson 1.2 Example Sentences section
+      'الطَّالِبُ جَدِيدٌ-male': 'lesson1-2-sentence-1.mp3',
+      'الطَّالِبَةُ جَدِيدَةٌ-male': 'lesson1-2-sentence-2.mp3',
+      'المُدَرِّسُ جَدِيدٌ-male': 'lesson1-2-sentence-3.mp3',
+      'المَدْرَسَةُ جَدِيدَةٌ-male': 'lesson1-2-sentence-4.mp3',
+      'الكِتابُ جَدِيدٌ-male': 'lesson1-2-sentence-5.mp3'
     };
 
     const audioKey = `${text}-${voiceType}`;
