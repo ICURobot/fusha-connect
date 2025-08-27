@@ -1,0 +1,78 @@
+{
+  "lesson": "1.4",
+  "title": "The Definite Article",
+  "vocabulary": [
+    {
+      "text": "الـ",
+      "filename": "lesson1-4-vocab-1.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "بابٌ",
+      "filename": "lesson1-4-vocab-2.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "شَمْسٌ",
+      "filename": "lesson1-4-vocab-3.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "قَمَرٌ",
+      "filename": "lesson1-4-vocab-4.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "مِفْتاحٌ",
+      "filename": "lesson1-4-vocab-5.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "نَجْمٌ",
+      "filename": "lesson1-4-vocab-6.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "وَلَدٌ",
+      "filename": "lesson1-4-vocab-7.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "دَفْتَرٌ",
+      "filename": "lesson1-4-vocab-8.mp3",
+      "voice": "male"
+    }
+  ],
+  "exampleSentences": [
+    {
+      "text": "البابُ مَفْتوحٌ.",
+      "filename": "lesson1-4-sentence-1.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "القَمَرُ جَمِيلٌ.",
+      "filename": "lesson1-4-sentence-2.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "الشَّمْسُ كَبِيرَةٌ.",
+      "filename": "lesson1-4-sentence-3.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "النَّجْمُ صَغِيرٌ.",
+      "filename": "lesson1-4-sentence-4.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "هٰذَا هُوَ الوَلَدُ.",
+      "filename": "lesson1-4-sentence-5.mp3",
+      "voice": "male"
+    },
+    {
+      "text": "الدَّفْتَرُ عَلى الطّاوِلَةِ.",
+      "filename": "lesson1-4-sentence-6.mp3",
+      "voice": "male"
+    }
+  ]
+}

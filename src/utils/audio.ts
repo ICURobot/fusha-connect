@@ -120,7 +120,23 @@ export const getAudioFromSupabase = async (text: string, voiceType: 'male' | 'fe
       'هٰذَا قَلَمٌ جَمِيلٌ.-male': 'lesson1-3-sentence-3.mp3',
       'هٰذِهِ طاوِلَةٌ كَبِيرَةٌ.-male': 'lesson1-3-sentence-4.mp3',
       'هٰذَا رَجُلٌ مُهَنْدِسٌ.-male': 'lesson1-3-sentence-5.mp3',
-      'هٰذِهِ اِمْرَأَةٌ مُدَرِّسَةٌ.-male': 'lesson1-3-sentence-6.mp3'
+      'هٰذِهِ اِمْرَأَةٌ مُدَرِّسَةٌ.-male': 'lesson1-3-sentence-6.mp3',
+      // Lesson 1.4 Vocabulary section
+      'الـ-male': 'lesson1-4-vocab-1.mp3',
+      'بابٌ-male': 'lesson1-4-vocab-2.mp3',
+      'شَمْسٌ-male': 'lesson1-4-vocab-3.mp3',
+      'قَمَرٌ-male': 'lesson1-4-vocab-4.mp3',
+      'مِفْتاحٌ-male': 'lesson1-4-vocab-5.mp3',
+      'نَجْمٌ-male': 'lesson1-4-vocab-6.mp3',
+      'وَلَدٌ-male': 'lesson1-4-vocab-7.mp3',
+      'دَفْتَرٌ-male': 'lesson1-4-vocab-8.mp3',
+      // Lesson 1.4 Example Sentences section
+      'البابُ مَفْتوحٌ.-male': 'lesson1-4-sentence-1.mp3',
+      'القَمَرُ جَمِيلٌ.-male': 'lesson1-4-sentence-2.mp3',
+      'الشَّمْسُ كَبِيرَةٌ.-male': 'lesson1-4-sentence-3.mp3',
+      'النَّجْمُ صَغِيرٌ.-male': 'lesson1-4-sentence-4.mp3',
+      'هٰذَا هُوَ الوَلَدُ.-male': 'lesson1-4-sentence-5.mp3',
+      'الدَّفْتَرُ عَلى الطّاوِلَةِ.-male': 'lesson1-4-sentence-6.mp3'
     };
     
     const filename = filenameMap[audioKey];
