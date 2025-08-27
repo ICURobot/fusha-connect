@@ -442,34 +442,18 @@ export default function Lesson() {
                         <td className="p-3 text-gray-600 italic">{item.transliteration}</td>
                         <td className="p-3 text-gray-700">{item.meaning}</td>
                         <td className="p-3">
-                          <div className="flex items-center space-x-2">
-                            <button 
-                              onClick={() => playAudio(item.arabic, 'male')}
-                              disabled={audioLoading[`${item.arabic}-male`]}
-                              className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
-                              title="Play with male voice (Anas)"
-                            >
-                              {audioLoading[`${item.arabic}-male`] ? (
-                                <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
-                              ) : (
-                                <Volume2 className="w-4 h-4 text-blue-600" />
-                              )}
-                            </button>
-                            <span className="text-xs text-gray-500">Anas</span>
-                            <button 
-                              onClick={() => playAudio(item.arabic, 'female')}
-                              disabled={audioLoading[`${item.arabic}-female`]}
-                              className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
-                              title="Play with female voice (Ghizlane)"
-                            >
-                              {audioLoading[`${item.arabic}-female`] ? (
-                                <Loader2 className="w-4 h-4 text-pink-600 animate-spin" />
-                              ) : (
-                                <Volume2 className="w-4 h-4 text-pink-600" />
-                              )}
-                            </button>
-                            <span className="text-xs text-gray-500">Ghizlane</span>
-                          </div>
+                          <button 
+                            onClick={() => playAudio(item.arabic, 'male')}
+                            disabled={audioLoading[`${item.arabic}-male`]}
+                            className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                            title="Play audio"
+                          >
+                            {audioLoading[`${item.arabic}-male`] ? (
+                              <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                            ) : (
+                              <Volume2 className="w-4 h-4 text-blue-600" />
+                            )}
+                          </button>
                         </td>
                       </tr>
                     ))}
@@ -489,34 +473,18 @@ export default function Lesson() {
                     <p className="text-xl text-right text-gray-800 mb-1" lang="ar" dir="rtl">{line.arabic}</p>
                     <p className="text-sm text-gray-500">{line.english}</p>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <button 
-                      onClick={() => playAudio(line.arabic, 'male')}
-                      disabled={audioLoading[`${line.arabic}-male`]}
-                      className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
-                      title="Play with male voice (Anas)"
-                    >
-                      {audioLoading[`${line.arabic}-male`] ? (
-                        <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
-                      ) : (
-                        <Volume2 className="w-4 h-4 text-blue-600" />
-                      )}
-                    </button>
-                    <span className="text-xs text-gray-500">Anas</span>
-                    <button 
-                      onClick={() => playAudio(line.arabic, 'female')}
-                      disabled={audioLoading[`${line.arabic}-female`]}
-                      className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
-                      title="Play with female voice (Ghizlane)"
-                    >
-                      {audioLoading[`${line.arabic}-female`] ? (
-                        <Loader2 className="w-4 h-4 text-pink-600 animate-spin" />
-                      ) : (
-                        <Volume2 className="w-4 h-4 text-pink-600" />
-                      )}
-                    </button>
-                    <span className="text-xs text-gray-500">Ghizlane</span>
-                  </div>
+                  <button 
+                    onClick={() => playAudio(line.arabic, 'male')}
+                    disabled={audioLoading[`${line.arabic}-male`]}
+                    className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                    title="Play audio"
+                  >
+                    {audioLoading[`${line.arabic}-male`] ? (
+                      <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                    ) : (
+                      <Volume2 className="w-4 h-4 text-blue-600" />
+                    )}
+                  </button>
                 </div>
               ))}
             </div>
@@ -656,10 +624,16 @@ export default function Lesson() {
                       <td className="p-3 text-gray-700">{item.meaning}</td>
                       <td className="p-3">
                         <button 
-                          onClick={() => playAudio(item.arabic)}
-                          className="clay-button p-2 hover:scale-110 transition-transform"
+                          onClick={() => playAudio(item.arabic, 'male')}
+                          disabled={audioLoading[`${item.arabic}-male`]}
+                          className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                          title="Play audio"
                         >
-                          <Volume2 className="w-4 h-4 text-blue-600" />
+                          {audioLoading[`${item.arabic}-male`] ? (
+                            <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                          ) : (
+                            <Volume2 className="w-4 h-4 text-blue-600" />
+                          )}
                         </button>
                       </td>
                     </tr>
@@ -680,10 +654,16 @@ export default function Lesson() {
                     <p className="text-sm text-gray-500">{sentence.english}</p>
                   </div>
                   <button 
-                    onClick={() => playAudio(sentence.arabic)}
-                    className="clay-button p-2 hover:scale-110 transition-transform"
+                    onClick={() => playAudio(sentence.arabic, 'male')}
+                    disabled={audioLoading[`${sentence.arabic}-male`]}
+                    className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                    title="Play audio"
                   >
-                    <Volume2 className="w-4 h-4 text-blue-600" />
+                    {audioLoading[`${sentence.arabic}-male`] ? (
+                      <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                    ) : (
+                      <Volume2 className="w-4 h-4 text-blue-600" />
+                    )}
                   </button>
                 </div>
               ))}

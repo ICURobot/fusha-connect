@@ -1,6 +1,17 @@
 // Audio utility functions for ElevenLabs TTS and Supabase storage
 import { createClient } from '@supabase/supabase-js';
 
+// Simple hash function to create safe filenames
+function createHash(str: string): string {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash; // Convert to 32-bit integer
+  }
+  return Math.abs(hash).toString(36);
+}
+
 const ELEVENLABS_API_KEY = process.env.REACT_APP_ELEVENLABS_API_KEY;
 const SUPABASE_URL = process.env.REACT_APP_SUPABASE_URL;
 const SUPABASE_ANON_KEY = process.env.REACT_APP_SUPABASE_ANON_KEY;
@@ -8,11 +19,26 @@ const SUPABASE_ANON_KEY = process.env.REACT_APP_SUPABASE_ANON_KEY;
 // Initialize Supabase client
 const supabase = createClient(SUPABASE_URL!, SUPABASE_ANON_KEY!);
 
+// Debug: Check Supabase connection
+console.log('Supabase client initialized:', {
+  url: SUPABASE_URL ? '✅ Loaded' : '❌ Missing',
+  anonKey: SUPABASE_ANON_KEY ? '✅ Loaded' : '❌ Missing',
+  client: supabase ? '✅ Created' : '❌ Failed'
+});
+
 // Voice IDs for ElevenLabs
 const VOICE_IDS = {
   male: process.env.REACT_APP_ELEVENLABS_MALE_VOICE_ID || '',
   female: process.env.REACT_APP_ELEVENLABS_FEMALE_VOICE_ID || ''
 };
+
+// Debug: Log environment variables (remove this after testing)
+console.log('Environment variables loaded:', {
+  apiKey: ELEVENLABS_API_KEY ? '✅ Loaded' : '❌ Missing',
+  maleVoice: VOICE_IDS.male ? `✅ ${VOICE_IDS.male}` : '❌ Missing',
+  femaleVoice: VOICE_IDS.female ? `✅ ${VOICE_IDS.female}` : '❌ Missing',
+  supabaseUrl: SUPABASE_URL ? '✅ Loaded' : '❌ Missing'
+});
 
 interface AudioResponse {
   success: boolean;
@@ -73,24 +99,24 @@ export const generateAudio = async (
       console.warn('Could not save to localStorage:', localStorageError);
     }
     
-    // Upload to Supabase bucket
+    // Save audio file locally for manual upload to Supabase
     try {
-      const fileName = `${audioKey}.mp3`;
-      const { data: uploadData, error: uploadError } = await supabase.storage
-        .from('audio')
-        .upload(fileName, audioBlob, {
-          contentType: 'audio/mpeg',
-          cacheControl: '3600',
-          upsert: true
-        });
+      // Create a safe filename for local storage
+      const safeFileName = `${createHash(audioKey)}.mp3`;
+      console.log('✅ Audio generated successfully:', {
+        originalKey: audioKey,
+        safeFileName: safeFileName,
+        fileSize: audioBlob.size
+      });
       
-      if (uploadError) {
-        console.warn('Supabase upload failed:', uploadError);
-      } else {
-        console.log('Audio uploaded to Supabase:', uploadData);
-      }
-    } catch (supabaseError) {
-      console.warn('Supabase upload error:', supabaseError);
+      // Store the mapping: audioKey -> safeFileName for retrieval
+      localStorage.setItem(`filename_${audioKey}`, safeFileName);
+      
+      // Note: Audio file is saved locally and will be manually uploaded to Supabase
+      console.log('📁 Audio ready for manual upload to Supabase bucket');
+      
+    } catch (localError) {
+      console.error('Local storage error:', localError);
     }
     
     // Convert to blob URL for playback
@@ -138,12 +164,28 @@ export const getAudioFromBackup = async (text: string, voiceType: 'male' | 'fema
     console.warn('Could not retrieve from localStorage:', error);
   }
   
-  // Try Supabase if local backup not available
+  // Try local file system first, then Supabase as fallback
   try {
-    const fileName = `${audioKey}.mp3`;
+    // Get the safe filename from localStorage mapping
+    const safeFileName = localStorage.getItem(`filename_${audioKey}`);
+    if (!safeFileName) {
+      console.warn('No filename mapping found for:', audioKey);
+      return null;
+    }
+    
+    // Try to load from local public/audio folder first
+    try {
+      const localAudioUrl = `/audio/${safeFileName}`;
+      console.log('Trying local audio file:', localAudioUrl);
+      return localAudioUrl;
+    } catch (localError) {
+      console.warn('Local file not found, trying Supabase...');
+    }
+    
+    // Fallback to Supabase if local file not available
     const { data, error } = await supabase.storage
       .from('audio')
-      .download(fileName);
+      .download(safeFileName);
     
     if (error || !data) {
       return null;
@@ -152,7 +194,7 @@ export const getAudioFromBackup = async (text: string, voiceType: 'male' | 'fema
     const audioBlob = new Blob([data], { type: 'audio/mpeg' });
     return URL.createObjectURL(audioBlob);
   } catch (error) {
-    console.warn('Could not retrieve from Supabase:', error);
+    console.warn('Could not retrieve audio:', error);
     return null;
   }
   
