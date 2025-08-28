@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl } from "../../utils";
-import { Home, BookOpen, Menu, X, MessageSquare } from "lucide-react";
+import { Home, BookOpen, Menu, X, MessageSquare, Heart } from "lucide-react";
 import { Button } from "../ui/button";
 
 export default function Layout({ children }) {
@@ -114,6 +114,17 @@ export default function Layout({ children }) {
                   <span>{item.name}</span>
                 </Link>
               ))}
+              
+              {/* Donation CTA */}
+              <a
+                href="https://buymeacoffee.com/fushaconnect"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="clay-button px-4 py-2 flex items-center space-x-2 bg-gradient-to-r from-pink-100 to-rose-100 hover:from-pink-200 hover:to-rose-200 text-rose-700 border-rose-200 hover:border-rose-300 transition-all duration-200"
+              >
+                <Heart className="w-4 h-4 fill-current" />
+                <span className="font-semibold">Support Us</span>
+              </a>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -142,6 +153,18 @@ export default function Layout({ children }) {
                     <span>{item.name}</span>
                   </Link>
                 ))}
+                
+                {/* Mobile Donation CTA */}
+                <a
+                  href="https://buymeacoffee.com/fushaconnect"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="clay-button px-4 py-3 flex items-center space-x-3 bg-gradient-to-r from-pink-100 to-rose-100 hover:from-pink-200 hover:to-rose-200 text-rose-700 border-rose-200 hover:border-rose-300 transition-all duration-200"
+                >
+                  <Heart className="w-4 h-4 fill-current" />
+                  <span className="font-semibold">Support Us</span>
+                </a>
               </div>
             </nav>
           )}
@@ -167,6 +190,15 @@ export default function Layout({ children }) {
               <Link to="/feedback" className="text-gray-600 hover:text-gray-800 transition-colors">
                 Contact & Feedback
               </Link>
+              <a
+                href="https://buymeacoffee.com/fushaconnect"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-rose-600 hover:text-rose-700 transition-colors flex items-center space-x-1"
+              >
+                <Heart className="w-3 h-3 fill-current" />
+                <span>Support Us</span>
+              </a>
             </div>
             <p className="text-gray-600 mb-2">© 2024 Fusha Connect. Made with ❤️ for Arabic learners.</p>
             <p className="text-sm text-gray-500">Free, structured, and effective Arabic learning.</p>
