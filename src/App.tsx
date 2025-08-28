@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Homepage from './components/pages/Homepage';
 import Dashboard from './components/pages/Dashboard';
 import Lesson from './components/pages/Lesson';
@@ -7,11 +7,24 @@ import Feedback from './components/pages/Feedback';
 import Layout from './components/layout/Layout';
 import ReactGA from 'react-ga4';
 
+// Initialize Google Analytics
+ReactGA.initialize("G-LF025F2XRT");
 
-ReactGA.initialize("G-LF025F2XRT"); // <-- Use your real Google Analytics ID here
+// Component to track page views
+function PageTracker() {
+  const location = useLocation();
+  
+  useEffect(() => {
+    ReactGA.send({ hitType: "pageview", page: location.pathname });
+  }, [location]);
+  
+  return null;
+}
+
 function App() {
   return (
     <Router>
+      <PageTracker />
       <Layout>
         <Routes>
           <Route path="/" element={<Homepage />} />
