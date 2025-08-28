@@ -11,3 +11,12 @@
     @apply font-bold;
   }
 }
+
+@layer components {
+  .font-arabic {
+    font-family: 'Noto Naskh Arabic', 'Amiri', 'Scheherazade', serif;
+    font-feature-settings: 'liga' 1, 'kern' 1;
+    text-align: right;
+    direction: rtl;
+  }
+}
