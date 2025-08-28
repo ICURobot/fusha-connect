@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl } from "../../utils";
 import { Home, BookOpen, Menu, X, MessageSquare, Heart } from "lucide-react";
 import { Button } from "../ui/button";
+import ReactGA from 'react-ga4';
 
 export default function Layout({ children }) {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+  // Track page views for Google Analytics
+  useEffect(() => {
+    ReactGA.send({ hitType: "pageview", page: location.pathname });
+  }, [location]);
 
   const navigation = [
     { name: "Home", url: "/", icon: Home },
