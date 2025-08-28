@@ -5,7 +5,10 @@ import Dashboard from './components/pages/Dashboard';
 import Lesson from './components/pages/Lesson';
 import Feedback from './components/pages/Feedback';
 import Layout from './components/layout/Layout';
+import ReactGA from 'react-ga4';
 
+
+ReactGA.initialize("G-LF025F2XRT"); // <-- Use your real Google Analytics ID here
 function App() {
   return (
     <Router>

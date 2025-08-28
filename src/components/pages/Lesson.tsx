@@ -5,6 +5,7 @@ import { Module } from "../../entities/Curriculum";
 import { BookOpen, Target, CheckCircle2, Circle, ArrowLeft, ArrowRight, Play, MessageCircle, PenTool, Volume2, Loader2 } from "lucide-react";
 import { generateAudio, playAudio as playAudioUtil, cleanupAudioUrl, getAudioFromSupabase } from "../../utils/audio";
 import { Button } from "../ui/button";
+import ReactGA from 'react-ga4';
 
 export default function Lesson() {
   const { moduleId } = useParams();
@@ -39,6 +40,12 @@ export default function Lesson() {
   }, [audioUrls]);
 
   const handleLessonComplete = (lessonId: string) => {
+    ReactGA.event({
+      category: 'Learning',
+      action: 'Lesson Completed',
+      label: currentModule?.lessons[currentLessonIndex]?.title || 'Unknown Lesson',
+      value: 1
+    });
     if (currentModule) {
       // Update lesson completion status (placeholder for now)
       console.log(`Lesson ${lessonId} completed`);
