@@ -1505,6 +1505,221 @@ export default function Lesson() {
     }
   ];
 
+  // Lesson 8.1: The Concept of I'raab (Case) (B2 Level)
+  const lesson8_1Vocabulary = [
+    { arabic: "اَلْإِعْرَابُ", transliteration: "al-iʿrābu", meaning: "grammatical case system" },
+    { arabic: "اَلْمَرْفُوعُ", transliteration: "al-marfūʿu", meaning: "the Nominative case (-u)" },
+    { arabic: "اَلْمَنْصُوبُ", transliteration: "al-manṣūbu", meaning: "the Accusative case (-a)" },
+    { arabic: "اَلْمَجْرُورُ", transliteration: "al-majrūru", meaning: "the Genitive case (-i)" },
+    { arabic: "اَلْكَاتِبُ", transliteration: "al-kātibu", meaning: "the writer / author" },
+    { arabic: "اَلشَّاعِرُ", transliteration: "ash-shāʿiru", meaning: "the poet" },
+    { arabic: "اَلْقَصِيدَةُ", transliteration: "al-qaṣīdatu", meaning: "the poem" },
+    { arabic: "اَلْمَعْنَى", transliteration: "al-maʿnā", meaning: "the meaning" },
+    { arabic: "اَلْعِلْمُ", transliteration: "al-ʿilmu", meaning: "science / knowledge" },
+    { arabic: "اَللُّغَةُ", transliteration: "al-lughatu", meaning: "the language" },
+    { arabic: "اَلنَّحْوُ", transliteration: "an-naḥwu", meaning: "grammar" },
+    { arabic: "اَلْقَاعِدَةُ", transliteration: "al-qāʿidatu", meaning: "the rule" },
+    { arabic: "اَلْجُمْلَةُ", transliteration: "al-jumlatu", meaning: "the sentence" },
+    { arabic: "وَاضِحٌ", transliteration: "wāḍiḥun", meaning: "clear / obvious" },
+    { arabic: "مُهِمٌّ", transliteration: "muhimmun", meaning: "important" },
+    { arabic: "جَمِيلٌ", transliteration: "jamīlun", meaning: "beautiful" },
+    { arabic: "بَعْدَ", transliteration: "baʿda", meaning: "after" },
+    { arabic: "قَبْلَ", transliteration: "qabla", meaning: "before" },
+  ];
+
+  const lesson8_1ExampleSentences = [
+    { arabic: "اَلْكَاتِبُ مَشْهُورٌ.", english: "The writer (subject - nominative) is famous." },
+    { arabic: "قَرَأْتُ الْكِتَابَ.", english: "I read the book (object - accusative)." },
+    { arabic: "ذَهَبْتُ إِلَى الْبَيْتِ.", english: "I went to the house (after preposition - genitive)." },
+    { arabic: "كَتَبَ الشَّاعِرُ الْقَصِيدَةَ.", english: "The poet (nominative) wrote the poem (accusative)." },
+    { arabic: "فَهِمَ الطَّالِبُ الدَّرْسَ.", english: "The student (nominative) understood the lesson (accusative)." },
+    { arabic: "اَلْعِلْمُ نُورٌ.", english: "Knowledge (subject - nominative) is light." },
+    { arabic: "أُحِبُّ اللُّغَةَ الْعَرَبِيَّةَ.", english: "I love the Arabic language (object - accusative)." },
+    { arabic: "مَعْنَى الْجُمْلَةِ وَاضِحٌ.", english: "The meaning of the sentence (idaafa - genitive) is clear." },
+    { arabic: "دَرَسْتُ النَّحْوَ فِي الْجَامِعَةِ.", english: "I studied grammar (accusative) at the university (genitive)." },
+    { arabic: "هَذِهِ قَاعِدَةٌ مُهِمَّةٌ.", english: "This is an important rule (nominative)." },
+  ];
+
+  const lesson8_1Exercises = [
+    {
+      question: "In the sentence 'فَتَحَ الْوَلَدُ الْبَابَ.', the word 'الْبَابَ' is in which case?",
+      options: ["Nominative (marfūʿ)", "Accusative (manṣūb)", "Genitive (majrūr)"],
+      correctAnswer: "Accusative (manṣūb)"
+    },
+    {
+      question: "The Genitive case (-i) is used for a noun that is...",
+      options: ["The subject of a sentence", "The object of a verb", "After a preposition or the second noun in an Idaafa"],
+      correctAnswer: "After a preposition or the second noun in an Idaafa"
+    },
+    {
+      question: "Which sentence is correctly voweled?",
+      options: ["شَرِبَ الطِّفْلُ الْحَلِيبَ.", "شَرِبَ الطِّفْلَ الْحَلِيبُ.", "شَرِبَ الطِّفْلِ الْحَلِيبِ."],
+      correctAnswer: "شَرِبَ الطِّفْلُ الْحَلِيبَ."
+    }
+  ];
+
+  // Lesson 8.2: Conditional Sentences (B2 Level)
+  const lesson8_2Vocabulary = [
+    { arabic: "إِذَا", transliteration: "idhā", meaning: "if (for real/possible conditions)" },
+    { arabic: "لَوْ", transliteration: "law", meaning: "if (for hypothetical/impossible conditions)" },
+    { arabic: "لَـ", transliteration: "la-", meaning: "then (used in the response to 'law')" },
+    { arabic: "نَجَحَ / يَنْجَحُ", transliteration: "najaḥa / yanjaḥu", meaning: "to succeed / pass" },
+    { arabic: "سَافَرَ / يُسَافِرُ", transliteration: "sāfara / yusāfiru", meaning: "to travel" },
+    { arabic: "اِمْتَلَكَ / يَمْتَلِكُ", transliteration: "imtalaka / yamtaliku", meaning: "to own / possess" },
+    { arabic: "عَاشَ / يَعِيشُ", transliteration: "ʿāsha / yaʿīshu", meaning: "to live" },
+    { arabic: "طَارَ / يَطِيرُ", transliteration: "ṭāra / yaṭīru", meaning: "to fly" },
+    { arabic: "اَلْمَالُ", transliteration: "al-mālu", meaning: "money" },
+    { arabic: "اَلْعَالَمُ", transliteration: "al-ʿālamu", meaning: "the world" },
+    { arabic: "طَائِرٌ", transliteration: "ṭā'irun", meaning: "a bird" },
+    { arabic: "قَصْرٌ", transliteration: "qaṣrun", meaning: "a palace" },
+    { arabic: "اَلْوَقْتُ", transliteration: "al-waqtu", meaning: "time" },
+    { arabic: "كَافٍ", transliteration: "kāfin", meaning: "enough" },
+    { arabic: "سَعِيدٌ", transliteration: "saʿīdun", meaning: "happy" },
+    { arabic: "غَنِيٌّ", transliteration: "ghaniyyun", meaning: "rich" },
+    { arabic: "لَكِنْ", transliteration: "lākin", meaning: "but" },
+  ];
+
+  const lesson8_2ExampleSentences = [
+    { arabic: "إِذَا دَرَسْتَ جَيِّدًا، سَتَنْجَحُ فِي الْاِمْتِحَانِ.", english: "If you (m.) study well, you will pass the exam." },
+    { arabic: "إِذَا كَانَ الطَّقْسُ جَمِيلًا غَدًا، سَنَخْرُجُ.", english: "If the weather is nice tomorrow, we will go out." },
+    { arabic: "إِذَا وَصَلَ الْقِطَارُ مُبَكِّرًا، سَأَتَّصِلُ بِكَ.", english: "If the train arrives early, I will call you (m.)." },
+    { arabic: "سَأُسَافِرُ إِذَا كَانَ عِنْدِي مَالٌ كَافٍ.", english: "I will travel if I have enough money." },
+    { arabic: "لَوْ كُنْتُ طَائِرًا، لَطِرْتُ حَوْلَ الْعَالَمِ.", english: "If I were a bird, I would fly around the world." },
+    { arabic: "لَوْ كُنْتُ غَنِيًّا، لَاشْتَرَيْتُ قَصْرًا.", english: "If I were rich, I would buy a palace." },
+    { arabic: "لَوْ عَرَفْتُ الْجَوَابَ، لَقُلْتُ لَكَ.", english: "If I had known the answer, I would have told you (m.)." },
+    { arabic: "لَوْ زُرْتَنِي، لَكُنْتُ سَعِيدًا.", english: "If you (m.) had visited me, I would have been happy." },
+    { arabic: "إِذَا لَمْ تَفْهَمْ، اِسْأَلِ الْأُسْتَاذَ.", english: "If you (m.) don't understand, ask the professor." },
+    { arabic: "لَوْ كَانَ عِنْدِي وَقْتٌ، لَزُرْتُ الْمُتْحَفَ.", english: "If I had time, I would visit the museum." },
+  ];
+
+  const lesson8_2Exercises = [
+    {
+      question: "Which particle is used for real or possible conditions?",
+      options: ["لَوْ", "إِذَا", "لَنْ", "لَمْ"],
+      correctAnswer: "إِذَا"
+    },
+    {
+      question: "Which particle is used for hypothetical or impossible conditions?",
+      options: ["لَوْ", "إِذَا", "لَنْ", "لَمْ"],
+      correctAnswer: "لَوْ"
+    },
+    {
+      question: "The response part of a 'لَوْ' sentence often begins with:",
+      options: ["سَـ", "سَوْفَ", "لَـ", "أَنْ"],
+      correctAnswer: "لَـ"
+    }
+  ];
+
+  // Lesson 8.3: Reading Unvowelled Texts (B2 Level)
+  const lesson8_3Vocabulary = [
+    { voweled: "اَلصُّحُفِيُّ", unvoweled: "الصحفي", transliteration: "aṣ-ṣuḥufiyyu", meaning: "the journalist" },
+    { voweled: "اَلْمَقَالَةُ", unvoweled: "المقالة", transliteration: "al-maqālatu", meaning: "the article" },
+    { voweled: "اَلْخَبَرُ", unvoweled: "الخبر", transliteration: "al-khabaru", meaning: "the news item" },
+    { voweled: "اَلْجَرِيدَةُ", unvoweled: "الجريدة", transliteration: "al-jarīdatu", meaning: "the newspaper" },
+    { voweled: "اَلْمُؤْتَمَرُ", unvoweled: "المؤتمر", transliteration: "al-mu'tamaru", meaning: "the conference" },
+    { voweled: "اَلْحَادِثُ", unvoweled: "الحادث", transliteration: "al-ḥādithu", meaning: "the accident / incident" },
+    { voweled: "اَلشَّاهِدُ", unvoweled: "الشاهد", transliteration: "ash-shāhidu", meaning: "the witness" },
+    { voweled: "اَلشُّرْطَةُ", unvoweled: "الشرطة", transliteration: "ash-shurṭatu", meaning: "the police" },
+    { voweled: "اَلْمَوْقِعُ", unvoweled: "الموقع", transliteration: "al-mawqiʿu", meaning: "the location / website" },
+    { voweled: "اَلْهَدَفُ", unvoweled: "الهدف", transliteration: "al-hadafu", meaning: "the goal / objective" },
+    { voweled: "اَلنَّتِيجَةُ", unvoweled: "النتيجة", transliteration: "an-natījatu", meaning: "the result" },
+    { voweled: "اَلْمُبَارَاةُ", unvoweled: "المباراة", transliteration: "al-mubārātu", meaning: "the match (sports)" },
+    { voweled: "اَلْفَرِيقُ", unvoweled: "الفريق", transliteration: "al-farīqu", meaning: "the team" },
+    { voweled: "اَللَّاعِبُ", unvoweled: "اللاعب", transliteration: "al-lāʿibu", meaning: "the player" },
+    { voweled: "مُهِمٌّ", unvoweled: "مهم", transliteration: "muhimmun", meaning: "important" },
+    { voweled: "وَاضِحٌ", unvoweled: "واضح", transliteration: "wāḍiḥun", meaning: "clear" },
+    { voweled: "نَشَرَ / يَنْشُرُ", unvoweled: "نشر / ينشر", transliteration: "nashara / yanshuru", meaning: "to publish" },
+    { voweled: "وَقَعَ / يَقَعُ", unvoweled: "وقع / يقع", transliteration: "waqaʿa / yaqaʿu", meaning: "to occur / happen" },
+  ];
+
+  const lesson8_3ExampleSentences = [
+    { voweled: "كَتَبَ الصُّحُفِيُّ مَقَالَةً طَوِيلَةً.", unvoweled: "كتب الصحفي مقالة طويلة.", english: "The journalist wrote a long article." },
+    { voweled: "نَشَرَتِ الْجَرِيدَةُ الْخَبَرَ الْيَوْمَ.", unvoweled: "نشرت الجريدة الخبر اليوم.", english: "The newspaper published the news item today." },
+    { voweled: "وَقَعَ الْحَادِثُ فِي وَسَطِ الْمَدِينَةِ.", unvoweled: "وقع الحادث في وسط المدينة.", english: "The accident occurred in the city center." },
+    { voweled: "تَكَلَّمَ الشَّاهِدُ مَعَ الشُّرْطَةِ.", unvoweled: "تكلم الشاهد مع الشرطة.", english: "The witness spoke with the police." },
+    { voweled: "كَانَ هَدَفُ الْفَرِيقِ الْفَوْزَ بِالْمُبَارَاةِ.", unvoweled: "كان هدف الفريق الفوز بالمباراة.", english: "The team's goal was to win the match." },
+    { voweled: "اَلنَّتِيجَةُ لَمْ تَكُنْ وَاضِحَةً.", unvoweled: "النتيجة لم تكن واضحة.", english: "The result was not clear." },
+    { voweled: "سَيُشَارِكُ الرَّئِيسُ فِي الْمُؤْتَمَرِ.", unvoweled: "سيشارك الرئيس في المؤتمر.", english: "The president will participate in the conference." },
+    { voweled: "أَعْلَنَ اللَّاعِبُ اِعْتِزَالَهُ.", unvoweled: "أعلن اللاعب اعتزاله.", english: "The player announced his retirement." },
+    { voweled: "هَذَا خَبَرٌ مُهِمٌّ جِدًّا.", unvoweled: "هذا خبر مهم جدا.", english: "This is very important news." },
+    { voweled: "أَقْرَأُ الْأَخْبَارَ عَلَى مَوْقِعٍ إِخْبَارِيٍّ.", unvoweled: "أقرأ الأخبار على موقع إخباري.", english: "I read the news on a news website." },
+  ];
+
+  const lesson8_3Exercises = [
+    {
+      question: "Read the unvoweled sentence: 'وصل الوزير الى المطار'",
+      options: ["waṣala al-wazīru ilā al-maṭāri.", "wuṣila al-wazīri ilā al-maṭāru.", "waṣṣala al-wazīru ilā al-maṭāri."],
+      correctAnswer: "waṣala al-wazīru ilā al-maṭāri."
+    },
+    {
+      question: "Recognizing word patterns like 'فاعل' (doer) and 'مفعول' (receiver of action) is a key strategy for reading unvoweled text.",
+      options: ["True", "False"],
+      correctAnswer: "True"
+    },
+    {
+      question: "What is the most likely reading of this unvoweled phrase: 'رئيس الحكومة'?",
+      options: ["ra'īsu al-ḥukūmati (The head of the government)", "ra'asa al-ḥukūmata (He presided over the government)"],
+      correctAnswer: "ra'īsu al-ḥukūmati (The head of the government)"
+    }
+  ];
+
+  // Lesson 8.4: Cultural Topics (B2 Level)
+  const lesson8_4Vocabulary = [
+    { arabic: "أَدِيبٌ / أُدَبَاءُ", transliteration: "adībun / udabā'u", meaning: "author(s), man of letters" },
+    { arabic: "رِوَائِيٌّ", transliteration: "riwā'iyyun", meaning: "novelist" },
+    { arabic: "شَهِيرٌ", transliteration: "shahīrun", meaning: "famous" },
+    { arabic: "مِصْرِيٌّ", transliteration: "miṣriyyun", meaning: "Egyptian" },
+    { arabic: "حَصَلَ عَلَى", transliteration: "ḥaṣala ʿalā", meaning: "he obtained / received" },
+    { arabic: "جَائِزَةُ نُوبِل", transliteration: "jā'izatu nōbil", meaning: "The Nobel Prize" },
+    { arabic: "اَلْأَدَبُ", transliteration: "al-adabu", meaning: "literature" },
+    { arabic: "رِوَايَةٌ / رِوَايَاتٌ", transliteration: "riwāyatun / riwāyātun", meaning: "novel(s)" },
+    { arabic: "قِصَّةٌ قَصِيرَةٌ", transliteration: "qiṣṣatun qaṣīratun", meaning: "short story" },
+    { arabic: "تُرْجِمَ / يُتَرْجَمُ", transliteration: "turjima / yutarjamu", meaning: "was translated / is translated" },
+    { arabic: "عَمَلٌ / أَعْمَالٌ", transliteration: "ʿamalun / aʿmālun", meaning: "a work / works (of art, literature)" },
+    { arabic: "اَلْقَرْنُ الْعِشْرُونَ", transliteration: "al-qarnu al-ʿishrūna", meaning: "the 20th century" },
+    { arabic: "يُعْتَبَرُ", transliteration: "yuʿtabaru", meaning: "he/it is considered" },
+    { arabic: "وَاحِدٌ مِنْ", transliteration: "wāḥidun min", meaning: "one of" },
+    { arabic: "أَهَمُّ", transliteration: "ahammu", meaning: "most important" },
+    { arabic: "اَلْعَالَمُ الْعَرَبِيُّ", transliteration: "al-ʿālamu al-ʿarabiyyu", meaning: "the Arab world" },
+    { arabic: "تُوُفِّيَ", transliteration: "tuwuffiya", meaning: "he passed away" },
+  ];
+
+  const lesson8_4ReadingPassage = {
+    title: "نَجِيب مَحْفُوظ",
+    text: "نَجِيب مَحْفُوظ هُوَ أَدِيبٌ وَرِوَائِيٌّ مِصْرِيٌّ شَهِيرٌ. يُعْتَبَرُ وَاحِدًا مِنْ أَهَمِّ الْكُتَّابِ فِي الْعَالَمِ الْعَرَبِيِّ فِي الْقَرْنِ الْعِشْرِينَ. فِي سَنَةِ ١٩٨٨، حَصَلَ مَحْفُوظ عَلَى جَائِزَةِ نُوبِل فِي الْأَدَبِ، وَكَانَ أَوَّلَ كَاتِبٍ عَرَبِيٍّ يَحْصُلُ عَلَيْهَا. كَتَبَ الْكَثِيرَ مِنَ الرِّوَايَاتِ وَالْقِصَصِ الْقَصِيرَةِ الَّتِي تُصَوِّرُ الْحَيَاةَ فِي الْقَاهِرَةِ. تُرْجِمَتْ أَعْمَالُهُ إِلَى لُغَاتٍ كَثِيرَةٍ. تُوُفِّيَ نَجِيب مَحْفُوظ سَنَةَ ٢٠٠٦."
+  };
+
+  const lesson8_4ExampleSentences = [
+    { arabic: "يُعْتَبَرُ هَذَا الْفِيلْمُ مِنْ أَهَمِّ الْأَفْلَامِ.", english: "This film is considered one of the most important films." },
+    { arabic: "تُرْجِمَ الْكِتَابُ إِلَى اللُّغَةِ الْإِنْجِلِيزِيَّةِ.", english: "The book was translated into the English language." },
+    { arabic: "حَصَلَتِ الطَّالِبَةُ عَلَى دَرَجَاتٍ عَالِيَةٍ.", english: "The student (f.) received high grades." },
+    { arabic: "كَانَ شَاعِرًا شَهِيرًا فِي بَلَدِهِ.", english: "He was a famous poet in his country." },
+    { arabic: "تُوُفِّيَ جَدِّي فِي السَّنَةِ الْمَاضِيَةِ.", english: "My grandfather passed away last year." },
+    { arabic: "أَنَا أَقْرَأُ رِوَايَةً لِكَاتِبٍ مَعْرُوفٍ.", english: "I am reading a novel by a well-known writer." },
+    { arabic: "اَلْأَدَبُ الْعَرَبِيُّ غَنِيٌّ وَمُتَنَوِّعٌ.", english: "Arabic literature is rich and diverse." },
+    { arabic: "هَذَا الْعَمَلُ الْفَنِّيُّ جَمِيلٌ جِدًّا.", english: "This work of art is very beautiful." },
+    { arabic: "هُوَ وَاحِدٌ مِنْ أَفْضَلِ اللَّاعِبِينَ.", english: "He is one of the best players." },
+    { arabic: "تُقَامُ الْحَفْلَةُ فِي قَاعَةٍ كَبِيرَةٍ.", english: "The party is held in a big hall." },
+  ];
+
+  const lesson8_4Exercises = [
+    {
+      question: "مِنْ أَيِّ بَلَدٍ كَانَ نَجِيب مَحْفُوظ؟",
+      options: ["لُبْنَان", "مِصْر", "سوريا", "اَلْعِرَاق"],
+      correctAnswer: "مِصْر"
+    },
+    {
+      question: "مَا هِيَ الْجَائِزَةُ الْمُهِمَّةُ الَّتِي حَصَلَ عَلَيْهَا؟",
+      options: ["جَائِزَةُ الْأُوسْكَار", "جَائِزَةُ نُوبِل", "جَائِزَةُ الْأَدَبِ الْعَرَبِيِّ"],
+      correctAnswer: "جَائِزَةُ نُوبِل"
+    },
+    {
+      question: "مَاذَا كَانَ يَكْتُبُ نَجِيب مَحْفُوظ؟",
+      options: ["أَشْعَارًا فَقَطْ", "رِوَايَاتٍ وَقِصَصًا قَصِيرَةً", "مَقَالَاتٍ صُحُفِيَّةً"],
+      correctAnswer: "رِوَايَاتٍ وَقِصَصًا قَصِيرَةً"
+    }
+  ];
+
   // Lesson 4.3: Object Pronouns (A2 Level)
   const lesson4_3Vocabulary = [
     { arabic: "ـنِي", transliteration: "-nī", meaning: "me" },
@@ -7065,6 +7280,787 @@ export default function Lesson() {
                {lesson7_4Exercises.map((q, qIndex) => (
                  <div key={qIndex} className="p-4 border border-gray-200/50 rounded-lg bg-white/30">
                    <p className="font-semibold text-gray-800 mb-4">{qIndex + 1}. {q.question}</p>
+                   <div className="space-y-3">
+                     {q.options.map((option, oIndex) => {
+                       const isSelected = selectedAnswers[qIndex] === option;
+                       const isCorrect = q.correctAnswer === option;
+                       let bgColor = 'bg-white/50';
+                       if (showResults) {
+                         if (isSelected && isCorrect) bgColor = 'bg-green-100/80 border-green-400';
+                         else if (isSelected && !isCorrect) bgColor = 'bg-red-100/80 border-red-400';
+                         else if (isCorrect) bgColor = 'bg-green-100/80 border-green-400';
+                       }
+
+                       // Check if option is Arabic text for right-alignment
+                       const isArabic = /[\u0600-\u06FF]/.test(option);
+                       const textAlignment = isArabic ? 'text-right' : 'text-left';
+
+                       return (
+                         <label key={oIndex} className={`flex items-center justify-between p-3 rounded-lg border cursor-pointer transition-all duration-200 ${isSelected ? 'border-blue-500' : 'border-gray-300/50'} ${bgColor} hover:bg-white/70`}>
+                           <input 
+                             type="radio" 
+                             name={`question-${qIndex}`} 
+                             value={option} 
+                             checked={isSelected} 
+                             onChange={() => handleOptionChange(qIndex, option)} 
+                             className="mr-3"
+                           />
+                           <span className={`text-lg flex-1 ${textAlignment}`} lang={isArabic ? 'ar' : 'en'} dir={isArabic ? 'rtl' : 'ltr'}>{option}</span>
+                         </label>
+                       );
+                     })}
+                   </div>
+                 </div>
+               ))}
+             </div>
+             <div className="mt-8 text-center">
+               <Button onClick={checkAnswers} className="clay-button bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                 Check Answers
+               </Button>
+             </div>
+           </div>
+         </div>
+       ) : currentLesson.id === "b2-m8-l1" ? (
+         <div className="space-y-8">
+           {/* Lesson Header */}
+           <div className="clay-card p-8 text-center">
+             <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 8.1: The Concept of I'raab (Case)</h3>
+             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+               Understand the grammatical roles of words through their endings.
+             </p>
+           </div>
+
+           {/* Objectives */}
+           <div className="clay-card p-6">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center space-x-2">
+               <Target className="w-5 h-5 text-blue-600" />
+               <span>Learning Objectives</span>
+             </h4>
+             <ul className="space-y-2 text-gray-700">
+               <li className="flex items-start space-x-2">
+                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                 <span>Understand the concept of <span className="font-arabic" lang="ar" dir="rtl">إِعْرَاب</span> (case endings).</span>
+               </li>
+               <li className="flex items-start space-x-2">
+                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                 <span>Recognize the three main cases: Nominative, Accusative, and Genitive.</span>
+               </li>
+               <li className="flex items-start space-x-2">
+                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                 <span>Identify the function of a word in a sentence based on its case ending.</span>
+               </li>
+             </ul>
+           </div>
+
+           {/* Grammar Explanation */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Grammar: The Three Cases</h4>
+             <div className="space-y-6">
+               <div className="p-4 bg-blue-50 rounded-lg">
+                 <h5 className="text-lg font-semibold text-gray-700 mb-2">What is I'raab?</h5>
+                 <p className="text-gray-600"><span className="font-arabic" lang="ar" dir="rtl">إِعْرَاب</span> is the system of changing the final vowel of a noun to show its grammatical function in a sentence. In spoken Arabic and most modern writing, these endings are often unpronounced. However, they are essential for reading formal texts like the Qur'an, classical literature, and poetry. <strong>Your goal in this lesson is to recognize them, not necessarily to produce them perfectly in speech.</strong></p>
+               </div>
+               <div className="overflow-x-auto p-4 bg-gray-50 rounded-lg">
+                 <table className="w-full text-left">
+                   <thead className="border-b-2 border-gray-200">
+                     <tr>
+                       <th className="p-2 font-semibold text-gray-700">Case</th>
+                       <th className="p-2 font-semibold text-gray-700">Ending</th>
+                       <th className="p-2 font-semibold text-gray-700">Primary Function</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr className="border-b">
+                       <td className="p-2 font-bold font-arabic" lang="ar" dir="rtl">اَلْمَرْفُوعُ</td>
+                       <td className="p-2 text-xl text-red-600 font-bold font-arabic" lang="ar" dir="rtl">ـُ / ـٌ</td>
+                       <td className="p-2">Subject of the sentence</td>
+                     </tr>
+                     <tr className="border-b">
+                       <td className="p-2 font-bold font-arabic" lang="ar" dir="rtl">اَلْمَنْصُوبُ</td>
+                       <td className="p-2 text-xl text-red-600 font-bold font-arabic" lang="ar" dir="rtl">ـَ / ـً</td>
+                       <td className="p-2">Object of a verb</td>
+                     </tr>
+                     <tr>
+                       <td className="p-2 font-bold font-arabic" lang="ar" dir="rtl">اَلْمَجْرُورُ</td>
+                       <td className="p-2 text-xl text-red-600 font-bold font-arabic" lang="ar" dir="rtl">ـِ / ـٍ</td>
+                       <td className="p-2">After a preposition or in an Idaafa</td>
+                     </tr>
+                   </tbody>
+                 </table>
+               </div>
+               <div className="p-4 bg-green-50 rounded-lg">
+                 <h5 className="text-lg font-semibold text-gray-700 mb-2">Example Breakdown</h5>
+                 <p className="text-xl text-right font-arabic" lang="ar" dir="rtl">يَقْرَأُ <span className="text-blue-600">الطَّالِبُ</span> <span className="text-red-600">الْكِتَابَ</span> فِي <span className="text-green-600">الْبَيْتِ</span>.</p>
+                 <ul className="mt-2 space-y-1 text-gray-700">
+                   <li><span className="text-blue-600 font-arabic" lang="ar" dir="rtl">الطَّالِبُ</span>: Nominative (-u) because it's the <strong>subject</strong> (the one reading).</li>
+                   <li><span className="text-red-600 font-arabic" lang="ar" dir="rtl">الْكِتَابَ</span>: Accusative (-a) because it's the <strong>object</strong> (the thing being read).</li>
+                   <li><span className="text-green-600 font-arabic" lang="ar" dir="rtl">الْبَيْتِ</span>: Genitive (-i) because it comes <strong>after the preposition</strong> <span className="font-arabic" lang="ar" dir="rtl">فِي</span>.</li>
+                 </ul>
+               </div>
+               <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg">
+                 <h5 className="text-lg font-semibold text-gray-700 mb-2">Why This Matters</h5>
+                 <p className="text-gray-600">Understanding case endings helps you:</p>
+                 <ul className="mt-2 space-y-1 text-gray-600">
+                   <li>• <strong>Read classical texts</strong> with full vowelings (like the Qur'an)</li>
+                   <li>• <strong>Understand poetry</strong> where case endings are crucial for meaning</li>
+                   <li>• <strong>Recognize grammatical relationships</strong> in complex sentences</li>
+                   <li>• <strong>Appreciate the beauty</strong> of formal Arabic expression</li>
+                 </ul>
+               </div>
+             </div>
+           </div>
+
+           {/* Vocabulary */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Vocabulary</h4>
+             <div className="overflow-x-auto">
+               <table className="w-full text-left">
+                 <thead>
+                   <tr className="border-b-2 border-gray-200">
+                     <th className="p-3 text-lg font-semibold text-gray-700">Arabic</th>
+                     <th className="p-3 font-medium text-gray-600">Transliteration</th>
+                     <th className="p-3 font-medium text-gray-600">Meaning</th>
+                     <th className="p-3 font-medium text-gray-600">Audio</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   {lesson8_1Vocabulary.map((item, index) => (
+                     <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                       <td className="p-3 text-xl font-medium text-gray-800 font-arabic" lang="ar" dir="rtl">{item.arabic}</td>
+                       <td className="p-3 text-gray-600 italic">{item.transliteration}</td>
+                       <td className="p-3 text-gray-700">{item.meaning}</td>
+                       <td className="p-3">
+                         <button 
+                           onClick={() => playAudio(item.arabic, 'male')}
+                           disabled={audioLoading[`${item.arabic}-male`]}
+                           className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                           title="Play audio"
+                         >
+                           {audioLoading[`${item.arabic}-male`] ? (
+                             <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                           ) : (
+                             <Volume2 className="w-4 h-4 text-blue-600" />
+                           )}
+                         </button>
+                       </td>
+                     </tr>
+                   ))}
+                 </tbody>
+               </table>
+             </div>
+           </div>
+           
+           {/* Example Sentences */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Example Sentences</h4>
+             <div className="space-y-4">
+               {lesson8_1ExampleSentences.map((sentence, index) => (
+                 <div key={index} className="flex items-center space-x-4 p-4 bg-white/50 rounded-lg hover:bg-white/70 transition-colors">
+                   <div className="flex-grow">
+                     <p className="text-xl text-right text-gray-800 font-arabic" lang="ar" dir="rtl">{sentence.arabic}</p>
+                     <p className="text-sm text-gray-500">{sentence.english}</p>
+                   </div>
+                   <button 
+                     onClick={() => playAudio(sentence.arabic, 'male')}
+                     disabled={audioLoading[`${sentence.arabic}-male`]}
+                     className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                     title="Play audio"
+                   >
+                     {audioLoading[`${sentence.arabic}-male`] ? (
+                       <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                     ) : (
+                       <Volume2 className="w-4 h-4 text-blue-600" />
+                     )}
+                   </button>
+                 </div>
+               ))}
+             </div>
+           </div>
+
+           {/* Exercises */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Check Your Understanding</h4>
+             <div className="space-y-6">
+               {lesson8_1Exercises.map((q, qIndex) => (
+                 <div key={qIndex} className="p-4 border border-gray-200/50 rounded-lg bg-white/30">
+                   <p className="font-semibold text-gray-800 mb-4">{qIndex + 1}. {q.question}</p>
+                   <div className="space-y-3">
+                     {q.options.map((option, oIndex) => {
+                       const isSelected = selectedAnswers[qIndex] === option;
+                       const isCorrect = q.correctAnswer === option;
+                       let bgColor = 'bg-white/50';
+                       if (showResults) {
+                         if (isSelected && isCorrect) bgColor = 'bg-green-100/80 border-green-400';
+                         else if (isSelected && !isCorrect) bgColor = 'bg-red-100/80 border-red-400';
+                         else if (isCorrect) bgColor = 'bg-green-100/80 border-green-400';
+                       }
+
+                       // Check if option is Arabic text for right-alignment
+                       const isArabic = /[\u0600-\u06FF]/.test(option);
+                       const textAlignment = isArabic ? 'text-right' : 'text-left';
+
+                       return (
+                         <label key={oIndex} className={`flex items-center justify-between p-3 rounded-lg border cursor-pointer transition-all duration-200 ${isSelected ? 'border-blue-500' : 'border-gray-300/50'} ${bgColor} hover:bg-white/70`}>
+                           <input 
+                             type="radio" 
+                             name={`question-${qIndex}`} 
+                             value={option} 
+                             checked={isSelected} 
+                             onChange={() => handleOptionChange(qIndex, option)} 
+                             className="mr-3"
+                           />
+                           <span className={`text-lg flex-1 ${textAlignment}`} lang={isArabic ? 'ar' : 'en'} dir={isArabic ? 'rtl' : 'ltr'}>{option}</span>
+                         </label>
+                       );
+                     })}
+                   </div>
+                 </div>
+               ))}
+             </div>
+             <div className="mt-8 text-center">
+               <Button onClick={checkAnswers} className="clay-button bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                 Check Answers
+               </Button>
+             </div>
+           </div>
+         </div>
+       ) : currentLesson.id === "b2-m8-l2" ? (
+         <div className="space-y-8">
+           {/* Lesson Header */}
+           <div className="clay-card p-8 text-center">
+             <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 8.2: Conditional Sentences</h3>
+             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+               Learn to talk about real possibilities and hypothetical situations.
+             </p>
+           </div>
+
+           {/* Objectives */}
+           <div className="clay-card p-6">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center space-x-2">
+               <Target className="w-5 h-5 text-blue-600" />
+               <span>Learning Objectives</span>
+             </h4>
+             <ul className="space-y-2 text-gray-700">
+               <li className="flex items-start space-x-2">
+                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                 <span>Learn the particle <span className="font-arabic" lang="ar" dir="rtl">إِذَا</span> for real conditions.</span>
+               </li>
+               <li className="flex items-start space-x-2">
+                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                 <span>Learn the particle <span className="font-arabic" lang="ar" dir="rtl">لَوْ</span> for hypothetical/impossible conditions.</span>
+               </li>
+               <li className="flex items-start space-x-2">
+                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                 <span>Understand the typical verb tense patterns for each type of conditional sentence.</span>
+               </li>
+             </ul>
+           </div>
+
+           {/* Grammar Explanation */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Grammar: "If..., then..."</h4>
+             <div className="space-y-6">
+               <div className="p-4 bg-blue-50 rounded-lg">
+                 <h5 className="text-lg font-semibold text-gray-700 mb-2">1. Real Conditions with <span className="font-arabic" lang="ar" dir="rtl">إِذَا</span> (idhā)</h5>
+                 <p className="text-gray-600 mb-3">Use <span className="font-arabic font-bold" lang="ar" dir="rtl">إِذَا</span> to talk about real and possible situations. The structure is usually: <strong><span className="font-arabic" lang="ar" dir="rtl">إِذَا</span> + Past Tense Verb, Future Tense Verb.</strong> Even though the first verb is in the past tense, the meaning is present or future.</p>
+                 <div className="bg-white/50 p-3 rounded-lg">
+                   <p className="text-xl text-right font-arabic" lang="ar" dir="rtl"><span className="text-red-600 font-bold">إِذَا</span> دَرَسْتَ، سَتَنْجَحُ.</p>
+                   <p className="text-sm text-gray-500 text-right">If you study, you will succeed.</p>
+                 </div>
+                 <div className="mt-3 p-3 bg-blue-100/50 rounded-lg">
+                   <p className="text-sm text-gray-700"><strong>Key Pattern:</strong> إِذَا + Past Tense → Future Tense</p>
+                   <p className="text-sm text-gray-600">This creates a sense of "when this happens, that will happen"</p>
+                 </div>
+               </div>
+               <div className="p-4 bg-green-50 rounded-lg">
+                 <h5 className="text-lg font-semibold text-gray-700 mb-2">2. Hypothetical Conditions with <span className="font-arabic" lang="ar" dir="rtl">لَوْ</span> (law)</h5>
+                 <p className="text-gray-600 mb-3">Use <span className="font-arabic font-bold" lang="ar" dir="rtl">لَوْ</span> to talk about hypothetical, imaginary, or impossible situations. The structure is usually: <strong><span className="font-arabic" lang="ar" dir="rtl">لَوْ</span> + Past Tense Verb, <span className="font-arabic" lang="ar" dir="rtl">لَـ</span> + Past Tense Verb.</strong> The <span className="font-arabic" lang="ar" dir="rtl">لَـ</span> (la-) prefix on the second verb means "then".</p>
+                 <div className="bg-white/50 p-3 rounded-lg">
+                   <p className="text-xl text-right font-arabic" lang="ar" dir="rtl"><span className="text-red-600 font-bold">لَوْ</span> كُنْتُ غَنِيًّا، <span className="text-blue-600 font-bold">لَ</span>اشْتَرَيْتُ سَيَّارَةً.</p>
+                   <p className="text-sm text-gray-500 text-right">If I were rich, I would buy a car.</p>
+                 </div>
+                 <div className="mt-3 p-3 bg-green-100/50 rounded-lg">
+                   <p className="text-sm text-gray-700"><strong>Key Pattern:</strong> لَوْ + Past Tense → لَـ + Past Tense</p>
+                   <p className="text-sm text-gray-600">This creates a sense of "if this were true, that would happen"</p>
+                 </div>
+               </div>
+               <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg">
+                 <h5 className="text-lg font-semibold text-gray-700 mb-2">Verb Tense Patterns</h5>
+                 <div className="space-y-3">
+                   <div className="bg-white/50 p-3 rounded-lg">
+                     <p className="font-semibold text-gray-700 mb-1"><span className="font-arabic" lang="ar" dir="rtl">إِذَا</span> Sentences:</p>
+                     <p className="text-sm text-gray-600">Past Tense + Future Tense (or Present Tense)</p>
+                     <p className="text-right font-arabic" lang="ar" dir="rtl">إِذَا دَرَسْتَ، سَتَنْجَحُ</p>
+                   </div>
+                   <div className="bg-white/50 p-3 rounded-lg">
+                     <p className="font-semibold text-gray-700 mb-1"><span className="font-arabic" lang="ar" dir="rtl">لَوْ</span> Sentences:</p>
+                     <p className="text-sm text-gray-600">Past Tense + لَـ + Past Tense</p>
+                     <p className="text-right font-arabic" lang="ar" dir="rtl">لَوْ كُنْتُ طَائِرًا، لَطِرْتُ</p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+           {/* Vocabulary */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Vocabulary</h4>
+             <div className="overflow-x-auto">
+               <table className="w-full text-left">
+                 <thead>
+                   <tr className="border-b-2 border-gray-200">
+                     <th className="p-3 text-lg font-semibold text-gray-700">Arabic</th>
+                     <th className="p-3 font-medium text-gray-600">Transliteration</th>
+                     <th className="p-3 font-medium text-gray-600">Meaning</th>
+                     <th className="p-3 font-medium text-gray-600">Audio</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   {lesson8_2Vocabulary.map((item, index) => (
+                     <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                       <td className="p-3 text-xl font-medium text-gray-800 font-arabic" lang="ar" dir="rtl">{item.arabic}</td>
+                       <td className="p-3 text-gray-600 italic">{item.transliteration}</td>
+                       <td className="p-3 text-gray-700">{item.meaning}</td>
+                       <td className="p-3">
+                         <button 
+                           onClick={() => playAudio(item.arabic, 'male')}
+                           disabled={audioLoading[`${item.arabic}-male`]}
+                           className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                           title="Play audio"
+                         >
+                           {audioLoading[`${item.arabic}-male`] ? (
+                             <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                           ) : (
+                             <Volume2 className="w-4 h-4 text-blue-600" />
+                           )}
+                         </button>
+                       </td>
+                     </tr>
+                   ))}
+                 </tbody>
+               </table>
+             </div>
+           </div>
+           
+           {/* Example Sentences */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Example Sentences</h4>
+             <div className="space-y-4">
+               {lesson8_2ExampleSentences.map((sentence, index) => (
+                 <div key={index} className="flex items-center space-x-4 p-4 bg-white/50 rounded-lg hover:bg-white/70 transition-colors">
+                   <div className="flex-grow">
+                     <p className="text-xl text-right text-gray-800 font-arabic" lang="ar" dir="rtl">{sentence.arabic}</p>
+                     <p className="text-sm text-gray-500">{sentence.english}</p>
+                   </div>
+                   <button 
+                     onClick={() => playAudio(sentence.arabic, 'male')}
+                     disabled={audioLoading[`${sentence.arabic}-male`]}
+                     className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                     title="Play audio"
+                   >
+                     {audioLoading[`${sentence.arabic}-male`] ? (
+                       <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                     ) : (
+                       <Volume2 className="w-4 h-4 text-blue-600" />
+                     )}
+                   </button>
+                 </div>
+               ))}
+             </div>
+           </div>
+
+           {/* Exercises */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Check Your Understanding</h4>
+             <div className="space-y-6">
+               {lesson8_2Exercises.map((q, qIndex) => (
+                 <div key={qIndex} className="p-4 border border-gray-200/50 rounded-lg bg-white/30">
+                   <p className="font-semibold text-gray-800 mb-4">{qIndex + 1}. {q.question}</p>
+                   <div className="space-y-3">
+                     {q.options.map((option, oIndex) => {
+                       const isSelected = selectedAnswers[qIndex] === option;
+                       const isCorrect = q.correctAnswer === option;
+                       let bgColor = 'bg-white/50';
+                       if (showResults) {
+                         if (isSelected && isCorrect) bgColor = 'bg-green-100/80 border-green-400';
+                         else if (isSelected && !isCorrect) bgColor = 'bg-red-100/80 border-red-400';
+                         else if (isCorrect) bgColor = 'bg-green-100/80 border-green-400';
+                       }
+
+                       // Check if option is Arabic text for right-alignment
+                       const isArabic = /[\u0600-\u06FF]/.test(option);
+                       const textAlignment = isArabic ? 'text-right' : 'text-left';
+
+                       return (
+                         <label key={oIndex} className={`flex items-center justify-between p-3 rounded-lg border cursor-pointer transition-all duration-200 ${isSelected ? 'border-blue-500' : 'border-gray-300/50'} ${bgColor} hover:bg-white/70`}>
+                           <input 
+                             type="radio" 
+                             name={`question-${qIndex}`} 
+                             value={option} 
+                             checked={isSelected} 
+                             onChange={() => handleOptionChange(qIndex, option)} 
+                             className="mr-3"
+                           />
+                           <span className={`text-lg flex-1 ${textAlignment}`} lang={isArabic ? 'ar' : 'en'} dir={isArabic ? 'rtl' : 'ltr'}>{option}</span>
+                         </label>
+                       );
+                     })}
+                   </div>
+                 </div>
+               ))}
+             </div>
+             <div className="mt-8 text-center">
+               <Button onClick={checkAnswers} className="clay-button bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                 Check Answers
+               </Button>
+             </div>
+           </div>
+         </div>
+       ) : currentLesson.id === "b2-m8-l3" ? (
+         <div className="space-y-8">
+           {/* Lesson Header */}
+           <div className="clay-card p-8 text-center">
+             <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 8.3: Reading Unvowelled Texts</h3>
+             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+               Develop the essential skill of reading Arabic as it appears in the real world.
+             </p>
+           </div>
+
+           {/* Objectives */}
+           <div className="clay-card p-6">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center space-x-2">
+               <Target className="w-5 h-5 text-blue-600" />
+               <span>Learning Objectives</span>
+             </h4>
+             <ul className="space-y-2 text-gray-700">
+               <li className="flex items-start space-x-2">
+                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                 <span>Understand why most modern Arabic texts are not voweled.</span>
+               </li>
+               <li className="flex items-start space-x-2">
+                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                 <span>Learn strategies for deducing vowels based on context and word patterns.</span>
+               </li>
+               <li className="flex items-start space-x-2">
+                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                 <span>Practice reading unvoweled sentences.</span>
+               </li>
+             </ul>
+           </div>
+
+           {/* Grammar Explanation */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Strategies for Reading Without Vowels</h4>
+             <div className="space-y-6">
+               <div className="p-4 bg-blue-50 rounded-lg">
+                 <h5 className="text-lg font-semibold text-gray-700 mb-2">Why No Vowels?</h5>
+                 <p className="text-gray-600">Short vowels (harakat) are generally omitted in most books, newspapers, and websites because native speakers can infer them from context. As an advanced learner, this is your goal too. It's like an English speaker reading "rdng wtht vwls" and knowing what it means.</p>
+               </div>
+               <div className="p-4 bg-green-50 rounded-lg">
+                 <h5 className="text-lg font-semibold text-gray-700 mb-2">Key Strategies</h5>
+                 <div className="space-y-3">
+                   <div className="bg-white/50 p-3 rounded-lg">
+                     <h6 className="font-semibold text-gray-700 mb-1">1. Recognize Patterns</h6>
+                     <p className="text-gray-600">You've learned many patterns already! For example, a word like <span className="font-arabic" lang="ar" dir="rtl">فَاعِل</span> is almost always the "doer" (e.g., <span className="font-arabic" lang="ar" dir="rtl">كَاتِب</span> - writer). A word like <span className="font-arabic" lang="ar" dir="rtl">مَفْعُول</span> is the receiver (e.g., <span className="font-arabic" lang="ar" dir="rtl">مَكْتُوب</span> - written).</p>
+                   </div>
+                   <div className="bg-white/50 p-3 rounded-lg">
+                     <h6 className="font-semibold text-gray-700 mb-1">2. Use Context</h6>
+                     <p className="text-gray-600">The grammar of the sentence tells you how to read the words. If you see <span className="font-arabic" lang="ar" dir="rtl">كَتَبَ الْوَلَدُ</span>, you know the next word is the object and will likely end in a fatha.</p>
+                   </div>
+                   <div className="bg-white/50 p-3 rounded-lg">
+                     <h6 className="font-semibold text-gray-700 mb-1">3. Know Your Vocabulary</h6>
+                     <p className="text-gray-600">The more words you know, the easier it is to recognize them without their vowels. There's no substitute for a large vocabulary.</p>
+                   </div>
+                 </div>
+               </div>
+               <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg">
+                 <h5 className="text-lg font-semibold text-gray-700 mb-2">Common Word Patterns</h5>
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                   <div className="bg-white/50 p-3 rounded-lg">
+                     <p className="font-semibold text-gray-700 mb-1"><span className="font-arabic" lang="ar" dir="rtl">فَاعِل</span> Pattern (Doer):</p>
+                     <p className="text-sm text-gray-600">كَاتِب (writer), قَارِئ (reader), طَالِب (student)</p>
+                   </div>
+                   <div className="bg-white/50 p-3 rounded-lg">
+                     <p className="font-semibold text-gray-700 mb-1"><span className="font-arabic" lang="ar" dir="rtl">مَفْعُول</span> Pattern (Receiver):</p>
+                     <p className="text-sm text-gray-600">مَكْتُوب (written), مَقْرُوء (read), مَدْرُوس (studied)</p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+           {/* Vocabulary */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Vocabulary</h4>
+             <div className="overflow-x-auto">
+               <table className="w-full text-left">
+                 <thead>
+                   <tr className="border-b-2 border-gray-200">
+                     <th className="p-3 text-lg font-semibold text-gray-700">Voweled</th>
+                     <th className="p-3 text-lg font-semibold text-gray-700">Unvoweled</th>
+                     <th className="p-3 font-medium text-gray-600">Meaning</th>
+                     <th className="p-3 font-medium text-gray-600">Audio</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   {lesson8_3Vocabulary.map((item, index) => (
+                     <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                       <td className="p-3 text-xl font-medium text-gray-800 font-arabic" lang="ar" dir="rtl">{item.voweled}</td>
+                       <td className="p-3 text-xl font-medium text-gray-600 font-arabic" lang="ar" dir="rtl">{item.unvoweled}</td>
+                       <td className="p-3 text-gray-700">{item.meaning}</td>
+                       <td className="p-3">
+                         <button 
+                           onClick={() => playAudio(item.voweled, 'male')}
+                           disabled={audioLoading[`${item.voweled}-male`]}
+                           className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                           title="Play audio"
+                         >
+                           {audioLoading[`${item.voweled}-male`] ? (
+                             <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                           ) : (
+                             <Volume2 className="w-4 h-4 text-blue-600" />
+                           )}
+                         </button>
+                       </td>
+                     </tr>
+                   ))}
+                 </tbody>
+               </table>
+             </div>
+           </div>
+           
+           {/* Example Sentences */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Reading Practice</h4>
+             <div className="space-y-4">
+               {lesson8_3ExampleSentences.map((sentence, index) => (
+                 <div key={index} className="flex items-center space-x-4 p-4 bg-white/50 rounded-lg hover:bg-white/70 transition-colors">
+                   <div className="flex-grow">
+                     <p className="text-xl text-right text-gray-800 font-arabic" lang="ar" dir="rtl">{sentence.unvoweled}</p>
+                     <p className="text-sm text-gray-500 text-right font-arabic" lang="ar" dir="rtl">{sentence.voweled}</p>
+                     <p className="text-sm text-gray-500 mt-1">{sentence.english}</p>
+                   </div>
+                   <button 
+                     onClick={() => playAudio(sentence.voweled, 'male')}
+                     disabled={audioLoading[`${sentence.voweled}-male`]}
+                     className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                     title="Play audio"
+                   >
+                     {audioLoading[`${sentence.voweled}-male`] ? (
+                       <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                     ) : (
+                       <Volume2 className="w-4 h-4 text-blue-600" />
+                     )}
+                   </button>
+                 </div>
+               ))}
+             </div>
+           </div>
+
+           {/* Exercises */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Check Your Understanding</h4>
+             <div className="space-y-6">
+               {lesson8_3Exercises.map((q, qIndex) => (
+                 <div key={qIndex} className="p-4 border border-gray-200/50 rounded-lg bg-white/30">
+                   <p className="font-semibold text-gray-800 mb-4">{qIndex + 1}. {q.question}</p>
+                   <div className="space-y-3">
+                     {q.options.map((option, oIndex) => {
+                       const isSelected = selectedAnswers[qIndex] === option;
+                       const isCorrect = q.correctAnswer === option;
+                       let bgColor = 'bg-white/50';
+                       if (showResults) {
+                         if (isSelected && isCorrect) bgColor = 'bg-green-100/80 border-green-400';
+                         else if (isSelected && !isCorrect) bgColor = 'bg-red-100/80 border-red-400';
+                         else if (isCorrect) bgColor = 'bg-green-100/80 border-green-400';
+                       }
+
+                       // Check if option is Arabic text for right-alignment
+                       const isArabic = /[\u0600-\u06FF]/.test(option);
+                       const textAlignment = isArabic ? 'text-right' : 'text-left';
+
+                       return (
+                         <label key={oIndex} className={`flex items-center justify-between p-3 rounded-lg border cursor-pointer transition-all duration-200 ${isSelected ? 'border-blue-500' : 'border-gray-300/50'} ${bgColor} hover:bg-white/70`}>
+                           <input 
+                             type="radio" 
+                             name={`question-${qIndex}`} 
+                             value={option} 
+                             checked={isSelected} 
+                             onChange={() => handleOptionChange(qIndex, option)} 
+                             className="mr-3"
+                           />
+                           <span className={`text-lg flex-1 ${textAlignment}`} lang={isArabic ? 'ar' : 'en'} dir={isArabic ? 'rtl' : 'ltr'}>{option}</span>
+                         </label>
+                       );
+                     })}
+                   </div>
+                 </div>
+               ))}
+             </div>
+             <div className="mt-8 text-center">
+               <Button onClick={checkAnswers} className="clay-button bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                 Check Answers
+               </Button>
+             </div>
+           </div>
+         </div>
+       ) : currentLesson.id === "b2-m8-l4" ? (
+         <div className="space-y-8">
+           {/* Lesson Header */}
+           <div className="clay-card p-8 text-center">
+             <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 8.4: Cultural Topics</h3>
+             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+               Apply your skills to read and understand authentic texts about Arab culture.
+             </p>
+           </div>
+
+           {/* Objectives */}
+           <div className="clay-card p-6">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center space-x-2">
+               <Target className="w-5 h-5 text-blue-600" />
+               <span>Learning Objectives</span>
+             </h4>
+             <ul className="space-y-2 text-gray-700">
+               <li className="flex items-start space-x-2">
+                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                 <span>Read and understand a short biography of a famous Arab cultural figure.</span>
+               </li>
+               <li className="flex items-start space-x-2">
+                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                 <span>Learn vocabulary related to literature, awards, and achievements.</span>
+               </li>
+               <li className="flex items-start space-x-2">
+                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                 <span>Practice reading comprehension with an authentic, voweled text.</span>
+               </li>
+             </ul>
+           </div>
+
+           {/* Reading Strategy */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">How to Approach This Text: A B2 Strategy</h4>
+             <div className="space-y-6">
+               <div className="p-4 bg-blue-50 rounded-lg">
+                 <h5 className="text-lg font-semibold text-gray-700 mb-2">Step 1: Skim for the Gist</h5>
+                 <p className="text-gray-600">Read the text quickly one time. Don't stop for words you don't know. Look for "islands of certainty" like names (<span className="font-arabic" lang="ar" dir="rtl">نَجِيب مَحْفُوظ</span>), places (<span className="font-arabic" lang="ar" dir="rtl">مِصْرِيٌّ</span>), and key verbs (<span className="font-arabic" lang="ar" dir="rtl">كَتَبَ</span>, <span className="font-arabic" lang="ar" dir="rtl">حَصَلَ عَلَى</span>) to get the main idea.</p>
+               </div>
+               <div className="p-4 bg-green-50 rounded-lg">
+                 <h5 className="text-lg font-semibold text-gray-700 mb-2">Step 2: Scan for New Vocabulary</h5>
+                 <p className="text-gray-600">Read the text a second time, actively looking for the new vocabulary from this lesson. This will confirm your initial understanding and add important details.</p>
+               </div>
+               <div className="p-4 bg-yellow-50 rounded-lg">
+                 <h5 className="text-lg font-semibold text-gray-700 mb-2">Step 3: Analyze the Grammar</h5>
+                 <p className="text-gray-600">Read slowly and deconstruct the sentences. Look for grammar you've learned in previous modules. For example:</p>
+                 <ul className="list-disc list-inside text-gray-700 space-y-1 mt-2">
+                   <li>Find the <strong>passive voice</strong> (e.g., <span className="font-arabic" lang="ar" dir="rtl">يُعْتَبَرُ</span>, <span className="font-arabic" lang="ar" dir="rtl">تُرْجِمَتْ</span>).</li>
+                   <li>Identify <strong>superlative Idaafas</strong> (e.g., <span className="font-arabic" lang="ar" dir="rtl">أَهَمِّ الْكُتَّابِ</span>).</li>
+                   <li>Spot <strong>relative clauses</strong> (e.g., <span className="font-arabic" lang="ar" dir="rtl">الَّتِي تُصَوِّرُ...</span>).</li>
+                 </ul>
+               </div>
+               <div className="p-4 bg-purple-50 border-l-4 border-purple-400 rounded-lg">
+                 <h5 className="text-lg font-semibold text-gray-700 mb-2">Step 4: Final Reading for Full Comprehension</h5>
+                 <p className="text-gray-600">Read the text one last time. With the vocabulary and grammar now clear, the full meaning should be accessible. You are now ready to confidently answer the comprehension questions.</p>
+               </div>
+             </div>
+           </div>
+
+           {/* Reading Text */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Reading Text</h4>
+             <div className="bg-gray-100 p-6 rounded-lg border border-gray-200 flex items-start space-x-4">
+               <div className="flex-grow">
+                 <h3 className="text-2xl font-bold text-center text-gray-800 mb-4 font-arabic" lang="ar" dir="rtl">{lesson8_4ReadingPassage.title}</h3>
+                 <p className="text-xl leading-loose text-right text-gray-700 font-arabic" lang="ar" dir="rtl">{lesson8_4ReadingPassage.text}</p>
+               </div>
+               <button 
+                 onClick={() => playAudio(lesson8_4ReadingPassage.text, 'male')}
+                 disabled={audioLoading[`${lesson8_4ReadingPassage.text}-male`]}
+                 className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                 title="Play audio"
+               >
+                 {audioLoading[`${lesson8_4ReadingPassage.text}-male`] ? (
+                   <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                 ) : (
+                   <Volume2 className="w-4 h-4 text-blue-600" />
+                 )}
+               </button>
+             </div>
+           </div>
+
+           {/* Vocabulary */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Key Vocabulary from the Text</h4>
+             <div className="overflow-x-auto">
+               <table className="w-full text-left">
+                 <thead>
+                   <tr className="border-b-2 border-gray-200">
+                     <th className="p-3 text-lg font-semibold text-gray-700">Arabic</th>
+                     <th className="p-3 font-medium text-gray-600">Transliteration</th>
+                     <th className="p-3 font-medium text-gray-600">Meaning</th>
+                     <th className="p-3 font-medium text-gray-600">Audio</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   {lesson8_4Vocabulary.map((item, index) => (
+                     <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                       <td className="p-3 text-xl font-medium text-gray-800 font-arabic" lang="ar" dir="rtl">{item.arabic}</td>
+                       <td className="p-3 text-gray-600 italic">{item.transliteration}</td>
+                       <td className="p-3 text-gray-700">{item.meaning}</td>
+                       <td className="p-3">
+                         <button 
+                           onClick={() => playAudio(item.arabic, 'male')}
+                           disabled={audioLoading[`${item.arabic}-male`]}
+                           className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                           title="Play audio"
+                         >
+                           {audioLoading[`${item.arabic}-male`] ? (
+                             <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                           ) : (
+                             <Volume2 className="w-4 h-4 text-blue-600" />
+                           )}
+                         </button>
+                       </td>
+                     </tr>
+                   ))}
+                 </tbody>
+               </table>
+             </div>
+           </div>
+           
+           {/* Example Sentences */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Example Sentences</h4>
+             <div className="space-y-4">
+               {lesson8_4ExampleSentences.map((sentence, index) => (
+                 <div key={index} className="flex items-center space-x-4 p-4 bg-white/50 rounded-lg hover:bg-white/70 transition-colors">
+                   <div className="flex-grow">
+                     <p className="text-xl text-right text-gray-800 font-arabic" lang="ar" dir="rtl">{sentence.arabic}</p>
+                     <p className="text-sm text-gray-500">{sentence.english}</p>
+                   </div>
+                   <button 
+                     onClick={() => playAudio(sentence.arabic, 'male')}
+                     disabled={audioLoading[`${sentence.arabic}-male`]}
+                     className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                     title="Play audio"
+                   >
+                     {audioLoading[`${sentence.arabic}-male`] ? (
+                       <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                     ) : (
+                       <Volume2 className="w-4 h-4 text-blue-600" />
+                     )}
+                   </button>
+                 </div>
+               ))}
+             </div>
+           </div>
+
+           {/* Exercises */}
+           <div className="clay-card p-6">
+             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Reading Comprehension</h4>
+             <div className="space-y-6">
+               {lesson8_4Exercises.map((q, qIndex) => (
+                 <div key={qIndex} className="p-4 border border-gray-200/50 rounded-lg bg-white/30">
+                   <p className="font-semibold text-gray-800 mb-4 text-lg font-arabic" lang="ar" dir="rtl">{qIndex + 1}. {q.question}</p>
                    <div className="space-y-3">
                      {q.options.map((option, oIndex) => {
                        const isSelected = selectedAnswers[qIndex] === option;

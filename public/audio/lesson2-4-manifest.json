@@ -1,0 +1,183 @@
+{
+  "lesson": "2.4",
+  "title": "The Idaafa Construction",
+  "vocabulary": [
+    {
+      "arabic": "بِنْتٌ",
+      "english": "daughter / girl",
+      "audioFile": "lesson2-4-vocab-1.mp3"
+    },
+    {
+      "arabic": "جَامِعَةٌ",
+      "english": "university",
+      "audioFile": "lesson2-4-vocab-2.mp3"
+    },
+    {
+      "arabic": "مَدِينَةٌ",
+      "english": "city",
+      "audioFile": "lesson2-4-vocab-3.mp3"
+    },
+    {
+      "arabic": "غُرْفَةٌ",
+      "english": "room",
+      "audioFile": "lesson2-4-vocab-4.mp3"
+    },
+    {
+      "arabic": "مِفْتَاحٌ",
+      "english": "key",
+      "audioFile": "lesson2-4-vocab-5.mp3"
+    },
+    {
+      "arabic": "مَكْتَبٌ",
+      "english": "desk / office",
+      "audioFile": "lesson2-4-vocab-6.mp3"
+    },
+    {
+      "arabic": "اَلْمُدِيرُ",
+      "english": "the director / manager",
+      "audioFile": "lesson2-4-vocab-7.mp3"
+    },
+    {
+      "arabic": "لَوْنٌ",
+      "english": "color",
+      "audioFile": "lesson2-4-vocab-8.mp3"
+    },
+    {
+      "arabic": "قَمِيصٌ",
+      "english": "shirt",
+      "audioFile": "lesson2-4-vocab-9.mp3"
+    },
+    {
+      "arabic": "طَعَامٌ",
+      "english": "food",
+      "audioFile": "lesson2-4-vocab-10.mp3"
+    },
+    {
+      "arabic": "مَطْبَخٌ",
+      "english": "kitchen",
+      "audioFile": "lesson2-4-vocab-11.mp3"
+    },
+    {
+      "arabic": "صُورَةٌ",
+      "english": "picture / photo",
+      "audioFile": "lesson2-4-vocab-12.mp3"
+    },
+    {
+      "arabic": "طَبِيبٌ",
+      "english": "doctor",
+      "audioFile": "lesson2-4-vocab-13.mp3"
+    },
+    {
+      "arabic": "مُسْتَشْفَى",
+      "english": "hospital",
+      "audioFile": "lesson2-4-vocab-14.mp3"
+    },
+    {
+      "arabic": "حَقِيبَةٌ",
+      "english": "bag / suitcase",
+      "audioFile": "lesson2-4-vocab-15.mp3"
+    },
+    {
+      "arabic": "شَارِعٌ",
+      "english": "street",
+      "audioFile": "lesson2-4-vocab-16.mp3"
+    },
+    {
+      "arabic": "نَافِذَةٌ",
+      "english": "window",
+      "audioFile": "lesson2-4-vocab-17.mp3"
+    }
+  ],
+  "exampleSentences": [
+    {
+      "arabic": "هَذَا بَيْتُ الْمُهَنْدِسِ.",
+      "english": "This is the engineer's house.",
+      "voice": "male",
+      "audioFile": "lesson2-4-sentence-1.mp3"
+    },
+    {
+      "arabic": "اِسْمُ الطَّالِبِ مُحَمَّدٌ.",
+      "english": "The student's name is Muhammad.",
+      "voice": "male",
+      "audioFile": "lesson2-4-sentence-2.mp3"
+    },
+    {
+      "arabic": "مِفْتَاحُ السَّيَّارَةِ جَدِيدٌ.",
+      "english": "The key of the car is new.",
+      "voice": "male",
+      "audioFile": "lesson2-4-sentence-3.mp3"
+    },
+    {
+      "arabic": "بِنْتُ الْمُدَرِّسَةِ فِي الْجَامِعَةِ.",
+      "english": "The teacher's daughter is at the university.",
+      "voice": "female",
+      "audioFile": "lesson2-4-sentence-4.mp3"
+    },
+    {
+      "arabic": "هَذَا مَكْتَبُ الْمُدِيرِ.",
+      "english": "This is the director's office.",
+      "voice": "male",
+      "audioFile": "lesson2-4-sentence-5.mp3"
+    },
+    {
+      "arabic": "لَوْنُ الْقَمِيصِ أَزْرَقُ.",
+      "english": "The shirt's color is blue.",
+      "voice": "male",
+      "audioFile": "lesson2-4-sentence-6.mp3"
+    },
+    {
+      "arabic": "نَافِذَةُ الْغُرْفَةِ كَبِيرَةٌ.",
+      "english": "The room's window is big.",
+      "voice": "female",
+      "audioFile": "lesson2-4-sentence-7.mp3"
+    },
+    {
+      "arabic": "صُورَةُ الْبِنْتِ جَمِيلَةٌ.",
+      "english": "The girl's picture is beautiful.",
+      "voice": "female",
+      "audioFile": "lesson2-4-sentence-8.mp3"
+    },
+    {
+      "arabic": "حَقِيبَةُ الطَّالِبَةِ عَلَى الْمَكْتَبِ.",
+      "english": "The student's (f) bag is on the desk.",
+      "voice": "female",
+      "audioFile": "lesson2-4-sentence-9.mp3"
+    },
+    {
+      "arabic": "طَعَامُ الْمَطْبَخِ لَذِيذٌ.",
+      "english": "The kitchen's food is delicious.",
+      "voice": "male",
+      "audioFile": "lesson2-4-sentence-10.mp3"
+    },
+    {
+      "arabic": "سَيَّارَةُ الطَّبِيبِ فِي الشَّارِعِ.",
+      "english": "The doctor's car is in the street.",
+      "voice": "male",
+      "audioFile": "lesson2-4-sentence-11.mp3"
+    },
+    {
+      "arabic": "اِسْمُ الْمُسْتَشْفَى \"الشِّفَاءُ\".",
+      "english": "The hospital's name is \"Al-Shifaa\".",
+      "voice": "male",
+      "audioFile": "lesson2-4-sentence-12.mp3"
+    },
+    {
+      "arabic": "مِفْتَاحُ الْبَابِ صَغِيرٌ.",
+      "english": "The key of the door is small.",
+      "voice": "male",
+      "audioFile": "lesson2-4-sentence-13.mp3"
+    },
+    {
+      "arabic": "مَدِينَةُ الْقَاهِرَةِ فِي مِصْرَ.",
+      "english": "The city of Cairo is in Egypt.",
+      "voice": "female",
+      "audioFile": "lesson2-4-sentence-14.mp3"
+    },
+    {
+      "arabic": "جَامِعَةُ دِمَشْقَ قَدِيمَةٌ.",
+      "english": "The University of Damascus is old.",
+      "voice": "female",
+      "audioFile": "lesson2-4-sentence-15.mp3"
+    }
+  ]
+}

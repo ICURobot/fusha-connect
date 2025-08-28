@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './components/pages/Homepage';
 import Dashboard from './components/pages/Dashboard';
 import Lesson from './components/pages/Lesson';
+import Feedback from './components/pages/Feedback';
 import Layout from './components/layout/Layout';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/lesson" element={<Lesson />} />
           <Route path="/lesson/:moduleId" element={<Lesson />} />
+          <Route path="/feedback" element={<Feedback />} />
         </Routes>
       </Layout>
     </Router>

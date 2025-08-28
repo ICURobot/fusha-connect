@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl } from "../../utils";
-import { Home, BookOpen, Menu, X } from "lucide-react";
+import { Home, BookOpen, Menu, X, MessageSquare } from "lucide-react";
 import { Button } from "../ui/button";
 
 export default function Layout({ children }) {
@@ -11,6 +11,7 @@ export default function Layout({ children }) {
   const navigation = [
     { name: "Home", url: "/", icon: Home },
     { name: "Dashboard", url: createPageUrl("Dashboard"), icon: BookOpen },
+    { name: "Feedback", url: "/feedback", icon: MessageSquare },
   ];
 
   const isActive = (url) => location.pathname === url;
@@ -156,6 +157,17 @@ export default function Layout({ children }) {
       <footer className="clay-element mx-4 mb-4 mt-16">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="text-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 mb-4">
+              <Link to="/" className="text-gray-600 hover:text-gray-800 transition-colors">
+                Home
+              </Link>
+              <Link to={createPageUrl("Dashboard")} className="text-gray-600 hover:text-gray-800 transition-colors">
+                Dashboard
+              </Link>
+              <Link to="/feedback" className="text-gray-600 hover:text-gray-800 transition-colors">
+                Contact & Feedback
+              </Link>
+            </div>
             <p className="text-gray-600 mb-2">© 2024 Fusha Connect. Made with ❤️ for Arabic learners.</p>
             <p className="text-sm text-gray-500">Free, structured, and effective Arabic learning.</p>
           </div>

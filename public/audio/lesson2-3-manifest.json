@@ -1,0 +1,94 @@
+{
+  "lesson": "2.3",
+  "title": "Attached Pronouns (Possession)",
+  "vocabulary": [
+    {
+      "arabic": "ـي",
+      "english": "my",
+      "audioFile": "lesson2-3-vocab-1.mp3"
+    },
+    {
+      "arabic": "ـكَ",
+      "english": "your (masc.)",
+      "audioFile": "lesson2-3-vocab-2.mp3"
+    },
+    {
+      "arabic": "ـكِ",
+      "english": "your (fem.)",
+      "audioFile": "lesson2-3-vocab-3.mp3"
+    },
+    {
+      "arabic": "ـهُ",
+      "english": "his",
+      "audioFile": "lesson2-3-vocab-4.mp3"
+    },
+    {
+      "arabic": "ـهَا",
+      "english": "her",
+      "audioFile": "lesson2-3-vocab-5.mp3"
+    },
+    {
+      "arabic": "اِسْمٌ",
+      "english": "name",
+      "audioFile": "lesson2-3-vocab-6.mp3"
+    },
+    {
+      "arabic": "كِتَابٌ",
+      "english": "book",
+      "audioFile": "lesson2-3-vocab-7.mp3"
+    },
+    {
+      "arabic": "صَدِيقٌ",
+      "english": "friend (male)",
+      "audioFile": "lesson2-3-vocab-8.mp3"
+    },
+    {
+      "arabic": "صَدِيقَةٌ",
+      "english": "friend (female)",
+      "audioFile": "lesson2-3-vocab-9.mp3"
+    },
+    {
+      "arabic": "سَيَّارَةٌ",
+      "english": "car",
+      "audioFile": "lesson2-3-vocab-10.mp3"
+    }
+  ],
+  "exampleSentences": [
+    {
+      "arabic": "اِسْمِي خَالِدٌ.",
+      "english": "My name is Khalid.",
+      "voice": "male",
+      "audioFile": "lesson2-3-sentence-1.mp3"
+    },
+    {
+      "arabic": "هَذَا كِتَابُكَ.",
+      "english": "This is your book. (to a male)",
+      "voice": "male",
+      "audioFile": "lesson2-3-sentence-2.mp3"
+    },
+    {
+      "arabic": "هَذِهِ سَيَّارَتُكِ.",
+      "english": "This is your car. (to a female)",
+      "voice": "female",
+      "audioFile": "lesson2-3-sentence-3.mp3"
+    },
+    {
+      "arabic": "صَدِيقُهُ مُهَنْدِسٌ.",
+      "english": "His friend is an engineer.",
+      "voice": "male",
+      "audioFile": "lesson2-3-sentence-4.mp3"
+    },
+    {
+      "arabic": "اِسْمُهَا مَهَا.",
+      "english": "Her name is Maha.",
+      "voice": "female",
+      "audioFile": "lesson2-3-sentence-5.mp3"
+    },
+    {
+      "arabic": "صَدِيقَتِي طَبِيبَةٌ.",
+      "english": "My friend (female) is a doctor.",
+      "voice": "female",
+      "audioFile": "lesson2-3-sentence-6.mp3"
+    }
+  ]
+}

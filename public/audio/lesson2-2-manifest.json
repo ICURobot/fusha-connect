@@ -1,0 +1,96 @@
+{
+  "lesson": "2.2",
+  "title": "This is... & Question Words",
+  "vocabulary": [
+    {
+      "arabic": "مَا؟",
+      "english": "What? (for non-humans)",
+      "audioFile": "lesson2-2-vocab-1.mp3"
+    },
+    {
+      "arabic": "مَنْ؟",
+      "english": "Who? (for humans)",
+      "audioFile": "lesson2-2-vocab-2.mp3"
+    },
+    {
+      "arabic": "مَكْتَبٌ",
+      "english": "desk, office",
+      "audioFile": "lesson2-2-vocab-3.mp3"
+    },
+    {
+      "arabic": "نَافِذَةٌ",
+      "english": "window",
+      "audioFile": "lesson2-2-vocab-4.mp3"
+    },
+    {
+      "arabic": "طَبِيبٌ / طَبِيبَةٌ",
+      "english": "doctor (m/f)",
+      "audioFile": "lesson2-2-vocab-5.mp3"
+    },
+    {
+      "arabic": "مُمَرِّضٌ / مُمَرِّضَةٌ",
+      "english": "nurse (m/f)",
+      "audioFile": "lesson2-2-vocab-6.mp3"
+    },
+    {
+      "arabic": "بَابٌ",
+      "english": "door",
+      "audioFile": "lesson2-2-vocab-7.mp3"
+    },
+    {
+      "arabic": "صَدِيقٌ / صَدِيقَةٌ",
+      "english": "friend (m/f)",
+      "audioFile": "lesson2-2-vocab-8.mp3"
+    }
+  ],
+  "exampleSentences": [
+    {
+      "arabic": "مَا هَذَا؟",
+      "english": "What is this? (pointing to masc. object)",
+      "voice": "male",
+      "audioFile": "lesson2-2-sentence-1.mp3"
+    },
+    {
+      "arabic": "هَذَا مَكْتَبٌ.",
+      "english": "This is a desk.",
+      "voice": "male",
+      "audioFile": "lesson2-2-sentence-2.mp3"
+    },
+    {
+      "arabic": "مَا هَذِهِ؟",
+      "english": "What is this? (pointing to fem. object)",
+      "voice": "female",
+      "audioFile": "lesson2-2-sentence-3.mp3"
+    },
+    {
+      "arabic": "هَذِهِ نَافِذَةٌ.",
+      "english": "This is a window.",
+      "voice": "female",
+      "audioFile": "lesson2-2-sentence-4.mp3"
+    },
+    {
+      "arabic": "مَنْ هَذَا؟",
+      "english": "Who is this? (pointing to a male)",
+      "voice": "male",
+      "audioFile": "lesson2-2-sentence-5.mp3"
+    },
+    {
+      "arabic": "هَذَا صَدِيقِي.",
+      "english": "This is my friend (male).",
+      "voice": "male",
+      "audioFile": "lesson2-2-sentence-6.mp3"
+    },
+    {
+      "arabic": "مَنْ هَذِهِ؟",
+      "english": "Who is this? (pointing to a female)",
+      "voice": "female",
+      "audioFile": "lesson2-2-sentence-7.mp3"
+    },
+    {
+      "arabic": "هَذِهِ طَبِيبَةٌ.",
+      "english": "This is a (female) doctor.",
+      "voice": "female",
+      "audioFile": "lesson2-2-sentence-8.mp3"
+    }
+  ]
+}
