@@ -26,20 +26,29 @@ export default function Feedback() {
     setIsSubmitting(true);
 
     try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent('Fusha Connect Feedback');
-      const body = encodeURIComponent(
-        `Feedback from: ${formData.firstName} ${formData.lastName}\n` +
-        `Email: ${formData.email}\n\n` +
-        `Message:\n${formData.message}`
-      );
-      
-      // Open default email client
-      window.location.href = `mailto:smartybytes2@gmail.com?subject=${subject}&body=${body}`;
-      
-      setIsSubmitted(true);
+      // Submit form data to Netlify Forms
+      const formDataToSend = new FormData();
+      formDataToSend.append('form-name', 'feedback');
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('firstName', formData.firstName);
+      formDataToSend.append('lastName', formData.lastName);
+      formDataToSend.append('message', formData.message);
+
+      // Send to Netlify Forms endpoint
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formDataToSend as any).toString()
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        throw new Error('Form submission failed');
+      }
     } catch (error) {
       console.error('Error submitting feedback:', error);
+      alert('There was an error sending your feedback. Please try again or contact us directly at smartybytes2@gmail.com');
     } finally {
       setIsSubmitting(false);
     }
@@ -86,7 +95,20 @@ export default function Feedback() {
 
         {/* Feedback Form */}
         <div className="clay-card p-8">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form 
+            name="feedback" 
+            method="POST" 
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            onSubmit={handleSubmit} 
+            className="space-y-6"
+          >
+            {/* Hidden fields for Netlify */}
+            <input type="hidden" name="form-name" value="feedback" />
+            <div className="hidden">
+              <input name="bot-field" />
+            </div>
+            
             {/* Email Field */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
