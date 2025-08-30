@@ -19,7 +19,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/lesson" element={<Lesson />} />
           <Route path="/lesson/:moduleId" element={<Lesson />} />
-          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/feedback" 
+          element={<Feedback />} />
         </Routes>
       </Layout>
     </Router>
