@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { curriculum } from "../../entities/Curriculum";
 import LevelCard from "../dashboard/LevelCard";
 import ModuleCard from "../dashboard/ModuleCard";
 import ProgressStats from "../dashboard/ProgressStats";
+import ProgressTracker from "../../utils/progress";
 import { Target, BookOpen, ArrowRight } from "lucide-react";
 
 export default function Dashboard() {
   const navigate = useNavigate();
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
   const [selectedModule, setSelectedModule] = useState<string | null>(null);
+  const [progressStats, setProgressStats] = useState({
+    completedLevels: 0,
+    completedModules: 0,
+    completedLessons: 0
+  });
 
   const totalLevels = curriculum.length;
   const totalModules = curriculum.reduce((acc, level) => acc + level.modules.length, 0);
@@ -17,15 +23,63 @@ export default function Dashboard() {
     acc + level.modules.reduce((modAcc, module) => modAcc + module.lessons.length, 0), 0
   );
 
-  const completedLevels = curriculum.filter(level => level.completed).length;
-  const completedModules = curriculum.reduce((acc, level) => 
-    acc + level.modules.filter(module => module.completed).length, 0
-  );
-  const completedLessons = curriculum.reduce((acc, level) => 
-    acc + level.modules.reduce((modAcc, module) => 
-      modAcc + module.lessons.filter(lesson => lesson.completed).length, 0
-    ), 0
-  );
+  // Calculate progress from actual completion data
+  useEffect(() => {
+    const calculateProgress = () => {
+      let completedLevels = 0;
+      let completedModules = 0;
+      let completedLessons = 0;
+
+      curriculum.forEach(level => {
+        let levelCompleted = true;
+        
+        level.modules.forEach(module => {
+          let moduleCompleted = true;
+          
+          module.lessons.forEach(lesson => {
+            if (ProgressTracker.isLessonCompleted(lesson.id)) {
+              completedLessons++;
+            } else {
+              moduleCompleted = false;
+            }
+          });
+          
+          if (moduleCompleted) {
+            completedModules++;
+          } else {
+            levelCompleted = false;
+          }
+        });
+        
+        if (levelCompleted) {
+          completedLevels++;
+        }
+      });
+
+      setProgressStats({
+        completedLevels,
+        completedModules,
+        completedLessons
+      });
+    };
+
+    calculateProgress();
+    
+    // Listen for storage changes to update progress in real-time
+    const handleStorageChange = () => {
+      calculateProgress();
+    };
+    
+    window.addEventListener('storage', handleStorageChange);
+    
+    // Also listen for custom progress events
+    window.addEventListener('progressUpdated', handleStorageChange);
+    
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('progressUpdated', handleStorageChange);
+    };
+  }, []);
 
   const handleLevelClick = (levelId: string) => {
     setSelectedLevel(selectedLevel === levelId ? null : levelId);
@@ -59,9 +113,9 @@ export default function Dashboard() {
           totalLevels={totalLevels}
           totalModules={totalModules}
           totalLessons={totalLessons}
-          completedLevels={completedLevels}
-          completedModules={completedModules}
-          completedLessons={completedLessons}
+          completedLevels={progressStats.completedLevels}
+          completedModules={progressStats.completedModules}
+          completedLessons={progressStats.completedLessons}
         />
       </div>
 

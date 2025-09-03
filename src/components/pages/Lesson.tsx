@@ -6,6 +6,7 @@ import { BookOpen, Target, CheckCircle2, Circle, ArrowLeft, ArrowRight, Play, Me
 import { generateAudio, playAudio as playAudioUtil, cleanupAudioUrl, getAudioFromSupabase } from "../../utils/audio";
 import { Button } from "../ui/button";
 import ReactGA from 'react-ga4';
+import ProgressTracker from '../../utils/progress';
 
 export default function Lesson() {
   const { moduleId } = useParams();
@@ -46,9 +47,15 @@ export default function Lesson() {
       label: currentModule?.lessons[currentLessonIndex]?.title || 'Unknown Lesson',
       value: 1
     });
+    
     if (currentModule) {
-      // Update lesson completion status (placeholder for now)
-      console.log(`Lesson ${lessonId} completed`);
+      // Mark lesson as completed in progress tracking
+      ProgressTracker.markLessonCompleted(lessonId);
+      
+      // Dispatch custom event to update dashboard
+      window.dispatchEvent(new CustomEvent('progressUpdated'));
+      
+      console.log(`Lesson ${lessonId} completed and saved to progress tracking`);
       
       // Move to next lesson if available
       if (currentLessonIndex < currentModule.lessons.length - 1) {
@@ -1962,12 +1969,12 @@ export default function Lesson() {
               className={`flex items-center space-x-3 p-3 rounded-lg border-2 transition-all cursor-pointer hover:scale-105 ${
                 index === currentLessonIndex
                   ? 'border-blue-500 bg-blue-50'
-                  : index < currentLessonIndex
+                  : ProgressTracker.isLessonCompleted(lesson.id)
                   ? 'border-green-300 bg-green-50'
                   : 'border-gray-200 bg-gray-50'
               }`}
             >
-              {index < currentLessonIndex ? (
+              {ProgressTracker.isLessonCompleted(lesson.id) ? (
                 <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
               ) : index === currentLessonIndex ? (
                 <Play className="w-5 h-5 text-blue-600 flex-shrink-0" />
@@ -1977,14 +1984,14 @@ export default function Lesson() {
               <div className="flex-1">
                 <p className={`font-medium ${
                   index === currentLessonIndex ? 'text-blue-800' : 
-                  index < currentLessonIndex ? 'text-green-800' : 'text-gray-700'
+                  ProgressTracker.isLessonCompleted(lesson.id) ? 'text-green-800' : 'text-gray-700'
                 }`}>
                   {lesson.title}
                 </p>
                 {lesson.description && (
                   <p className={`text-sm ${
                     index === currentLessonIndex ? 'text-blue-600' : 
-                    index < currentLessonIndex ? 'text-green-600' : 'text-gray-500'
+                    ProgressTracker.isLessonCompleted(lesson.id) ? 'text-green-600' : 'text-gray-500'
                   }`}>
                     {lesson.description}
                   </p>
@@ -8933,13 +8940,20 @@ export default function Lesson() {
           Previous Lesson
         </Button>
 
-        <Button 
-          onClick={() => handleLessonComplete(currentLesson.id)}
-          className="clay-button bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600"
-        >
-          Mark Complete
-          <CheckCircle2 className="w-4 h-4 ml-2" />
-        </Button>
+        {ProgressTracker.isLessonCompleted(currentLesson.id) ? (
+          <div className="flex items-center space-x-2 text-green-600">
+            <CheckCircle2 className="w-5 h-5" />
+            <span className="font-semibold">Lesson Completed</span>
+          </div>
+        ) : (
+          <Button 
+            onClick={() => handleLessonComplete(currentLesson.id)}
+            className="clay-button bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600"
+          >
+            Mark Complete
+            <CheckCircle2 className="w-4 h-4 ml-2" />
+          </Button>
+        )}
 
         <Button 
           onClick={handleNextLesson}
