@@ -1308,57 +1308,11 @@ export default function Lesson() {
 
 
 
-  // Lesson 7.2: Weak Verbs II (Defective & Doubled) (B2 Level)
-  const lesson7_2Vocabulary = [
-    { arabic: "مَشَى / يَمْشِي", transliteration: "mashā / yamshī", meaning: "to walk", root: "م ش ي", type: 'Defective' },
-    { arabic: "بَقِيَ / يَبْقَى", transliteration: "baqiya / yabqā", meaning: "to remain/stay", root: "ب ق ي", type: 'Defective' },
-    { arabic: "نَسِيَ / يَنْسَى", transliteration: "nasiya / yansā", meaning: "to forget", root: "ن س ي", type: 'Defective' },
-    { arabic: "دَعَا / يَدْعُو", transliteration: "daʿā / yadʿū", meaning: "to invite/call", root: "د ع و", type: 'Defective' },
-    { arabic: "أَحَبَّ / يُحِبُّ", transliteration: "aḥabba / yuḥibbu", meaning: "to love/like", root: "ح ب ب", type: 'Doubled' },
-    { arabic: "ظَنَّ / يَظُنُّ", transliteration: "ẓanna / yaẓunnu", meaning: "to think/assume", root: "ظ ن ن", type: 'Doubled' },
-    { arabic: "رَدَّ / يَرُدُّ", transliteration: "radda / yaruddu", meaning: "to reply/return", root: "ر د د", type: 'Doubled' },
-    { arabic: "مَرَّ / يَمُرُّ", transliteration: "marra / yamurru", meaning: "to pass by", root: "م ر ر", type: 'Doubled' },
-    { arabic: "اَلْحَفْلَةُ", transliteration: "al-ḥaflatu", meaning: "the party", type: 'Noun/Other' },
-    { arabic: "اَلْوَقْتُ", transliteration: "al-waqtu", meaning: "the time", type: 'Noun/Other' },
-    { arabic: "اَلْمَوْعِدُ", transliteration: "al-mawʿidu", meaning: "the appointment", type: 'Noun/Other' },
-    { arabic: "اَلْجَوَابُ", transliteration: "al-jawābu", meaning: "the answer", type: 'Noun/Other' },
-    { arabic: "اَلرِّسَالَةُ", transliteration: "ar-risālatu", meaning: "the letter/message", type: 'Noun/Other' },
-    { arabic: "اَلطَّرِيقُ", transliteration: "aṭ-ṭarīqu", meaning: "the road/way", type: 'Noun/Other' },
-    { arabic: "اَلْقَرْيَةُ", transliteration: "al-qaryatu", meaning: "the village", type: 'Noun/Other' },
-    { arabic: "اَلْجَدُّ", transliteration: "al-jaddu", meaning: "the grandfather", type: 'Noun/Other' },
-    { arabic: "مَعًا", transliteration: "maʿan", meaning: "together", type: 'Noun/Other' },
-  ];
 
-  const lesson7_2ExampleSentences = [
-    { arabic: "مَشَيْتُ إِلَى السُّوقِ.", english: "I walked to the market." },
-    { arabic: "هِيَ تَنْسَى مَوْعِدَهَا دَائِمًا.", english: "She always forgets her appointment." },
-    { arabic: "دَعَوْنَاهُمْ إِلَى الْحَفْلَةِ.", english: "We invited them (m.) to the party." },
-    { arabic: "لَمْ يَبْقَ أَحَدٌ فِي الْغُرْفَةِ.", english: "No one remained in the room." },
-    { arabic: "أَنَا أُحِبُّ عَائِلَتِي.", english: "I love my family." },
-    { arabic: "هَلْ ظَنَنْتَ أَنَّهُ سَيَأْتِي؟", english: "Did you (m.) think that he would come?" },
-    { arabic: "لِمَاذَا لَمْ تَرُدَّ عَلَى رِسَالَتِي؟", english: "Why didn't you (f.) reply to my message?" },
-    { arabic: "اَلْوَقْتُ يَمُرُّ بِسُرْعَةٍ.", english: "The time passes quickly." },
-    { arabic: "جَدِّي يَمْشِي فِي الطَّرِيقِ.", english: "My grandfather walks in the road." },
-    { arabic: "هُمْ بَقُوا فِي الْقَرْيَةِ.", english: "They (m.) stayed in the village." },
-  ];
 
-  const lesson7_2Exercises = [
-    {
-      question: "A verb with a 'و' or 'ي' as its final root letter is called:",
-      options: ["Assimilated", "Hollow", "Sound", "Defective"],
-      correctAnswer: "Defective"
-    },
-    {
-      question: "How do you say 'I loved'?",
-      options: ["أَحَبَّ", "أُحِبُّ", "أَحْبَبْتُ", "حَبَّبْتُ"],
-      correctAnswer: "أَحْبَبْتُ"
-    },
-    {
-      question: "In the past tense conjugation of Doubled verbs (like for 'أَنَا'), what happens?",
-      options: ["The doubling is removed", "The verb doesn't change", "The first letter is doubled", "The verb adds a 'و'"],
-      correctAnswer: "The doubling is removed"
-    }
-  ];
+
+
+
 
   // Lesson 7.3: Inna and Her Sisters (B2 Level)
   const lesson7_3Vocabulary = [
@@ -1783,6 +1737,60 @@ export default function Lesson() {
       question: "The verb `قَابَلَ` (to meet) is Form III of the root `ق ب ل`. What is the most likely meaning of Form VI verb `تَقَابَلَ`?",
       options: ["To cause to accept.", "To meet each other (reciprocal).", "To seek acceptance."],
       correctAnswer: "To meet each other (reciprocal)."
+    }
+  ];
+
+  // Lesson 7.2: The Verb Form System II (Forms VI-X)
+  const lesson7_2Vocabulary = [
+    { arabic: "مُتَبَادَلٌ", transliteration: "mutabādalun", meaning: "reciprocal, mutual" },
+    { arabic: "اِنْعِكَاسِيٌّ", transliteration: "inʿikāsiyyun", meaning: "reflexive" },
+    { arabic: "مَجْهُولٌ", transliteration: "majhūlun", meaning: "passive" },
+    { arabic: "اِصْطِلَاحِيٌّ", transliteration: "iṣṭilāḥiyyun", meaning: "idiomatic" },
+    { arabic: "نَادِرٌ", transliteration: "nādirun", meaning: "rare" },
+    { arabic: "تَعَاوَنَ", transliteration: "taʿāwana", meaning: "to cooperate (Form VI)", root: "ع و ن" },
+    { arabic: "تَبَادَلَ", transliteration: "tabādala", meaning: "to exchange (Form VI)", root: "ب د ل" },
+    { arabic: "اِنْكَسَرَ", transliteration: "inkasara", meaning: "to be broken (Form VII)", root: "ك س ر" },
+    { arabic: "اِنْفَتَحَ", transliteration: "infataḥa", meaning: "to be opened (Form VII)", root: "ف ت ح" },
+    { arabic: "اِجْتَمَعَ", transliteration: "ijtimaʿa", meaning: "to meet, gather (Form VIII)", root: "ج م ع" },
+    { arabic: "اِسْتَمَعَ إِلَى", transliteration: "istamaʿa ilā", meaning: "to listen to (Form VIII)", root: "س م ع" },
+    { arabic: "اِعْتَقَدَ أَنَّ", transliteration: "iʿtaqada anna", meaning: "to believe that (Form VIII)", root: "ع ق د" },
+    { arabic: "اِحْمَرَّ", transliteration: "iḥmarra", meaning: "to become red, to blush (Form IX)", root: "ح م ر" },
+    { arabic: "اِخْضَرَّ", transliteration: "ikhḍarra", meaning: "to become green (Form IX)", root: "خ ض ر" },
+    { arabic: "اِسْتَخْدَمَ", transliteration: "istakhdama", meaning: "to use (Form X)", root: "خ د م" },
+    { arabic: "اِسْتَقْبَلَ", transliteration: "istaqbala", meaning: "to receive, to welcome (Form X)", root: "ق ب ل" },
+    { arabic: "اِسْتَطَاعَ أَنْ", transliteration: "istaṭāʿa an", meaning: "to be able to (Form X)", root: "ط و ع" },
+    { arabic: "اِسْتَفْهَمَ عَنْ", transliteration: "istafhama ʿan", meaning: "to inquire about (Form X)", root: "ف ه م" }
+  ];
+
+  const lesson7_2ExampleSentences = [
+    { arabic: "تَعَاوَنَ الطَّالِبَانِ فِي الْمَشْرُوعِ.", english: "The two students cooperated on the project." },
+    { arabic: "اِنْكَسَرَ الزُّجَاجُ عِنْدَمَا سَقَطَ.", english: "The glass broke (was broken) when it fell." },
+    { arabic: "سَنَجْتَمِعُ غَدًا فِي الْمَكْتَبَةِ لِلدِّرَاسَةِ.", english: "We will meet tomorrow in the library to study." },
+    { arabic: "أَنَا أَسْتَخْدِمُ هٰذَا الْقَلَمَ لِكِتَابَةِ الرَّسَائِلِ.", english: "I use this pen to write the letters." },
+    { arabic: "اِحْمَرَّ وَجْهُهُ عِنْدَمَا تَكَلَّمَ أَمَامَ الْجُمْهُورِ.", english: "His face became red when he spoke in front of the audience." },
+    { arabic: "تَبَادَلَ الصَّدِيقَانِ الْهَدَايَا فِي عِيدِ الْمِيلَادِ.", english: "The two friends exchanged gifts on Christmas." },
+    { arabic: "أَسْتَمِعُ إِلَى الْأَخْبَارِ كُلَّ صَبَاحٍ.", english: "I listen to the news every morning." },
+    { arabic: "اِسْتَقْبَلَ الْمُدِيرُ الْمُوَظَّفِينَ الْجُدُدَ.", english: "The manager welcomed the new employees." },
+    { arabic: "هَلْ تَسْتَطِيعُ أَنْ تُسَاعِدَنِي؟", english: "Are you able to help me?" },
+    { arabic: "اِعْتَقِدُ أَنَّ الْفِكْرَةَ جَيِّدَةٌ.", english: "I believe that the idea is good." },
+    { arabic: "اِنْفَتَحَ الْبَابُ بِبُطْءٍ.", english: "The door opened (was opened) slowly." }
+  ];
+
+  const lesson7_2Exercises = [
+    {
+      question: "The verb `اِسْتَعْلَمَ` (to inquire) is on which form, and what meaning does it likely add to the root `ع ل م` (to know)?",
+      options: ["Form VII - to be known.", "Form VIII - to know oneself.", "Form X - to seek to know."],
+      correctAnswer: "Form X - to seek to know."
+    },
+    {
+      question: "Which of the following verbs has a reciprocal (each other) meaning?",
+      options: ["اِنْتَظَرَ", "تَكَاتَبَ", "اِصْفَرَّ"],
+      correctAnswer: "تَكَاتَبَ"
+    },
+    {
+      question: "The verb `اِنْقَطَعَ` means 'to be cut off'. This passive-like meaning is characteristic of which verb form?",
+      options: ["Form VII", "Form VI", "Form X"],
+      correctAnswer: "Form VII"
     }
   ];
 
@@ -6894,21 +6902,254 @@ export default function Lesson() {
            <div className="clay-card p-8 text-center">
              <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 7.2: The Verb Form System II (Forms VI-X)</h3>
              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-               Mastering the advanced verb forms and their applications.
+               Completing your map of the Arabic verb system.
              </p>
            </div>
 
-           {/* Placeholder Content */}
-           <div className="clay-card p-8">
-             <div className="text-center py-16">
-               <div className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                 <BookOpen className="w-12 h-12 text-blue-700" />
-               </div>
-               <h4 className="text-xl font-semibold text-gray-800 mb-4">Content Coming Soon</h4>
-               <p className="text-gray-600 mb-6">
-                 This lesson will cover the advanced verb forms (VI-X) and their applications.
-                 The detailed curriculum content will be added as you finalize the lesson plans.
+           {/* Objectives */}
+           <div className="clay-card p-6 bg-blue-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+               <Target className="w-5 h-5 mr-2 text-blue-600" />
+               Objectives
+             </h4>
+             <ul className="space-y-2 text-gray-700">
+               <li className="flex items-start">
+                 <CheckCircle2 className="w-4 h-4 mr-2 mt-1 text-green-600 flex-shrink-0" />
+                 Identify the pattern and core meaning of Forms VI, VII, VIII, IX, and X.
+               </li>
+               <li className="flex items-start">
+                 <CheckCircle2 className="w-4 h-4 mr-2 mt-1 text-green-600 flex-shrink-0" />
+                 Understand concepts like reciprocity (Form VI) and the passive-reflexive (Form VII).
+               </li>
+               <li className="flex items-start">
+                 <CheckCircle2 className="w-4 h-4 mr-2 mt-1 text-green-600 flex-shrink-0" />
+                 Recognize the common "seeking" meaning of Form X.
+               </li>
+               <li className="flex items-start">
+                 <CheckCircle2 className="w-4 h-4 mr-2 mt-1 text-green-600 flex-shrink-0" />
+                 Use the full 10-form system as a tool to predict the meaning of new verbs.
+               </li>
+             </ul>
+           </div>
+
+           {/* Grammar and Explanation */}
+           <div className="clay-card p-6 bg-green-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4">Forms VI-X: The Advanced Recipes</h4>
+             <div className="p-4 bg-white rounded-lg">
+               <p className="text-gray-700 leading-relaxed">
+                 Now that you've mastered the first five "recipes," we'll complete the set. These forms often build on the meanings of the earlier forms, adding layers of meaning like reciprocity ("each other") or reflexivity ("oneself").
                </p>
+             </div>
+           </div>
+
+           {/* Forms VI-X Detailed Explanation */}
+           <div className="clay-card p-6 bg-yellow-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Forms VI-X: A Detailed Look</h4>
+             
+             {/* Form VI */}
+             <div className="p-4 bg-white border rounded-lg mb-4">
+               <h5 className="text-2xl font-bold text-gray-800">Form VI: The Reciprocal <span className="text-lg font-normal text-gray-500">(تَفَاعَلَ)</span></h5>
+               <p className="text-gray-600 mt-2">This form is the reflexive or reciprocal version of Form III. It implies the action is done **mutually, by two or more subjects**. The key feature is the <strong className="text-red-600">prefix تَـ</strong> added to the Form III pattern.</p>
+               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                 <div className="bg-gray-100 p-2 rounded"><strong>Past Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">تَفَاعَلَ</span> (tafāʿala)</div>
+                 <div className="bg-gray-100 p-2 rounded"><strong>Present Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">يَتَفَاعَلُ</span> (yatafāʿalu)</div>
+               </div>
+               <div className="mt-4">
+                 <p className="font-semibold">Examples:</p>
+                 <ul className="list-disc list-inside text-gray-700 mt-2">
+                   <li>Form III: <span className="font-arabic" lang="ar" dir="rtl">كَاتَبَ</span> (to correspond WITH someone) → Form VI: <span className="font-arabic" lang="ar" dir="rtl">تَكَاتَبَ</span> (to correspond WITH EACH OTHER)</li>
+                   <li>Form III: <span className="font-arabic" lang="ar" dir="rtl">سَاعَدَ</span> (to help someone) → Form VI: <span className="font-arabic" lang="ar" dir="rtl">تَسَاعَدَ</span> (to help EACH OTHER)</li>
+                 </ul>
+               </div>
+             </div>
+
+             {/* Form VII */}
+             <div className="p-4 bg-white border rounded-lg mb-4">
+               <h5 className="text-2xl font-bold text-gray-800">Form VII: The Passive-Reflexive <span className="text-lg font-normal text-gray-500">(اِنْفَعَلَ)</span></h5>
+               <p className="text-gray-600 mt-2">This form gives a passive meaning to a Form I verb. It describes something happening to the subject, without an actor. The key feature is the <strong className="text-red-600">prefix اِنْـ</strong>.</p>
+               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                 <div className="bg-gray-100 p-2 rounded"><strong>Past Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">اِنْفَعَلَ</span> (infaʿala)</div>
+                 <div className="bg-gray-100 p-2 rounded"><strong>Present Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">يَنْفَعِلُ</span> (yanfaʿilu)</div>
+               </div>
+               <div className="mt-4">
+                 <p className="font-semibold">Examples:</p>
+                 <ul className="list-disc list-inside text-gray-700 mt-2">
+                   <li>Form I: <span className="font-arabic" lang="ar" dir="rtl">كَسَرَ</span> (to break something) → Form VII: <span className="font-arabic" lang="ar" dir="rtl">اِنْكَسَرَ</span> (to BE BROKEN, to break)</li>
+                   <li>Form I: <span className="font-arabic" lang="ar" dir="rtl">قَطَعَ</span> (to cut something) → Form VII: <span className="font-arabic" lang="ar" dir="rtl">اِنْقَطَعَ</span> (to BE CUT, to be cut off)</li>
+                 </ul>
+               </div>
+             </div>
+
+             {/* Form VIII */}
+             <div className="p-4 bg-white border rounded-lg mb-4">
+               <h5 className="text-2xl font-bold text-gray-800">Form VIII: The Reflexive / Middle Voice <span className="text-lg font-normal text-gray-500">(اِفْتَعَلَ)</span></h5>
+               <p className="text-gray-600 mt-2">This form is often a reflexive or middle-voice version of Form I. The meaning is often idiomatic and must be learned with the root. The key feature is the <strong className="text-red-600">prefix اِ- and infix -ت- after the first root letter</strong>.</p>
+               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                 <div className="bg-gray-100 p-2 rounded"><strong>Past Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">اِفْتَعَلَ</span> (iftaʿala)</div>
+                 <div className="bg-gray-100 p-2 rounded"><strong>Present Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">يَفْتَعِلُ</span> (yaftaʿilu)</div>
+               </div>
+               <div className="mt-4">
+                 <p className="font-semibold">Examples:</p>
+                 <ul className="list-disc list-inside text-gray-700 mt-2">
+                   <li>Root <span className="font-arabic" lang="ar" dir="rtl">ج م ع</span> (to gather) → Form VIII: <span className="font-arabic" lang="ar" dir="rtl">اِجْتَمَعَ</span> (to GATHER TOGETHER, to meet)</li>
+                   <li>Root <span className="font-arabic" lang="ar" dir="rtl">ن ق ل</span> (to transport) → Form VIII: <span className="font-arabic" lang="ar" dir="rtl">اِنْتَقَلَ</span> (to MOVE ONESELF, to move)</li>
+                 </ul>
+               </div>
+             </div>
+             
+             {/* Form IX */}
+             <div className="p-4 bg-yellow-100 border rounded-lg mb-4">
+               <h5 className="text-2xl font-bold text-gray-800">Form IX: Colors & Defects <span className="text-lg font-normal text-gray-500">(اِفْعَلَّ)</span></h5>
+               <p className="text-gray-600 mt-2">This is a **rare** form used almost exclusively to describe **becoming a color** or having a physical defect. The key feature is the <strong className="text-red-600">doubled final root letter</strong>.</p>
+               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                 <div className="bg-gray-100 p-2 rounded"><strong>Past Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">اِفْعَلَّ</span> (ifʿalla)</div>
+                 <div className="bg-gray-100 p-2 rounded"><strong>Present Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">يَفْعَلُّ</span> (yafʿallu)</div>
+               </div>
+               <div className="mt-4">
+                 <p className="font-semibold">Example:</p>
+                 <ul className="list-disc list-inside text-gray-700 mt-2">
+                   <li>Root <span className="font-arabic" lang="ar" dir="rtl">ح م ر</span> (redness) → Form IX: <span className="font-arabic" lang="ar" dir="rtl">اِحْمَرَّ</span> (to BECOME RED, to blush)</li>
+                 </ul>
+               </div>
+             </div>
+
+             {/* Form X */}
+             <div className="p-4 bg-white border rounded-lg">
+               <h5 className="text-2xl font-bold text-gray-800">Form X: To Seek / To Request <span className="text-lg font-normal text-gray-500">(اِسْتَفْعَلَ)</span></h5>
+               <p className="text-gray-600 mt-2">This is a very common and useful form. It almost always adds the meaning of **seeking, requesting, or asking for** the action of the root verb. The key feature is the <strong className="text-red-600">prefix اِسْتَـ</strong>.</p>
+               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                 <div className="bg-gray-100 p-2 rounded"><strong>Past Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">اِسْتَفْعَلَ</span> (istafʿala)</div>
+                 <div className="bg-gray-100 p-2 rounded"><strong>Present Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">يَسْتَفْعِلُ</span> (yastafʿilu)</div>
+               </div>
+               <div className="mt-4">
+                 <p className="font-semibold">Examples:</p>
+                 <ul className="list-disc list-inside text-gray-700 mt-2">
+                   <li>Root <span className="font-arabic" lang="ar" dir="rtl">خ د م</span> (to serve) → Form X: <span className="font-arabic" lang="ar" dir="rtl">اِسْتَخْدَمَ</span> (to USE - to seek service from)</li>
+                   <li>Root <span className="font-arabic" lang="ar" dir="rtl">ف ه م</span> (to understand) → Form X: <span className="font-arabic" lang="ar" dir="rtl">اِسْتَفْهَمَ</span> (to INQUIRE - to seek understanding)</li>
+                 </ul>
+               </div>
+             </div>
+           </div>
+
+           {/* Summary Table */}
+           <div className="clay-card p-6 bg-purple-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4">Summary of All 10 Forms</h4>
+             <div className="overflow-x-auto">
+               <table className="w-full text-left border-collapse bg-white rounded-lg">
+                 <thead className="bg-gray-200">
+                   <tr>
+                     <th className="p-3 font-semibold text-gray-700">Form</th>
+                     <th className="p-3 font-semibold text-gray-700">Past Pattern</th>
+                     <th className="p-3 font-semibold text-gray-700">Common Meaning</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   <tr className="border-b"><td className="p-3">I</td><td className="p-3 font-arabic" lang="ar" dir="rtl">فَعَلَ</td><td className="p-3">Base verb</td></tr>
+                   <tr className="border-b bg-gray-50"><td className="p-3">II</td><td className="p-3 font-arabic" lang="ar" dir="rtl">فَعَّلَ</td><td className="p-3">Intensive / Causative</td></tr>
+                   <tr className="border-b"><td className="p-3">III</td><td className="p-3 font-arabic" lang="ar" dir="rtl">فَاعَلَ</td><td className="p-3">Acting upon/with</td></tr>
+                   <tr className="border-b bg-gray-50"><td className="p-3">IV</td><td className="p-3 font-arabic" lang="ar" dir="rtl">أَفْعَلَ</td><td className="p-3">Causative</td></tr>
+                   <tr className="border-b"><td className="p-3">V</td><td className="p-3 font-arabic" lang="ar" dir="rtl">تَفَعَّلَ</td><td className="p-3">Reflexive of Form II</td></tr>
+                   <tr className="border-b bg-gray-50"><td className="p-3">VI</td><td className="p-3 font-arabic" lang="ar" dir="rtl">تَفَاعَلَ</td><td className="p-3">Reciprocal</td></tr>
+                   <tr className="border-b"><td className="p-3">VII</td><td className="p-3 font-arabic" lang="ar" dir="rtl">اِنْفَعَلَ</td><td className="p-3">Passive-Reflexive</td></tr>
+                   <tr className="border-b bg-gray-50"><td className="p-3">VIII</td><td className="p-3 font-arabic" lang="ar" dir="rtl">اِفْتَعَلَ</td><td className="p-3">Reflexive / Middle Voice</td></tr>
+                   <tr className="border-b"><td className="p-3">IX</td><td className="p-3 font-arabic" lang="ar" dir="rtl">اِفْعَلَّ</td><td className="p-3">Colors & Defects (rare)</td></tr>
+                   <tr className="bg-gray-50"><td className="p-3">X</td><td className="p-3 font-arabic" lang="ar" dir="rtl">اِسْتَفْعَلَ</td><td className="p-3">To seek / to request</td></tr>
+                 </tbody>
+               </table>
+             </div>
+           </div>
+
+           {/* Vocabulary */}
+           <div className="clay-card p-6 bg-red-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4">Advanced Grammar Vocabulary</h4>
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+               {lesson7_2Vocabulary.map((item, index) => (
+                 <div key={index} className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+                   <div className="flex items-start justify-between">
+                     <div className="flex-grow">
+                       <p className="text-lg font-medium text-right text-gray-800 font-arabic" lang="ar" dir="rtl">{item.arabic}</p>
+                       <p className="text-sm text-gray-500 italic">{item.transliteration}</p>
+                       <p className="text-sm text-gray-700">{item.meaning}</p>
+                       {item.root && <p className="text-xs text-gray-400 font-mono" lang="ar" dir="rtl">Root: {item.root}</p>}
+                     </div>
+                     <button 
+                       onClick={() => playAudio(item.arabic, 'male')}
+                       disabled={audioLoading[`${item.arabic}-male`]}
+                       className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50 ml-2"
+                       title="Play audio"
+                     >
+                       {audioLoading[`${item.arabic}-male`] ? (
+                         <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                       ) : (
+                         <Volume2 className="w-4 h-4 text-blue-600" />
+                       )}
+                     </button>
+                   </div>
+                 </div>
+               ))}
+             </div>
+           </div>
+
+           {/* Example Sentences */}
+           <div className="clay-card p-6 bg-orange-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4">Example Sentences</h4>
+             <div className="space-y-4">
+               {lesson7_2ExampleSentences.map((sentence, index) => (
+                 <div key={index} className="bg-white p-4 rounded-lg border border-gray-200 flex items-start space-x-4">
+                   <div className="flex-grow">
+                     <p className="text-lg text-right text-gray-800 font-arabic" lang="ar" dir="rtl">{sentence.arabic}</p>
+                     <p className="text-sm text-gray-600 mt-1">{sentence.english}</p>
+                   </div>
+                   <button 
+                     onClick={() => playAudio(sentence.arabic, 'male')}
+                     disabled={audioLoading[`${sentence.arabic}-male`]}
+                     className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                     title="Play audio"
+                   >
+                     {audioLoading[`${sentence.arabic}-male`] ? (
+                       <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                     ) : (
+                       <Volume2 className="w-4 h-4 text-blue-600" />
+                     )}
+                   </button>
+                 </div>
+               ))}
+             </div>
+           </div>
+
+           {/* Exercises */}
+           <div className="clay-card p-6 bg-indigo-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4">Practice Exercises</h4>
+             <div className="space-y-6">
+               {lesson7_2Exercises.map((q, qIndex) => (
+                 <div key={qIndex} className="bg-white p-4 rounded-lg border border-gray-200">
+                   <p className="font-semibold text-gray-800 mb-3 text-lg">{qIndex + 1}. {q.question}</p>
+                   <div className="space-y-2">
+                     {q.options.map((option, oIndex) => {
+                       const isSelected = selectedAnswers[qIndex] === option;
+                       const isCorrect = q.correctAnswer === option;
+                       let bgColor = 'bg-white';
+                       if (showResults) {
+                         if (isSelected && isCorrect) bgColor = 'bg-green-100 border-green-400';
+                         else if (isSelected && !isCorrect) bgColor = 'bg-red-100 border-red-400';
+                         else if (isCorrect) bgColor = 'bg-green-100 border-green-400';
+                       }
+
+                       return (
+                         <label key={oIndex} className={`flex items-center p-3 rounded-md border cursor-pointer transition-all duration-200 ${isSelected ? 'border-blue-500' : 'border-gray-300'} ${bgColor}`}>
+                           <input type="radio" name={`question-${qIndex}`} value={option} checked={isSelected} onChange={() => handleOptionChange(qIndex, option)} className="mr-3"/>
+                           <span className='text-left'>{option}</span>
+                         </label>
+                       );
+                     })}
+                   </div>
+                 </div>
+               ))}
+             </div>
+             <div className="mt-6 text-center">
+               <Button onClick={checkAnswers} className="clay-button bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                 Check Answers
+               </Button>
              </div>
            </div>
          </div>
@@ -7172,7 +7413,6 @@ export default function Lesson() {
                      <th className="p-3 text-lg font-semibold text-gray-700">Arabic</th>
                      <th className="p-3 font-medium text-gray-600">Transliteration</th>
                      <th className="p-3 font-medium text-gray-600">Meaning</th>
-                     <th className="p-3 font-medium text-gray-600">Type</th>
                      <th className="p-3 font-medium text-gray-600">Root</th>
                      <th className="p-3 font-medium text-gray-600">Audio</th>
                    </tr>
@@ -7183,7 +7423,6 @@ export default function Lesson() {
                        <td className="p-3 text-xl font-medium text-gray-800 font-arabic" lang="ar" dir="rtl">{item.arabic}</td>
                        <td className="p-3 text-gray-600 italic">{item.transliteration}</td>
                        <td className="p-3 text-gray-700">{item.meaning}</td>
-                       <td className="p-3 text-sm text-gray-500">{item.type}</td>
                        <td className="p-3 text-sm text-gray-500">{item.root || '-'}</td>
                        <td className="p-3">
                          <button 
