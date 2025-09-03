@@ -133,7 +133,8 @@ export const curriculum: Level[] = [
           { id: "b1-m6-l1", title: "Relative Clauses", description: "Using alladhii, allatii, etc., to connect sentences (e.g., 'The man who I saw...')." },
           { id: "b1-m6-l2", title: "Weak Verbs I (Hollow & Assimilated)", description: "Introduction to conjugating verbs with a weak middle or first root letter." },
           { id: "b1-m6-l3", title: "Comparatives & Superlatives", description: "Forming and using comparative (af'al min) and superlative adjectives." },
-          { id: "b1-m6-l4", title: "Numbers 11-99", description: "Rules for compound numbers and noun agreement." }
+          { id: "b1-m6-l4", title: "Numbers 11-99", description: "Rules for compound numbers and noun agreement." },
+          { id: "b1-m6-l5", title: "Your Most Powerful Tool - Using a Root-Based Dictionary", description: "Learn the essential skill that unlocks independent Arabic reading and vocabulary building." }
         ]
       }
     ]

@@ -1727,6 +1727,58 @@ export default function Lesson() {
     }
   ];
 
+  // Lesson 6.5: Your Most Powerful Tool - Using a Root-Based Dictionary
+  const lesson6_5Vocabulary = [
+    { arabic: "جَذْرٌ / جُذُورٌ", transliteration: "jadhrun / judhūrun", meaning: "root(s)" },
+    { arabic: "وَزْنٌ / أَوْزَانٌ", transliteration: "waznun / awzānun", meaning: "pattern(s), form(s)" },
+    { arabic: "قَامُوسٌ", transliteration: "qāmūsun", meaning: "dictionary" },
+    { arabic: "مُعْجَمٌ", transliteration: "muʿjamun", meaning: "dictionary, lexicon" },
+    { arabic: "فِعْلٌ / أَفْعَالٌ", transliteration: "fiʿlun / afʿālun", meaning: "verb(s)" },
+    { arabic: "اِسْمٌ / أَسْمَاءٌ", transliteration: "ismun / asmā'un", meaning: "noun(s)" },
+    { arabic: "مَاضٍ", transliteration: "māḍin", meaning: "past tense" },
+    { arabic: "مُضَارِعٌ", transliteration: "muḍāriʿun", meaning: "present tense" },
+    { arabic: "مَصْدَرٌ", transliteration: "maṣdarun", meaning: "verbal noun (masdar)" },
+    { arabic: "مُجَرَّدٌ", transliteration: "mujarradun", meaning: "abstracted, stripped down" },
+    { arabic: "مُشْتَقٌّ", transliteration: "mushtaqqun", meaning: "derived" },
+    { arabic: "مَادَّةٌ", transliteration: "māddatun", meaning: "entry, lemma (in a dictionary)" },
+    { arabic: "حَرْفٌ / حُرُوفٌ", transliteration: "ḥarfun / ḥurūfun", meaning: "letter(s)" },
+    { arabic: "أَصْلِيٌّ", transliteration: "aṣliyyun", meaning: "original, root (adj.)" },
+    { arabic: "زَائِدٌ", transliteration: "zā'idun", meaning: "extra, additional" },
+    { arabic: "بَحَثَ عَنْ", transliteration: "baḥatha ʿan", meaning: "he searched for" },
+    { arabic: "وَجَدَ", transliteration: "wajada", meaning: "he found" }
+  ];
+
+  const lesson6_5ExampleSentences = [
+    { arabic: "مَا هُوَ جَذْرُ كَلِمَةِ 'مَكْتَبَة'؟", english: "What is the root of the word 'maktaba' (library)?" },
+    { arabic: "بَحَثْتُ عَنِ الْمَصْدَرِ فِي الْمُعْجَمِ.", english: "I searched for the masdar in the dictionary." },
+    { arabic: "اَلْحُرُوفُ الْأَصْلِيَّةُ لِلْفِعْلِ هِيَ 'د ر س'.", english: "The root letters of the verb are 'd r s'." },
+    { arabic: "هَذَا الاِسْمُ مُشْتَقٌّ مِنَ الْفِعْلِ 'كَتَبَ'.", english: "This noun is derived from the verb 'kataba'." },
+    { arabic: "وَجَدْتُ الْكَلِمَةَ تَحْتَ مَادَّةِ 'ع ل م'.", english: "I found the word under the entry for 'ʿ l m'." },
+    { arabic: "لِكُلِّ فِعْلٍ فِي الْعَرَبِيَّةِ جَذْرٌ.", english: "Every verb in Arabic has a root." },
+    { arabic: "أَوْزَانُ الْأَفْعَالِ مُهِمَّةٌ جِدًّا.", english: "The verb patterns are very important." },
+    { arabic: "اَلْأَحْرُفُ الزَّائِدَةُ تُغَيِّرُ الْمَعْنَى.", english: "The extra letters change the meaning." },
+    { arabic: "عَلَيْكَ أَنْ تُجَرِّدَ الْكَلِمَةَ لِتَجِدَ الْجَذْرَ.", english: "You must strip the word to find the root." },
+    { arabic: "يَشْرَحُ الْقَامُوسُ مَعَانِيَ الْكَلِمَاتِ.", english: "The dictionary explains the meanings of words." }
+  ];
+
+  const lesson6_5Exercises = [
+    {
+      question: "What is the three-letter root of the word `مُسَافِرُونَ` (travelers)?",
+      options: ["س ف ر", "س ف ا", "ف ر و"],
+      correctAnswer: "س ف ر"
+    },
+    {
+      question: "Under which root would you find the word `مِفْتَاح` (key)?",
+      options: ["م ف ت", "ف ت ح", "ف ت ا"],
+      correctAnswer: "ف ت ح"
+    },
+    {
+      question: "What is the root of the verb `اِسْتَقْبَلَ` (to receive/welcome)?",
+      options: ["س ق ب", "ت ق ب", "ق ب ل"],
+      correctAnswer: "ق ب ل"
+    }
+  ];
+
   // Lesson 4.3: Object Pronouns (A2 Level)
   const lesson4_3Vocabulary = [
     { arabic: "ـنِي", transliteration: "-nī", meaning: "me" },
@@ -8102,6 +8154,236 @@ export default function Lesson() {
                ))}
              </div>
              <div className="mt-8 text-center">
+               <Button onClick={checkAnswers} className="clay-button bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                 Check Answers
+               </Button>
+             </div>
+           </div>
+         </div>
+       ) : currentLesson.id === "b1-m6-l5" ? (
+         <div className="space-y-8">
+           {/* Lesson Header */}
+           <div className="clay-card p-8 text-center">
+             <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 6.5: Your Most Powerful Tool - Using a Root-Based Dictionary</h3>
+             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+               Learn the essential skill that unlocks independent Arabic reading and vocabulary building.
+             </p>
+           </div>
+
+           {/* Objectives */}
+           <div className="clay-card p-6 bg-blue-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+               <Target className="w-5 h-5 mr-2 text-blue-600" />
+               Objectives
+             </h4>
+             <ul className="space-y-2 text-gray-700">
+               <li className="flex items-start">
+                 <CheckCircle2 className="w-4 h-4 mr-2 mt-1 text-green-600 flex-shrink-0" />
+                 Understand why Arabic dictionaries are organized by root, not alphabetically.
+               </li>
+               <li className="flex items-start">
+                 <CheckCircle2 className="w-4 h-4 mr-2 mt-1 text-green-600 flex-shrink-0" />
+                 Learn the steps to "strip down" a word to find its three-letter root.
+               </li>
+               <li className="flex items-start">
+                 <CheckCircle2 className="w-4 h-4 mr-2 mt-1 text-green-600 flex-shrink-0" />
+                 Recognize common verb and noun patterns to isolate roots.
+               </li>
+               <li className="flex items-start">
+                 <CheckCircle2 className="w-4 h-4 mr-2 mt-1 text-green-600 flex-shrink-0" />
+                 Practice finding the roots of various derived words.
+               </li>
+             </ul>
+           </div>
+
+           {/* Grammar and Explanation */}
+           <div className="clay-card p-6 bg-green-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4">How Arabic Dictionaries Work</h4>
+             
+             <div className="space-y-6">
+               <div>
+                 <h5 className="text-lg font-semibold text-gray-700 mb-2">Part 1: Why It's Different</h5>
+                 <p className="text-gray-600 leading-relaxed">
+                   In Arabic, words are families built from a core root. Words like <span className="font-arabic" lang="ar" dir="rtl">كِتَابٌ</span> (book), <span className="font-arabic" lang="ar" dir="rtl">مَكْتَبٌ</span> (office), <span className="font-arabic" lang="ar" dir="rtl">كَاتِبٌ</span> (writer), and <span className="font-arabic" lang="ar" dir="rtl">يَكْتُبُ</span> (he writes) all share the same root, <span className="font-arabic font-bold" lang="ar" dir="rtl">ك ت ب</span>, and are all found under that single entry in a dictionary.
+                 </p>
+               </div>
+
+               <div>
+                 <h5 className="text-lg font-semibold text-gray-700 mb-2">Part 2: The Art of Finding the Root</h5>
+                 <p className="text-gray-600 leading-relaxed mb-3">
+                   To find a word, you must first "strip it down" to its basic, original letters (<span className="font-arabic" lang="ar" dir="rtl">اَلْجَذْرُ</span>). This involves removing extra letters (<span className="font-arabic" lang="ar" dir="rtl">حُرُوفٌ زَائِدَةٌ</span>) that are part of a word's pattern (<span className="font-arabic" lang="ar" dir="rtl">وَزْنٌ</span>).
+                 </p>
+               </div>
+               
+               <div className="space-y-4">
+                 <h5 className="text-lg font-semibold text-gray-700 border-b pb-2">Part 3: Comprehensive Walkthrough Examples</h5>
+                 
+                 <h6 className="text-md font-semibold text-gray-700 mt-4">A. Finding Roots of Verbs (Forms I-X)</h6>
+
+                 <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+                   <p className="font-semibold text-gray-800">Form I Verb: <span className="font-arabic" lang="ar" dir="rtl">يَشْرَبُونَ</span> (they drink)</p>
+                   <ol className="list-decimal list-inside text-gray-700 mt-2 space-y-1">
+                     <li>Remove the present tense prefix <span className="font-arabic" lang="ar" dir="rtl">يَـ</span> and the plural suffix <span className="font-arabic" lang="ar" dir="rtl">ـُونَ</span>.</li>
+                     <li>You are left with <span className="font-arabic" lang="ar" dir="rtl">شْرَب</span>. The vowels can be ignored.</li>
+                     <li>The root is <strong className="font-arabic" lang="ar" dir="rtl">ش ر ب</strong>.</li>
+                   </ol>
+                 </div>
+
+                 <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+                   <p className="font-semibold text-gray-800">Form II Verb: <span className="font-arabic" lang="ar" dir="rtl">يُدَرِّسُ</span> (he teaches)</p>
+                   <ol className="list-decimal list-inside text-gray-700 mt-2 space-y-1">
+                     <li>The pattern is <span className="font-arabic" lang="ar" dir="rtl">يُفَعِّلُ</span>. Remove the prefix <span className="font-arabic" lang="ar" dir="rtl">يُـ</span>.</li>
+                     <li>The defining feature of Form II is the doubled middle root letter (<span className="font-arabic" lang="ar" dir="rtl">ـرِّ</span>). Un-double it.</li>
+                     <li>The root is <strong className="font-arabic" lang="ar" dir="rtl">د ر س</strong>.</li>
+                   </ol>
+                 </div>
+
+                 <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+                   <p className="font-semibold text-gray-800">Form IV Verb: <span className="font-arabic" lang="ar" dir="rtl">أَرْسَلْنَا</span> (we sent)</p>
+                   <ol className="list-decimal list-inside text-gray-700 mt-2 space-y-1">
+                     <li>The pattern is <span className="font-arabic" lang="ar" dir="rtl">أَفْعَلَ</span>. The defining feature is the prefix <span className="font-arabic" lang="ar" dir="rtl">أَ</span> in the past tense.</li>
+                     <li>Remove the prefix <span className="font-arabic" lang="ar" dir="rtl">أَ</span> and the past tense suffix <span className="font-arabic" lang="ar" dir="rtl">ـنَا</span>.</li>
+                     <li>The root is <strong className="font-arabic" lang="ar" dir="rtl">ر س ل</strong>.</li>
+                   </ol>
+                 </div>
+
+                 <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+                   <p className="font-semibold text-gray-800">Form VIII Verb: <span className="font-arabic" lang="ar" dir="rtl">اِجْتِمَاع</span> (meeting)</p>
+                   <ol className="list-decimal list-inside text-gray-700 mt-2 space-y-1">
+                     <li>This is a masdar on the pattern <span className="font-arabic" lang="ar" dir="rtl">اِفْتِعَال</span>. The verb is <span className="font-arabic" lang="ar" dir="rtl">اِجْتَمَعَ</span>.</li>
+                     <li>The pattern letters are the initial <span className="font-arabic" lang="ar" dir="rtl">اِ</span> and the infixed <span className="font-arabic" lang="ar" dir="rtl">ـتـ</span>.</li>
+                     <li>Removing these leaves the root: <strong className="font-arabic" lang="ar" dir="rtl">ج م ع</strong>.</li>
+                   </ol>
+                 </div>
+
+                 <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+                   <p className="font-semibold text-gray-800">Form X Verb: <span className="font-arabic" lang="ar" dir="rtl">اِسْتَخْدَمْتُ</span> (I used)</p>
+                   <ol className="list-decimal list-inside text-gray-700 mt-2 space-y-1">
+                     <li>The pattern is <span className="font-arabic" lang="ar" dir="rtl">اِسْتَفْعَلَ</span>. The defining feature is the prefix <span className="font-arabic" lang="ar" dir="rtl">اِسْتَـ</span>.</li>
+                     <li>Remove the prefix <span className="font-arabic" lang="ar" dir="rtl">اِسْتَـ</span> and the past tense suffix <span className="font-arabic" lang="ar" dir="rtl">ـتُ</span>.</li>
+                     <li>The root is <strong className="font-arabic" lang="ar" dir="rtl">خ د م</strong>.</li>
+                   </ol>
+                 </div>
+                 
+                 <h6 className="text-md font-semibold text-gray-700 mt-6">B. Finding Roots of Derived Nouns & Participles</h6>
+
+                 <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+                   <p className="font-semibold text-gray-800">Noun of Place: <span className="font-arabic" lang="ar" dir="rtl">اَلْمَطْبَخ</span> (the kitchen)</p>
+                   <ol className="list-decimal list-inside text-gray-700 mt-2 space-y-1">
+                     <li>Remove the definite article <span className="font-arabic" lang="ar" dir="rtl">الـ</span>, leaving <span className="font-arabic" lang="ar" dir="rtl">مَطْبَخ</span>.</li>
+                     <li>The pattern for a place is often <span className="font-arabic" lang="ar" dir="rtl">مَفْعَل</span>. Remove the prefix <span className="font-arabic" lang="ar" dir="rtl">مَـ</span>.</li>
+                     <li>The root is <strong className="font-arabic" lang="ar" dir="rtl">ط ب خ</strong> (to cook).</li>
+                   </ol>
+                 </div>
+
+                 <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+                   <p className="font-semibold text-gray-800">Noun of Instrument: <span className="font-arabic" lang="ar" dir="rtl">مِفْتَاح</span> (key)</p>
+                   <ol className="list-decimal list-inside text-gray-700 mt-2 space-y-1">
+                     <li>The pattern for an instrument is often <span className="font-arabic" lang="ar" dir="rtl">مِفْعَال</span>.</li>
+                     <li>The extra letters are the prefix <span className="font-arabic" lang="ar" dir="rtl">مِـ</span> and the infix <span className="font-arabic" lang="ar" dir="rtl">ـَا</span>.</li>
+                     <li>Removing them leaves the root: <strong className="font-arabic" lang="ar" dir="rtl">ف ت ح</strong> (to open).</li>
+                   </ol>
+                 </div>
+
+                 <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+                   <p className="font-semibold text-gray-800">Passive Participle: <span className="font-arabic" lang="ar" dir="rtl">مَكْتُوب</span> (written)</p>
+                   <ol className="list-decimal list-inside text-gray-700 mt-2 space-y-1">
+                     <li>This is on the pattern <span className="font-arabic" lang="ar" dir="rtl">مَفْعُول</span>.</li>
+                     <li>The extra letters are the prefix <span className="font-arabic" lang="ar" dir="rtl">مَـ</span> and the infix <span className="font-arabic" lang="ar" dir="rtl">ـُو</span>.</li>
+                     <li>Removing them leaves the root: <strong className="font-arabic" lang="ar" dir="rtl">ك ت ب</strong>.</li>
+                   </ol>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+           {/* Vocabulary */}
+           <div className="clay-card p-6 bg-yellow-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4">Meta-Language Vocabulary</h4>
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+               {lesson6_5Vocabulary.map((item, index) => (
+                 <div key={index} className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+                   <div className="flex items-start justify-between">
+                     <div className="flex-grow">
+                       <p className="text-lg font-medium text-right text-gray-800 font-arabic" lang="ar" dir="rtl">{item.arabic}</p>
+                       <p className="text-sm text-gray-500 italic">{item.transliteration}</p>
+                       <p className="text-sm text-gray-700">{item.meaning}</p>
+                     </div>
+                     <button 
+                       onClick={() => playAudio(item.arabic, 'male')}
+                       disabled={audioLoading[`${item.arabic}-male`]}
+                       className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50 ml-2"
+                       title="Play audio"
+                     >
+                       {audioLoading[`${item.arabic}-male`] ? (
+                         <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                       ) : (
+                         <Volume2 className="w-4 h-4 text-blue-600" />
+                       )}
+                     </button>
+                   </div>
+                 </div>
+               ))}
+             </div>
+           </div>
+
+           {/* Example Sentences */}
+           <div className="clay-card p-6 bg-purple-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4">Example Sentences</h4>
+             <div className="space-y-4">
+               {lesson6_5ExampleSentences.map((sentence, index) => (
+                 <div key={index} className="bg-white p-4 rounded-lg border border-gray-200 flex items-start space-x-4">
+                   <div className="flex-grow">
+                     <p className="text-lg text-right text-gray-800 font-arabic" lang="ar" dir="rtl">{sentence.arabic}</p>
+                     <p className="text-sm text-gray-600 mt-1">{sentence.english}</p>
+                   </div>
+                   <button 
+                     onClick={() => playAudio(sentence.arabic, 'male')}
+                     disabled={audioLoading[`${sentence.arabic}-male`]}
+                     className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                     title="Play audio"
+                   >
+                     {audioLoading[`${sentence.arabic}-male`] ? (
+                       <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                     ) : (
+                       <Volume2 className="w-4 h-4 text-blue-600" />
+                     )}
+                   </button>
+                 </div>
+               ))}
+             </div>
+           </div>
+
+           {/* Exercises */}
+           <div className="clay-card p-6 bg-red-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4">Practice Finding the Root</h4>
+             <div className="space-y-6">
+               {lesson6_5Exercises.map((q, qIndex) => (
+                 <div key={qIndex} className="bg-white p-4 rounded-lg border border-gray-200">
+                   <p className="font-semibold text-gray-800 mb-3 text-lg">{qIndex + 1}. {q.question}</p>
+                   <div className="space-y-2">
+                     {q.options.map((option, oIndex) => {
+                       const isSelected = selectedAnswers[qIndex] === option;
+                       const isCorrect = q.correctAnswer === option;
+                       let bgColor = 'bg-white';
+                       if (showResults) {
+                         if (isSelected && isCorrect) bgColor = 'bg-green-100 border-green-400';
+                         else if (isSelected && !isCorrect) bgColor = 'bg-red-100 border-red-400';
+                         else if (isCorrect) bgColor = 'bg-green-100 border-green-400';
+                       }
+
+                       return (
+                         <label key={oIndex} className={`flex items-center p-3 rounded-md border cursor-pointer transition-all duration-200 ${isSelected ? 'border-blue-500' : 'border-gray-300'} ${bgColor}`}>
+                           <input type="radio" name={`question-${qIndex}`} value={option} checked={isSelected} onChange={() => handleOptionChange(qIndex, option)} className="mr-3"/>
+                           <span className='text-lg font-arabic' lang="ar" dir="rtl">{option}</span>
+                         </label>
+                       );
+                     })}
+                   </div>
+                 </div>
+               ))}
+             </div>
+             <div className="mt-6 text-center">
                <Button onClick={checkAnswers} className="clay-button bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors duration-300">
                  Check Answers
                </Button>
