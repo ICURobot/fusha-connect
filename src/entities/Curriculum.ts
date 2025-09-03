@@ -155,10 +155,12 @@ export const curriculum: Level[] = [
         description: "Master passive voice and media language",
         canDoStatement: "I can understand the main ideas of news articles, describe events using the passive voice, and express more complex ideas using sentence modifiers.",
         lessons: [
-          { id: "b2-m7-l1", title: "The Passive Voice", description: "Forming and using the passive in both past and present tenses." },
-          { id: "b2-m7-l2", title: "Weak Verbs II (Defective & Doubled)", description: "Mastering the remaining categories of weak and irregular verbs." },
-          { id: "b2-m7-l3", title: "Inna and Her Sisters", description: "Using sentence modifiers like inna, anna, laakinna." },
-          { id: "b2-m7-l4", title: "Introduction to Media Arabic", description: "Analyzing headlines and short news clips. Vocabulary for politics and current events." }
+          { id: "b2-m7-l1", title: "The Verb Form System I (Forms I-V)", description: "Understanding the foundational verb forms and their patterns." },
+          { id: "b2-m7-l2", title: "The Verb Form System II (Forms VI-X)", description: "Mastering the advanced verb forms and their applications." },
+          { id: "b2-m7-l3", title: "The Passive Voice", description: "Forming and using the passive in both past and present tenses." },
+          { id: "b2-m7-l4", title: "Weak Verbs II (Defective & Doubled)", description: "Mastering the remaining categories of weak and irregular verbs." },
+          { id: "b2-m7-l5", title: "Inna and Her Sisters", description: "Using sentence modifiers like inna, anna, laakinna." },
+          { id: "b2-m7-l6", title: "Introduction to Media Arabic", description: "Analyzing headlines and short news clips. Vocabulary for politics and current events." }
         ]
       },
       {

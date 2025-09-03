@@ -6649,7 +6649,55 @@ export default function Lesson() {
          <div className="space-y-8">
            {/* Lesson Header */}
            <div className="clay-card p-8 text-center">
-             <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 7.1: The Passive Voice</h3>
+             <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 7.1: The Verb Form System I (Forms I-V)</h3>
+             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+               Understanding the foundational verb forms and their patterns.
+             </p>
+           </div>
+
+           {/* Placeholder Content */}
+           <div className="clay-card p-8">
+             <div className="text-center py-16">
+               <div className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                 <BookOpen className="w-12 h-12 text-blue-700" />
+               </div>
+               <h4 className="text-xl font-semibold text-gray-800 mb-4">Content Coming Soon</h4>
+               <p className="text-gray-600 mb-6">
+                 This lesson will cover the foundational verb forms (I-V) and their patterns.
+                 The detailed curriculum content will be added as you finalize the lesson plans.
+               </p>
+             </div>
+           </div>
+         </div>
+       ) : currentLesson.id === "b2-m7-l2" ? (
+         <div className="space-y-8">
+           {/* Lesson Header */}
+           <div className="clay-card p-8 text-center">
+             <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 7.2: The Verb Form System II (Forms VI-X)</h3>
+             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+               Mastering the advanced verb forms and their applications.
+             </p>
+           </div>
+
+           {/* Placeholder Content */}
+           <div className="clay-card p-8">
+             <div className="text-center py-16">
+               <div className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                 <BookOpen className="w-12 h-12 text-blue-700" />
+               </div>
+               <h4 className="text-xl font-semibold text-gray-800 mb-4">Content Coming Soon</h4>
+               <p className="text-gray-600 mb-6">
+                 This lesson will cover the advanced verb forms (VI-X) and their applications.
+                 The detailed curriculum content will be added as you finalize the lesson plans.
+               </p>
+             </div>
+           </div>
+         </div>
+       ) : currentLesson.id === "b2-m7-l3" ? (
+         <div className="space-y-8">
+           {/* Lesson Header */}
+           <div className="clay-card p-8 text-center">
+             <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 7.3: The Passive Voice</h3>
              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                Learn to construct sentences where the subject receives the action.
              </p>
@@ -6830,11 +6878,11 @@ export default function Lesson() {
              </div>
            </div>
          </div>
-       ) : currentLesson.id === "b2-m7-l2" ? (
+       ) : currentLesson.id === "b2-m7-l4" ? (
          <div className="space-y-8">
            {/* Lesson Header */}
            <div className="clay-card p-8 text-center">
-             <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 7.2: Weak Verbs II (Defective & Doubled)</h3>
+             <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 7.4: Weak Verbs II (Defective & Doubled)</h3>
              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                Master the final two categories of irregular verbs.
              </p>
@@ -7013,11 +7061,11 @@ export default function Lesson() {
              </div>
            </div>
          </div>
-       ) : currentLesson.id === "b2-m7-l3" ? (
+       ) : currentLesson.id === "b2-m7-l5" ? (
          <div className="space-y-8">
            {/* Lesson Header */}
            <div className="clay-card p-8 text-center">
-             <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 7.3: Inna and Her Sisters</h3>
+             <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 7.5: Inna and Her Sisters</h3>
              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                Learn to add emphasis and contrast to your sentences with powerful particles.
              </p>
@@ -7202,11 +7250,11 @@ export default function Lesson() {
              </div>
            </div>
          </div>
-       ) : currentLesson.id === "b2-m7-l4" ? (
+       ) : currentLesson.id === "b2-m7-l6" ? (
          <div className="space-y-8">
            {/* Lesson Header */}
            <div className="clay-card p-8 text-center">
-             <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 7.4: Introduction to Media Arabic</h3>
+             <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 7.6: Introduction to Media Arabic</h3>
              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                Understand the language of news headlines and formal announcements.
              </p>
