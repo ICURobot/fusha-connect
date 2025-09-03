@@ -1302,56 +1302,11 @@ export default function Lesson() {
   ];
 
   // Lesson 7.1: The Passive Voice (B2 Level)
-  const lesson7_1Vocabulary = [
-    { arabic: "فُتِحَ / يُفْتَحُ", transliteration: "futiḥa / yuftaḥu", meaning: "was opened / is opened", root: "ف ت ح" },
-    { arabic: "كُتِبَ / يُكْتَبُ", transliteration: "kutiba / yuktabu", meaning: "was written / is written", root: "ك ت ب" },
-    { arabic: "أُكِلَ / يُؤْكَلُ", transliteration: "ukila / yu'kalu", meaning: "was eaten / is eaten", root: "أ ك ل" },
-    { arabic: "شُرِبَ / يُشْرَبُ", transliteration: "shuriba / yushrabu", meaning: "was drunk / is drunk", root: "ش ر ب" },
-    { arabic: "أُرْسِلَ / يُرْسَلُ", transliteration: "ursila / yursalu", meaning: "was sent / is sent", root: "ر س ل" },
-    { arabic: "قُتِلَ / يُقْتَلُ", transliteration: "qutila / yuqtalu", meaning: "was killed / is killed", root: "ق ت ل" },
-    { arabic: "سُرِقَ / يُسْرَقُ", transliteration: "suriqa / yusraqu", meaning: "was stolen / is stolen", root: "س ر ق" },
-    { arabic: "اَلْبَابُ", transliteration: "al-bābu", meaning: "the door" },
-    { arabic: "اَلدَّرْسُ", transliteration: "ad-darsu", meaning: "the lesson" },
-    { arabic: "اَلطَّعَامُ", transliteration: "aṭ-ṭaʿāmu", meaning: "the food" },
-    { arabic: "اَلْقَهْوَةُ", transliteration: "al-qahwatu", meaning: "the coffee" },
-    { arabic: "اَلرِّسَالَةُ", transliteration: "ar-risālatu", meaning: "the letter/message" },
-    { arabic: "اَلْبَنْكُ", transliteration: "al-banku", meaning: "the bank" },
-    { arabic: "اَللِّصُّ", transliteration: "al-liṣṣu", meaning: "the thief" },
-    { arabic: "اَلْجُنْدِيُّ", transliteration: "al-jundiyyu", meaning: "the soldier" },
-    { arabic: "بِوَاسِطَةِ", transliteration: "biwāsiṭati", meaning: "by (means of)" },
-    { arabic: "مِنْ قِبَلِ", transliteration: "min qibali", meaning: "by (someone)" },
-  ];
 
-  const lesson7_1ExampleSentences = [
-    { arabic: "فُتِحَ الْبَابُ.", english: "The door was opened." },
-    { arabic: "كُتِبَ الدَّرْسُ بِالْأَمْسِ.", english: "The lesson was written yesterday." },
-    { arabic: "يُؤْكَلُ الطَّعَامُ فِي الْمَطْعَمِ.", english: "The food is eaten in the restaurant." },
-    { arabic: "تُشْرَبُ الْقَهْوَةُ فِي الصَّبَاحِ.", english: "The coffee is drunk in the morning." },
-    { arabic: "أُرْسِلَتِ الرِّسَالَةُ مِنْ قِبَلِ الْمُدِيرِ.", english: "The message was sent by the manager." },
-    { arabic: "سُرِقَ الْبَنْكُ.", english: "The bank was stolen from (robbed)." },
-    { arabic: "يُعْرَفُ أَنَّهُ رَجُلٌ طَيِّبٌ.", english: "It is known that he is a good man." },
-    { arabic: "قُتِلَ الْجُنْدِيُّ فِي الْحَرْبِ.", english: "The soldier was killed in the war." },
-    { arabic: "يُقَالُ إِنَّ الطَّقْسَ سَيَكُونُ حَارًّا.", english: "It is said that the weather will be hot." },
-    { arabic: "وُجِدَ الْكِتَابُ فِي الْمَكْتَبَةِ.", english: "The book was found in the library." },
-  ];
 
-  const lesson7_1Exercises = [
-    {
-      question: "What is the past passive form of the verb 'كَتَبَ' (he wrote)?",
-      options: ["يُكْتَبُ", "كُتِبَ", "كَاتِبٌ", "مَكْتُوبٌ"],
-      correctAnswer: "كُتِبَ"
-    },
-    {
-      question: "What is the present passive form of the verb 'فَتَحَ' (he opened)?",
-      options: ["فُتِحَ", "يَفْتَحُ", "فَاتِحٌ", "يُفْتَحُ"],
-      correctAnswer: "يُفْتَحُ"
-    },
-    {
-      question: "In a passive sentence, the doer of the action is...",
-      options: ["Always the subject", "Always the object", "Often unknown or unimportant", "Always feminine"],
-      correctAnswer: "Often unknown or unimportant"
-    }
-  ];
+
+
+
 
   // Lesson 7.2: Weak Verbs II (Defective & Doubled) (B2 Level)
   const lesson7_2Vocabulary = [
@@ -1776,6 +1731,58 @@ export default function Lesson() {
       question: "What is the root of the verb `اِسْتَقْبَلَ` (to receive/welcome)?",
       options: ["س ق ب", "ت ق ب", "ق ب ل"],
       correctAnswer: "ق ب ل"
+    }
+  ];
+
+  // Lesson 7.1: The Verb Form System I (Forms I-V)
+  const lesson7_1Vocabulary = [
+    { arabic: "صِيغَةٌ / صِيَغٌ", transliteration: "ṣīghatun / ṣiyaghun", meaning: "form, pattern(s)" },
+    { arabic: "مَعْنًى / مَعَانٍ", transliteration: "maʿnan / maʿānin", meaning: "meaning(s)" },
+    { arabic: "مُكَثَّفٌ", transliteration: "mukaththafun", meaning: "intensified" },
+    { arabic: "مُسَبَّبٌ", transliteration: "musabbabun", meaning: "causative (caused)" },
+    { arabic: "تَدْرِيجِيٌّ", transliteration: "tadrījiyyun", meaning: "gradual, step-by-step" },
+    { arabic: "عَلَّمَ", transliteration: "ʿallama", meaning: "to teach (Form II)", root: "ع ل م" },
+    { arabic: "دَرَّسَ", transliteration: "darrasa", meaning: "to teach (Form II)", root: "د ر س" },
+    { arabic: "نَظَّفَ", transliteration: "naẓẓafa", meaning: "to clean (Form II)", root: "ن ظ ف" },
+    { arabic: "شَاهَدَ", transliteration: "shāhada", meaning: "to watch (Form III)", root: "ش ه د" },
+    { arabic: "سَاعَدَ", transliteration: "sāʿada", meaning: "to help (Form III)", root: "س ع د" },
+    { arabic: "أَرْسَلَ", transliteration: "arsala", meaning: "to send (Form IV)", root: "ر س ل" },
+    { arabic: "أَعْلَنَ", transliteration: "aʿlana", meaning: "to announce (Form IV)", root: "ع ل ن" },
+    { arabic: "أَنْهَى", transliteration: "anhā", meaning: "to finish (Form IV)", root: "ن ه ي" },
+    { arabic: "تَذَكَّرَ", transliteration: "tadhakkara", meaning: "to remember (Form V)", root: "ذ ك ر" },
+    { arabic: "تَعَلَّمَ", transliteration: "taʿallama", meaning: "to learn (Form V)", root: "ع ل م" },
+    { arabic: "تَخَرَّجَ", transliteration: "takharraja", meaning: "to graduate (Form V)", root: "خ ر ج" },
+    { arabic: "تَكَلَّمَ", transliteration: "takallama", meaning: "to speak (Form V)", root: "ك ل م" }
+  ];
+
+  const lesson7_1ExampleSentences = [
+    { arabic: "الْمُدَرِّسُ يُعَلِّمُ الطُّلَّابَ الْقَوَاعِدَ الْجَدِيدَةَ.", english: "The teacher teaches the students the new rules." },
+    { arabic: "أُشَاهِدُ الْأَفْلَامَ الْعَرَبِيَّةَ لِأَتَعَلَّمَ اللُّغَةَ.", english: "I watch Arabic movies in order to learn the language." },
+    { arabic: "سَأُرْسِلُ لَكَ رِسَالَةً غَدًا.", english: "I will send you a message tomorrow." },
+    { arabic: "هَلْ تَتَذَكَّرُ اِسْمَهُ؟ أَنَا لَا أَتَذَكَّرُهُ.", english: "Do you remember his name? I don't remember it." },
+    { arabic: "بَعْدَ أَنْ أُنْهِيَ عَمَلِي، سَأُسَاعِدُكَ.", english: "After I finish my work, I will help you." },
+    { arabic: "نَظَّفَ الرَّجُلُ الْبَيْتَ بِشَكْلٍ كَامِلٍ.", english: "The man cleaned the house completely." },
+    { arabic: "تَخَرَّجَتْ أُخْتِي مِنَ الْجَامِعَةِ السَّنَةَ الْمَاضِيَةَ.", english: "My sister graduated from the university last year." },
+    { arabic: "الْحُكُومَةُ تُعْلِنُ عَنْ قَرَارَاتٍ مُهِمَّةٍ.", english: "The government announces important decisions." },
+    { arabic: "يَجِبُ أَنْ تَتَكَلَّمَ بِصَوْتٍ عَالٍ.", english: "You must speak in a loud voice." },
+    { arabic: "دَرَّسْتُ اللُّغَةَ الْإِنْجِلِيزِيَّةَ لِمُدَّةِ خَمْسِ سَنَوَاتٍ.", english: "I taught the English language for a period of five years." }
+  ];
+
+  const lesson7_1Exercises = [
+    {
+      question: "The verb `كَسَّرَ` (to shatter) is on which form, and what meaning does it add to the root `ك س ر` (to break)?",
+      options: ["Form II - it makes the action intensive.", "Form III - it means to break with someone.", "Form IV - it causes something to break."],
+      correctAnswer: "Form II - it makes the action intensive."
+    },
+    {
+      question: "Which of the following verbs is on Form V?",
+      options: ["سَافَرَ", "أَخْبَرَ", "تَصَرَّفَ"],
+      correctAnswer: "تَصَرَّفَ"
+    },
+    {
+      question: "The verb `قَابَلَ` (to meet) is Form III of the root `ق ب ل`. What is the most likely meaning of Form VI verb `تَقَابَلَ`?",
+      options: ["To cause to accept.", "To meet each other (reciprocal).", "To seek acceptance."],
+      correctAnswer: "To meet each other (reciprocal)."
     }
   ];
 
@@ -6651,21 +6658,233 @@ export default function Lesson() {
            <div className="clay-card p-8 text-center">
              <h3 className="text-3xl font-bold text-gray-800 mb-4">Lesson 7.1: The Verb Form System I (Forms I-V)</h3>
              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-               Understanding the foundational verb forms and their patterns.
+               Unlock the logic of Arabic verbs by understanding their predictable patterns.
              </p>
            </div>
 
-           {/* Placeholder Content */}
-           <div className="clay-card p-8">
-             <div className="text-center py-16">
-               <div className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                 <BookOpen className="w-12 h-12 text-blue-700" />
-               </div>
-               <h4 className="text-xl font-semibold text-gray-800 mb-4">Content Coming Soon</h4>
-               <p className="text-gray-600 mb-6">
-                 This lesson will cover the foundational verb forms (I-V) and their patterns.
-                 The detailed curriculum content will be added as you finalize the lesson plans.
+           {/* Objectives */}
+           <div className="clay-card p-6 bg-blue-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+               <Target className="w-5 h-5 mr-2 text-blue-600" />
+               Objectives
+             </h4>
+             <ul className="space-y-2 text-gray-700">
+               <li className="flex items-start">
+                 <CheckCircle2 className="w-4 h-4 mr-2 mt-1 text-green-600 flex-shrink-0" />
+                 Understand the concept of the 10 verb forms (الأَوْزَان) as a system.
+               </li>
+               <li className="flex items-start">
+                 <CheckCircle2 className="w-4 h-4 mr-2 mt-1 text-green-600 flex-shrink-0" />
+                 Identify the pattern and core meaning of Forms I, II, III, IV, and V.
+               </li>
+               <li className="flex items-start">
+                 <CheckCircle2 className="w-4 h-4 mr-2 mt-1 text-green-600 flex-shrink-0" />
+                 Recognize how adding letters to a root changes its meaning in a predictable way.
+               </li>
+               <li className="flex items-start">
+                 <CheckCircle2 className="w-4 h-4 mr-2 mt-1 text-green-600 flex-shrink-0" />
+                 Begin to predict the meaning of a new verb based on its form.
+               </li>
+             </ul>
+           </div>
+
+           {/* Grammar and Explanation */}
+           <div className="clay-card p-6 bg-green-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4">The Big Idea: Roots are Ingredients, Forms are Recipes</h4>
+             <div className="p-4 bg-white rounded-lg">
+               <p className="text-gray-700 leading-relaxed">
+                 Think of the three-letter root as a set of basic ingredients, like flour, water, and salt. By themselves, they have a core potential. The ten verb forms (الأَوْزَان) are like different recipes. By putting the same root ingredients into different recipes, you create different results.
                </p>
+               <p className="text-gray-700 leading-relaxed mt-2">
+                 For example, the root <span className="font-arabic" lang="ar" dir="rtl">ع ل م</span> (knowledge) can be put into Form I to mean 'to know' (<span className="font-arabic" lang="ar" dir="rtl">عَلِمَ</span>), or into Form II to mean 'to teach' (<span className="font-arabic" lang="ar" dir="rtl">عَلَّمَ</span>), or into Form V to mean 'to learn' (<span className="font-arabic" lang="ar" dir="rtl">تَعَلَّمَ</span>). The core idea of 'knowledge' is always there, but the form changes its specific meaning.
+               </p>
+               <p className="text-gray-700 leading-relaxed mt-2 font-semibold">
+                 This is the most powerful concept in Arabic. Once you understand this system, you can unlock the meaning of thousands of words.
+               </p>
+             </div>
+           </div>
+
+           {/* Forms I-V Detailed Explanation */}
+           <div className="clay-card p-6 bg-yellow-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Forms I-V: A Detailed Look</h4>
+             
+             {/* Form I */}
+             <div className="p-4 bg-white border rounded-lg mb-4">
+               <h5 className="text-2xl font-bold text-gray-800">Form I: The Base <span className="text-lg font-normal text-gray-500">(اَلْفِعْلُ الْمُجَرَّدُ)</span></h5>
+               <p className="text-gray-600 mt-2">This is the simplest, most basic form of the verb. It's just the root itself, with vowels. It's the standard "to do" an action.</p>
+               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                 <div className="bg-gray-100 p-2 rounded"><strong>Past Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">فَعَلَ</span> (faʿala)</div>
+                 <div className="bg-gray-100 p-2 rounded"><strong>Present Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">يَفْعُلُ</span> (yafʿulu)</div>
+               </div>
+               <div className="mt-4">
+                 <p className="font-semibold">Examples:</p>
+                 <ul className="list-disc list-inside text-gray-700 mt-2">
+                   <li>Root <span className="font-arabic" lang="ar" dir="rtl">ك ت ب</span> → <span className="font-arabic" lang="ar" dir="rtl">كَتَبَ / يَكْتُبُ</span> (to write)</li>
+                   <li>Root <span className="font-arabic" lang="ar" dir="rtl">د ر س</span> → <span className="font-arabic" lang="ar" dir="rtl">دَرَسَ / يَدْرُسُ</span> (to study)</li>
+                 </ul>
+               </div>
+             </div>
+
+             {/* Form II */}
+             <div className="p-4 bg-white border rounded-lg mb-4">
+               <h5 className="text-2xl font-bold text-gray-800">Form II: The Intensifier / The Causer <span className="text-lg font-normal text-gray-500">(فَعَّلَ)</span></h5>
+               <p className="text-gray-600 mt-2">This form makes the action of the root more intense, or it causes someone/something to do the action (causative). The key feature is the <strong className="text-red-600">doubled middle root letter</strong>.</p>
+               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                 <div className="bg-gray-100 p-2 rounded"><strong>Past Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">فَعَّلَ</span> (faʿʿala)</div>
+                 <div className="bg-gray-100 p-2 rounded"><strong>Present Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">يُفَعِّلُ</span> (yufaʿʿilu)</div>
+               </div>
+               <div className="mt-4">
+                 <p className="font-semibold">Examples:</p>
+                 <ul className="list-disc list-inside text-gray-700 mt-2">
+                   <li>Root <span className="font-arabic" lang="ar" dir="rtl">د ر س</span> (to study) → <span className="font-arabic" lang="ar" dir="rtl">دَرَّسَ / يُدَرِّسُ</span> (to TEACH - to cause someone to study)</li>
+                   <li>Root <span className="font-arabic" lang="ar" dir="rtl">ك س ر</span> (to break) → <span className="font-arabic" lang="ar" dir="rtl">كَسَّرَ / يُكَسِّرُ</span> (to SHATTER - to break intensively)</li>
+                 </ul>
+               </div>
+             </div>
+
+             {/* Form III */}
+             <div className="p-4 bg-white border rounded-lg mb-4">
+               <h5 className="text-2xl font-bold text-gray-800">Form III: The Actor-Upon <span className="text-lg font-normal text-gray-500">(فَاعَلَ)</span></h5>
+               <p className="text-gray-600 mt-2">This form indicates that the action is being done *to* or *with* someone or something. It often has a sense of correspondence. The key feature is the <strong className="text-red-600">long alif (ا) after the first root letter</strong>.</p>
+               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                 <div className="bg-gray-100 p-2 rounded"><strong>Past Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">فَاعَلَ</span> (fāʿala)</div>
+                 <div className="bg-gray-100 p-2 rounded"><strong>Present Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">يُفَاعِلُ</span> (yufāʿilu)</div>
+               </div>
+               <div className="mt-4">
+                 <p className="font-semibold">Examples:</p>
+                 <ul className="list-disc list-inside text-gray-700 mt-2">
+                   <li>Root <span className="font-arabic" lang="ar" dir="rtl">ك ت ب</span> (to write) → <span className="font-arabic" lang="ar" dir="rtl">كَاتَبَ / يُكَاتِبُ</span> (to CORRESPOND with someone)</li>
+                   <li>Root <span className="font-arabic" lang="ar" dir="rtl">ش ه د</span> (to witness) → <span className="font-arabic" lang="ar" dir="rtl">شَاهَدَ / يُشَاهِدُ</span> (to WATCH something)</li>
+                 </ul>
+               </div>
+             </div>
+
+             {/* Form IV */}
+             <div className="p-4 bg-white border rounded-lg mb-4">
+               <h5 className="text-2xl font-bold text-gray-800">Form IV: The Causer (Again) <span className="text-lg font-normal text-gray-500">(أَفْعَلَ)</span></h5>
+               <p className="text-gray-600 mt-2">Like Form II, this form is also causative. It makes something happen. The key feature is the <strong className="text-red-600">prefix alif (أ) in the past tense</strong>.</p>
+               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                 <div className="bg-gray-100 p-2 rounded"><strong>Past Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">أَفْعَلَ</span> (afʿala)</div>
+                 <div className="bg-gray-100 p-2 rounded"><strong>Present Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">يُفْعِلُ</span> (yufʿilu)</div>
+               </div>
+               <div className="mt-4">
+                 <p className="font-semibold">Examples:</p>
+                 <ul className="list-disc list-inside text-gray-700 mt-2">
+                   <li>Root <span className="font-arabic" lang="ar" dir="rtl">ر س ل</span> (to travel/be a messenger) → <span className="font-arabic" lang="ar" dir="rtl">أَرْسَلَ / يُرْسِلُ</span> (to SEND - to cause to travel)</li>
+                   <li>Root <span className="font-arabic" lang="ar" dir="rtl">خ ب ر</span> (news/information) → <span className="font-arabic" lang="ar" dir="rtl">أَخْبَرَ / يُخْبِرُ</span> (to INFORM - to cause to know)</li>
+                 </ul>
+               </div>
+             </div>
+             
+             {/* Form V */}
+             <div className="p-4 bg-white border rounded-lg">
+               <h5 className="text-2xl font-bold text-gray-800">Form V: The Reflexive of Form II <span className="text-lg font-normal text-gray-500">(تَفَعَّلَ)</span></h5>
+               <p className="text-gray-600 mt-2">This form is the reflexive or passive version of Form II. If Form II is "to teach," Form V is "to learn" (to be taught). The key feature is the <strong className="text-red-600">prefix تَـ</strong> added to the Form II pattern.</p>
+               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                 <div className="bg-gray-100 p-2 rounded"><strong>Past Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">تَفَعَّلَ</span> (tafaʿʿala)</div>
+                 <div className="bg-gray-100 p-2 rounded"><strong>Present Pattern:</strong> <span className="font-arabic" lang="ar" dir="rtl">يَتَفَعَّلُ</span> (yatafaʿʿalu)</div>
+               </div>
+               <div className="mt-4">
+                 <p className="font-semibold">Examples:</p>
+                 <ul className="list-disc list-inside text-gray-700 mt-2">
+                   <li>Root <span className="font-arabic" lang="ar" dir="rtl">ع ل م</span> (Form II: to teach) → <span className="font-arabic" lang="ar" dir="rtl">تَعَلَّمَ / يَتَعَلَّمُ</span> (to LEARN)</li>
+                   <li>Root <span className="font-arabic" lang="ar" dir="rtl">ذ ك ر</span> (Form II: to remind) → <span className="font-arabic" lang="ar" dir="rtl">تَذَكَّرَ / يَتَذَكَّرُ</span> (to REMEMBER)</li>
+                 </ul>
+               </div>
+             </div>
+           </div>
+
+           {/* Vocabulary */}
+           <div className="clay-card p-6 bg-purple-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4">Meta-Language Vocabulary</h4>
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+               {lesson7_1Vocabulary.map((item, index) => (
+                 <div key={index} className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+                   <div className="flex items-start justify-between">
+                     <div className="flex-grow">
+                       <p className="text-lg font-medium text-right text-gray-800 font-arabic" lang="ar" dir="rtl">{item.arabic}</p>
+                       <p className="text-sm text-gray-500 italic">{item.transliteration}</p>
+                       <p className="text-sm text-gray-700">{item.meaning}</p>
+                       {item.root && <p className="text-xs text-gray-400 font-mono" lang="ar" dir="rtl">Root: {item.root}</p>}
+                     </div>
+                     <button 
+                       onClick={() => playAudio(item.arabic, 'male')}
+                       disabled={audioLoading[`${item.arabic}-male`]}
+                       className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50 ml-2"
+                       title="Play audio"
+                     >
+                       {audioLoading[`${item.arabic}-male`] ? (
+                         <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                       ) : (
+                         <Volume2 className="w-4 h-4 text-blue-600" />
+                       )}
+                     </button>
+                   </div>
+                 </div>
+               ))}
+             </div>
+           </div>
+
+           {/* Example Sentences */}
+           <div className="clay-card p-6 bg-red-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4">Example Sentences</h4>
+             <div className="space-y-4">
+               {lesson7_1ExampleSentences.map((sentence, index) => (
+                 <div key={index} className="bg-white p-4 rounded-lg border border-gray-200 flex items-start space-x-4">
+                   <div className="flex-grow">
+                     <p className="text-lg text-right text-gray-800 font-arabic" lang="ar" dir="rtl">{sentence.arabic}</p>
+                     <p className="text-sm text-gray-600 mt-1">{sentence.english}</p>
+                   </div>
+                   <button 
+                     onClick={() => playAudio(sentence.arabic, 'male')}
+                     disabled={audioLoading[`${sentence.arabic}-male`]}
+                     className="clay-button p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                     title="Play audio"
+                   >
+                     {audioLoading[`${sentence.arabic}-male`] ? (
+                       <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                     ) : (
+                       <Volume2 className="w-4 h-4 text-blue-600" />
+                     )}
+                   </button>
+                 </div>
+               ))}
+             </div>
+           </div>
+
+           {/* Exercises */}
+           <div className="clay-card p-6 bg-orange-50">
+             <h4 className="text-xl font-semibold text-gray-800 mb-4">Practice Exercises</h4>
+             <div className="space-y-6">
+               {lesson7_1Exercises.map((q, qIndex) => (
+                 <div key={qIndex} className="bg-white p-4 rounded-lg border border-gray-200">
+                   <p className="font-semibold text-gray-800 mb-3 text-lg">{qIndex + 1}. {q.question}</p>
+                   <div className="space-y-2">
+                     {q.options.map((option, oIndex) => {
+                       const isSelected = selectedAnswers[qIndex] === option;
+                       const isCorrect = q.correctAnswer === option;
+                       let bgColor = 'bg-white';
+                       if (showResults) {
+                         if (isSelected && isCorrect) bgColor = 'bg-green-100 border-green-400';
+                         else if (isSelected && !isCorrect) bgColor = 'bg-red-100 border-red-400';
+                         else if (isCorrect) bgColor = 'bg-green-100 border-green-400';
+                       }
+
+                       return (
+                         <label key={oIndex} className={`flex items-center p-3 rounded-md border cursor-pointer transition-all duration-200 ${isSelected ? 'border-blue-500' : 'border-gray-300'} ${bgColor}`}>
+                           <input type="radio" name={`question-${qIndex}`} value={option} checked={isSelected} onChange={() => handleOptionChange(qIndex, option)} className="mr-3"/>
+                           <span className='text-left'>{option}</span>
+                         </label>
+                       );
+                     })}
+                   </div>
+                 </div>
+               ))}
+             </div>
+             <div className="mt-6 text-center">
+               <Button onClick={checkAnswers} className="clay-button bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                 Check Answers
+               </Button>
              </div>
            </div>
          </div>
