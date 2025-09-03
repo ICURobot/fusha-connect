@@ -4,6 +4,7 @@ import { curriculum } from "../../entities/Curriculum";
 import { Module } from "../../entities/Curriculum";
 import { BookOpen, Target, CheckCircle2, Circle, ArrowLeft, ArrowRight, Play, MessageCircle, PenTool, Volume2, Loader2 } from "lucide-react";
 import { generateAudio, playAudio as playAudioUtil, cleanupAudioUrl, getAudioFromSupabase } from "../../utils/audio";
+import PodcastPlayer from "../lesson/PodcastPlayer";
 import { Button } from "../ui/button";
 import ReactGA from 'react-ga4';
 import ProgressTracker from '../../utils/progress';
@@ -2012,6 +2013,9 @@ export default function Lesson() {
               Learn the essential phrases for your first conversations in Arabic.
             </p>
           </div>
+
+          {/* Podcast Player */}
+          <PodcastPlayer lessonId={currentLesson.id} lessonTitle={currentLesson.title} />
 
           {/* Objectives */}
           <div className="clay-card p-6">

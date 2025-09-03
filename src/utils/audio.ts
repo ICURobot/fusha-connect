@@ -62,6 +62,69 @@ export const cleanupAudioUrl = (audioUrl: string) => {
 // Cache for audio blob URLs to prevent re-downloading
 const audioCache: { [key: string]: string } = {};
 
+// Function to get podcast audio (tries local first, then Supabase)
+export const getPodcastFromSupabase = async (lessonId: string): Promise<string | null> => {
+  try {
+    console.log('🎧 Looking for podcast for lesson:', lessonId);
+    
+    // Check if we already have this podcast cached
+    if (audioCache[`podcast-${lessonId}`]) {
+      console.log('💾 Using cached podcast URL for:', lessonId);
+      return audioCache[`podcast-${lessonId}`];
+    }
+    
+    const filename = `lesson-${lessonId}.mp3`;
+    
+    // First, try to load from local public folder (for testing)
+    const localUrl = `/audio/podcasts/${filename}`;
+    console.log('🔍 Checking for local podcast file:', localUrl);
+    
+    // Test if local file exists by trying to fetch it
+    try {
+      const response = await fetch(localUrl, { method: 'HEAD' });
+      if (response.ok) {
+        console.log('✅ Found local podcast file:', localUrl);
+        audioCache[`podcast-${lessonId}`] = localUrl;
+        return localUrl;
+      }
+    } catch (localError) {
+      console.log('📁 No local podcast file found, trying Supabase...');
+    }
+    
+    // If no local file, try Supabase
+    if (!supabase) {
+      console.warn('❌ Supabase client not available');
+      return null;
+    }
+
+    console.log('📤 Downloading podcast from Supabase:', filename);
+    
+    // Get podcast from Supabase bucket
+    const { data, error } = await supabase.storage
+      .from('audio')
+      .download(filename);
+
+    if (error || !data) {
+      console.warn('❌ Supabase podcast download failed for:', filename, error);
+      return null;
+    }
+
+    // Convert to blob URL for playback
+    const audioBlob = new Blob([data], { type: 'audio/mpeg' });
+    const audioUrl = URL.createObjectURL(audioBlob);
+    
+    // Cache the audio URL for future use
+    audioCache[`podcast-${lessonId}`] = audioUrl;
+    
+    console.log('✅ Podcast loaded from Supabase and cached:', filename);
+    return audioUrl;
+
+  } catch (error) {
+    console.error('❌ Error getting podcast:', error);
+    return null;
+  }
+};
+
 // Function to get audio directly from Supabase bucket
 export const getAudioFromSupabase = async (text: string, voiceType: 'male' | 'female' = 'male'): Promise<string | null> => {
   try {
