@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl } from "../../utils";
-import { Home, BookOpen, Menu, X, MessageSquare, Heart } from "lucide-react";
+import { Home, BookOpen, Menu, X, MessageSquare, Heart, BookMarked } from "lucide-react";
 import { Button } from "../ui/button";
 import ReactGA from 'react-ga4';
 
@@ -17,6 +17,7 @@ export default function Layout({ children }) {
   const navigation = [
     { name: "Home", url: "/", icon: Home },
     { name: "Dashboard", url: createPageUrl("Dashboard"), icon: BookOpen },
+    { name: "Grammar Reference", url: "/reference", icon: BookMarked },
     { name: "Feedback", url: "/feedback", icon: MessageSquare },
   ];
 

@@ -4,6 +4,7 @@ import Homepage from './components/pages/Homepage';
 import Dashboard from './components/pages/Dashboard';
 import Lesson from './components/pages/Lesson';
 import Feedback from './components/pages/Feedback';
+import GrammarHub from './components/GrammarHub';
 import Layout from './components/layout/Layout';
 import ReactGA from 'react-ga4';
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/lesson" element={<Lesson />} />
           <Route path="/lesson/:moduleId" element={<Lesson />} />
+          <Route path="/reference" element={<GrammarHub />} />
           <Route path="/feedback" 
           element={<Feedback />} />
         </Routes>

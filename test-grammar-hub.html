@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar Hub Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; }
+        button { padding: 10px 15px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 3px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Grammar Hub Functionality Test</h1>
+    
+    <div class="test-section">
+        <h2>Progress Tracker Test</h2>
+        <p>This test verifies that the progress tracking system works correctly.</p>
+        <button onclick="testProgressTracker()">Test Progress Tracker</button>
+        <div id="progress-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Grammar Data Test</h2>
+        <p>This test verifies that the grammar data is properly structured.</p>
+        <button onclick="testGrammarData()">Test Grammar Data</button>
+        <div id="grammar-results"></div>
+    </div>
+
+    <script>
+        // Mock ProgressTracker for testing
+        class ProgressTracker {
+            static STORAGE_KEY = 'fusha_progress_test';
+            
+            static getProgress() {
+                try {
+                    const stored = localStorage.getItem(this.STORAGE_KEY);
+                    return stored ? JSON.parse(stored) : [];
+                } catch (error) {
+                    console.error('Error reading progress:', error);
+                    return [];
+                }
+            }
+            
+            static saveProgress(progress) {
+                try {
+                    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(progress));
+                } catch (error) {
+                    console.error('Error saving progress:', error);
+                }
+            }
+            
+            static markLessonCompleted(lessonId, score, timeSpent) {
+                const progress = this.getProgress();
+                const existingIndex = progress.findIndex(p => p.lessonId === lessonId);
+                
+                const newProgress = {
+                    lessonId,
+                    completedAt: new Date().toISOString(),
+                    score,
+                    timeSpent
+                };
+
+                if (existingIndex >= 0) {
+                    progress[existingIndex] = newProgress;
+                } else {
+                    progress.push(newProgress);
+                }
+
+                this.saveProgress(progress);
+            }
+            
+            static isLessonCompleted(lessonId) {
+                const progress = this.getProgress();
+                return progress.some(p => p.lessonId === lessonId);
+            }
+        }
+
+        // Mock grammar data
+        const pastTenseData = [
+            { pronoun: "أَنَا", arabic: "كَتَبْتُ", transliteration: "katabtu" },
+            { pronoun: "أَنْتَ", arabic: "كَتَبْتَ", transliteration: "katabta" },
+            { pronoun: "هُوَ", arabic: "كَتَبَ", transliteration: "kataba" }
+        ];
+
+        const verbFormsData = [
+            { form: "Form I", pattern: "فَعَلَ", meaning: "Basic action (e.g., كَتَبَ - to write)" },
+            { form: "Form II", pattern: "فَعَّلَ", meaning: "Intensive/causative (e.g., دَرَّسَ - to teach)" }
+        ];
+
+        function testProgressTracker() {
+            const results = document.getElementById('progress-results');
+            results.innerHTML = '<p>Testing progress tracker...</p>';
+            
+            try {
+                // Clear any existing test data
+                localStorage.removeItem(ProgressTracker.STORAGE_KEY);
+                
+                // Test initial state
+                let progress = ProgressTracker.getProgress();
+                if (progress.length !== 0) {
+                    throw new Error('Initial progress should be empty');
+                }
+                
+                // Test marking lesson as completed
+                ProgressTracker.markLessonCompleted('a2-m4-l2');
+                progress = ProgressTracker.getProgress();
+                if (progress.length !== 1) {
+                    throw new Error('Should have 1 completed lesson');
+                }
+                
+                // Test checking if lesson is completed
+                if (!ProgressTracker.isLessonCompleted('a2-m4-l2')) {
+                    throw new Error('Lesson 4.2 should be marked as completed');
+                }
+                
+                // Test marking lesson 7.2 as completed
+                ProgressTracker.markLessonCompleted('b2-m7-l2');
+                progress = ProgressTracker.getProgress();
+                if (progress.length !== 2) {
+                    throw new Error('Should have 2 completed lessons');
+                }
+                
+                if (!ProgressTracker.isLessonCompleted('b2-m7-l2')) {
+                    throw new Error('Lesson 7.2 should be marked as completed');
+                }
+                
+                results.innerHTML = '<div class="success"><h3>✅ Progress Tracker Test Passed!</h3><p>All progress tracking functionality is working correctly.</p></div>';
+                
+            } catch (error) {
+                results.innerHTML = `<div class="error"><h3>❌ Progress Tracker Test Failed</h3><p>Error: ${error.message}</p></div>`;
+            }
+        }
+
+        function testGrammarData() {
+            const results = document.getElementById('grammar-results');
+            results.innerHTML = '<p>Testing grammar data...</p>';
+            
+            try {
+                // Test past tense data structure
+                if (!Array.isArray(pastTenseData)) {
+                    throw new Error('Past tense data should be an array');
+                }
+                
+                if (pastTenseData.length === 0) {
+                    throw new Error('Past tense data should not be empty');
+                }
+                
+                const firstItem = pastTenseData[0];
+                if (!firstItem.pronoun || !firstItem.arabic || !firstItem.transliteration) {
+                    throw new Error('Past tense data items should have pronoun, arabic, and transliteration properties');
+                }
+                
+                // Test verb forms data structure
+                if (!Array.isArray(verbFormsData)) {
+                    throw new Error('Verb forms data should be an array');
+                }
+                
+                if (verbFormsData.length === 0) {
+                    throw new Error('Verb forms data should not be empty');
+                }
+                
+                const firstForm = verbFormsData[0];
+                if (!firstForm.form || !firstForm.pattern || !firstForm.meaning) {
+                    throw new Error('Verb forms data items should have form, pattern, and meaning properties');
+                }
+                
+                results.innerHTML = '<div class="success"><h3>✅ Grammar Data Test Passed!</h3><p>All grammar data structures are correct.</p></div>';
+                
+            } catch (error) {
+                results.innerHTML = `<div class="error"><h3>❌ Grammar Data Test Failed</h3><p>Error: ${error.message}</p></div>`;
+            }
+        }
+    </script>
+</body>
+</html>

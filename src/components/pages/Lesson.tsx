@@ -8,6 +8,7 @@ import PodcastPlayer from "../lesson/PodcastPlayer";
 import { Button } from "../ui/button";
 import ReactGA from 'react-ga4';
 import ProgressTracker from '../../utils/progress';
+import FeatureUnlockedCard from '../FeatureUnlockedCard';
 
 export default function Lesson() {
   const { moduleId } = useParams();
@@ -2178,6 +2179,9 @@ export default function Lesson() {
             </p>
           </div>
 
+          {/* Podcast Player */}
+          <PodcastPlayer lessonId={currentLesson.id} lessonTitle={currentLesson.title} />
+
           {/* Objectives */}
           <div className="clay-card p-6">
             <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center space-x-2">
@@ -2202,20 +2206,28 @@ export default function Lesson() {
 
           {/* Grammar Explanation */}
           <div className="clay-card p-6">
-            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Grammar: The Nominal Sentence</h4>
+            <h4 className="text-2xl font-semibold text-gray-800 mb-6">Grammar: The Nominal Sentence (<span className="font-arabic text-2xl" lang="ar" dir="rtl">الجُمْلَة الاِسْمِيَّة</span>)</h4>
             <div className="space-y-4">
               <div className="p-4 bg-gray-50 rounded-lg">
-                <h5 className="text-lg font-semibold text-gray-700 mb-2">No Verb "To Be"</h5>
-                <p className="text-gray-600">In Arabic, the simplest sentences don't need a verb in the present tense. A sentence like "The student is new" is just two words: "The student" (الطالِب) and "new" (جَديد). The "is" is understood. This is called a <strong>Nominal Sentence</strong> because it starts with a noun.</p>
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">The Beautiful Simplicity of Arabic</h5>
+                <p className="text-gray-600">In English, we say "The house IS big." In Arabic, you literally just say "The house big" - <span className="font-arabic" lang="ar" dir="rtl">اَلْبَيْتُ كَبِيرٌ</span>. No verb needed! This is called a <strong>Nominal Sentence</strong> (<span className="font-arabic" lang="ar" dir="rtl">الجُمْلَة الاِسْمِيَّة</span>). Think of it as a mathematical equation: Subject plus Predicate equals complete sentence.</p>
               </div>
               <div className="p-4 bg-gray-50 rounded-lg">
-                <h5 className="text-lg font-semibold text-gray-700 mb-2">Gender and the Ta' Marbuta (ة)</h5>
-                <p className="text-gray-600">Most nouns in Arabic are either masculine or feminine. The easiest way to spot a feminine noun is by the <strong>Ta' Marbuta (ة)</strong> at the end. For example, `طالِب` (Taalib) is a male student, while `طالِبة` (Taaliba) is a female student.</p>
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">Subject and Predicate</h5>
+                <p className="text-gray-600">The subject - that's <span className="font-arabic" lang="ar" dir="rtl">مُبْتَدَأ</span> - is typically a definite noun, like "the house." The predicate - that's <span className="font-arabic" lang="ar" dir="rtl">خَبَر</span> - is usually an indefinite adjective, like "big." Arabic speakers automatically understand there's an invisible "is" connecting them.</p>
               </div>
               <div className="p-4 bg-gray-50 rounded-lg">
-                <h5 className="text-lg font-semibold text-gray-700 mb-2">Adjective Agreement</h5>
-                <p className="text-gray-600">Adjectives must <strong>agree</strong> with the noun they describe in gender. If the noun is feminine, the adjective must also be made feminine, usually by adding a Ta' Marbuta (ة).</p>
-                <p className="text-gray-700 mt-2 font-medium">Example: `طالِب جَديد` (a new male student) vs. `طالِبة جَديدة` (a new female student).</p>
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">Examples in Action</h5>
+                <div className="space-y-3">
+                  <p className="text-gray-600"><span className="font-arabic text-lg" lang="ar" dir="rtl">اَلْبَيْتُ كَبِيرٌ</span> - "The house is big." Notice how the adjective <span className="font-arabic" lang="ar" dir="rtl">كَبِيرٌ</span> matches the masculine noun.</p>
+                  <p className="text-gray-600"><span className="font-arabic text-lg" lang="ar" dir="rtl">اَلسَّيَّارَةُ جَدِيدَةٌ</span> - "The car is new." Here, <span className="font-arabic" lang="ar" dir="rtl">جَدِيدَةٌ</span> has the feminine ending to match <span className="font-arabic" lang="ar" dir="rtl">السَّيَّارَةُ</span>.</p>
+                  <p className="text-gray-600"><span className="font-arabic text-lg" lang="ar" dir="rtl">اَلطَّالِبُ ذَكِيٌّ</span> - "The student is smart."</p>
+                  <p className="text-gray-600"><span className="font-arabic text-lg" lang="ar" dir="rtl">اَلْمَدْرَسَةُ كَبِيرَةٌ</span> - "The school is big."</p>
+                </div>
+              </div>
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h5 className="text-lg font-semibold text-gray-700 mb-2">Gender Agreement</h5>
+                <p className="text-gray-600">Do you hear the pattern? Definite noun, indefinite adjective, and they must agree in gender. That invisible "is" does all the connecting work for you! Just put a definite noun and an indefinite adjective together, make sure they agree in gender, and let Arabic do the rest.</p>
               </div>
             </div>
           </div>
@@ -4760,6 +4772,13 @@ export default function Lesson() {
                </Button>
              </div>
            </div>
+
+           {/* Feature Unlock Card */}
+           <FeatureUnlockedCard
+             title="🎉 Grammar Reference Hub Unlocked!"
+             description="You've completed the past tense! Access your new Grammar Reference Hub to review verb conjugations anytime. This will be your go-to resource for all Arabic grammar tables."
+             buttonLink="/reference"
+           />
          </div>
        ) : currentLesson.id === "a2-m4-l3" ? (
          <div className="space-y-8">
@@ -7163,6 +7182,13 @@ export default function Lesson() {
                </Button>
              </div>
            </div>
+
+           {/* Feature Update Notification */}
+           <FeatureUnlockedCard
+             title="🚀 Grammar Hub Expanded!"
+             description="Amazing! You've mastered the complete verb form system. Your Grammar Reference Hub now includes all verb conjugations, moods, and the complete 10-form system. This is your comprehensive Arabic grammar library!"
+             buttonLink="/reference"
+           />
          </div>
        ) : currentLesson.id === "b2-m7-l3" ? (
          <div className="space-y-8">
